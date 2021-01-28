@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shoppingApp/presentation/common_widget/custom_button.dart';
+import 'package:shoppingApp/presentation/common_widget/profile_pic_upload.dart';
 import 'package:shoppingApp/presentation/common_widget/text_field_widget.dart';
 import 'package:shoppingApp/presentation/common_widget/text_style.dart';
-import 'package:shoppingApp/presentation/signin/profile_pic_upload.dart';
 import 'package:shoppingApp/presentation/signin/signin_page.dart';
 
 class SignupPage extends StatelessWidget {
