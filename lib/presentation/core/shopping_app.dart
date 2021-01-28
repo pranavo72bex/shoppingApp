@@ -4,10 +4,23 @@ class ShoppingApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Material App',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        appBarTheme: AppBarTheme(
+          centerTitle: true,
+          // textTheme: TextTheme(),
+          brightness: Brightness.light,
+          color: Colors.transparent,
+          elevation: 0,
+        ),
+        // primaryColor: Colors.white,
+        primarySwatch: Colors.green,
+      ),
+      title: 'Shopping App',
       home: Scaffold(
+        floatingActionButton: FloatingActionButton(onPressed: () {}),
         appBar: AppBar(
-          title: Text('Material App Bar'),
+          title: Text('Shopping App'),
         ),
         body: Center(
           child: Container(
