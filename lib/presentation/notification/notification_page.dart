@@ -3,12 +3,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:shoppingApp/presentation/common_widget/custom_button.dart';
 import 'package:shoppingApp/presentation/common_widget/text_style.dart';
 
-class Notifications extends StatefulWidget {
+class NotificationsPage extends StatefulWidget {
   @override
-  _NotificationsState createState() => _NotificationsState();
+  _NotificationsPageState createState() => _NotificationsPageState();
 }
 
-class _NotificationsState extends State<Notifications> {
+class _NotificationsPageState extends State<NotificationsPage> {
   //bool isChecked = false;
   @override
   Widget build(BuildContext context) {
