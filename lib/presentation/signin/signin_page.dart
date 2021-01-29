@@ -84,10 +84,14 @@ class _SigninPageState extends State<SigninPage> {
                   ],
                 ),
                 SizedBox(height: height * 0.04),
-                Btns(
-                  text: "Login",
-                  fillcolor: Color(0xff6cc41d),
-                  textcolor: Colors.white,
+                InkWell(
+                  onTap: () => ExtendedNavigator.of(context)
+                      .push(Routes.bottomNavigationPage),
+                  child: Btns(
+                    text: "Login",
+                    fillcolor: Color(0xff6cc41d),
+                    textcolor: Colors.white,
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(12.0),

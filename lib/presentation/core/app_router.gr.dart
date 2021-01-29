@@ -13,14 +13,17 @@ import '../about_me/about_me_page.dart';
 import '../cart/cart_page.dart';
 import '../signin/signin_page.dart';
 import '../signup/signup_page.dart';
+import 'bottom_navigation_page.dart';
 
 class Routes {
   static const String signinPage = '/';
+  static const String bottomNavigationPage = '/bottom-navigation-page';
   static const String signupPage = '/signup-page';
   static const String aboutMePage = '/about-me-page';
   static const String cartPage = '/cart-page';
   static const all = <String>{
     signinPage,
+    bottomNavigationPage,
     signupPage,
     aboutMePage,
     cartPage,
@@ -32,6 +35,7 @@ class AppRouter extends RouterBase {
   List<RouteDef> get routes => _routes;
   final _routes = <RouteDef>[
     RouteDef(Routes.signinPage, page: SigninPage),
+    RouteDef(Routes.bottomNavigationPage, page: BottomNavigationPage),
     RouteDef(Routes.signupPage, page: SignupPage),
     RouteDef(Routes.aboutMePage, page: AboutMePage),
     RouteDef(Routes.cartPage, page: CartPage),
@@ -42,6 +46,12 @@ class AppRouter extends RouterBase {
     SigninPage: (data) {
       return MaterialPageRoute<dynamic>(
         builder: (context) => SigninPage(),
+        settings: data,
+      );
+    },
+    BottomNavigationPage: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => BottomNavigationPage(),
         settings: data,
       );
     },
@@ -72,6 +82,9 @@ class AppRouter extends RouterBase {
 
 extension AppRouterExtendedNavigatorStateX on ExtendedNavigatorState {
   Future<dynamic> pushSigninPage() => push<dynamic>(Routes.signinPage);
+
+  Future<dynamic> pushBottomNavigationPage() =>
+      push<dynamic>(Routes.bottomNavigationPage);
 
   Future<dynamic> pushSignupPage() => push<dynamic>(Routes.signupPage);
 

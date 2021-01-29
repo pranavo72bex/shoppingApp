@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shoppingApp/presentation/core/app_router.gr.dart';
 
 import 'app_router.gr.dart';
 
