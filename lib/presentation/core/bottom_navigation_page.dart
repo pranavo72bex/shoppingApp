@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shoppingApp/presentation/about_me/about_me_page.dart';
+import 'package:shoppingApp/presentation/profile/profile_page.dart';
 
 class BottomNavigationPage extends StatefulWidget {
   @override
@@ -8,20 +10,22 @@ class BottomNavigationPage extends StatefulWidget {
 class _BottomNavigationPageState extends State<BottomNavigationPage> {
   int _cIndex = 0;
 
-  void _incrementTab(index) {
-    setState(() {
-      _cIndex = index;
-    });
-  }
+  final _pageController = PageController(initialPage: 0);
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      body: new Center(
-        child: new Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[],
-        ),
+      body: PageView(
+        controller: _pageController,
+        onPageChanged: (int) {
+          print('Page Changes to index $int');
+        },
+        children: <Widget>[
+          AboutMePage(),
+          ProfilePage(),
+        ],
+        physics:
+            NeverScrollableScrollPhysics(), // Comment this if you need to use Swipe.
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
@@ -34,9 +38,31 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
           height: 55,
           child: Row(
             mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              Icon(Icons.ac_unit_rounded),
+              IconButton(
+                  icon: Icon(
+                    Icons.home_outlined,
+                    color: _cIndex == 0 ? Theme.of(context).primaryColor : null,
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      _cIndex = 0;
+                      _pageController.jumpToPage(0);
+                    });
+                  }),
+              IconButton(
+                  icon: Icon(
+                    Icons.person_outlined,
+                    color: _cIndex == 1 ? Theme.of(context).primaryColor : null,
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      _cIndex = 1;
+                      _pageController.jumpToPage(1);
+                    });
+                  }),
+              SizedBox(),
             ],
           ),
         ),
