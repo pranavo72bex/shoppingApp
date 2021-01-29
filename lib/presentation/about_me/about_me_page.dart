@@ -4,7 +4,7 @@ import 'package:shoppingApp/presentation/common_widget/custom_button.dart';
 import 'package:shoppingApp/presentation/common_widget/text_field_widget.dart';
 import 'package:shoppingApp/presentation/common_widget/text_style.dart';
 
-class AboutMe extends StatelessWidget {
+class AboutMePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

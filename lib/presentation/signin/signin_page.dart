@@ -1,10 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:shoppingApp/presentation/common_widget/custom_button.dart';
 import 'package:shoppingApp/presentation/common_widget/text_field_widget.dart';
 import 'package:shoppingApp/presentation/common_widget/text_style.dart';
+import 'package:shoppingApp/presentation/core/app_router.gr.dart';
 import 'package:shoppingApp/presentation/signin/password_recovery.dart';
-import 'package:shoppingApp/presentation/signup/signup_page.dart';
 
 class SigninPage extends StatefulWidget {
   @override
@@ -18,11 +18,9 @@ class _SigninPageState extends State<SigninPage> {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
-        // backgroundColor: Color(0xFFf2f1ee),
         appBar: AppBar(
           title: Text(
             "Login",
-            // style: Constants.appBarHeading,
           ),
         ),
         body: Center(
@@ -96,15 +94,11 @@ class _SigninPageState extends State<SigninPage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Don't have an account?",
+                      Text("Don't have an account? ",
                           style: Constants.rememberMe),
                       InkWell(
-                        onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => SignupPage(),
-                          ),
-                        ),
+                        onTap: () => ExtendedNavigator.of(context)
+                            .push(Routes.signupPage),
                         child: Text(
                           "Signup",
                           style: Constants.signIn,

@@ -13,7 +13,7 @@ class PasswordRecovery extends StatelessWidget {
         elevation: 0,
         title: Text(
           "Password Recovery",
-          style: GoogleFonts.poppins(textStyle: Constants.appBarHeading),
+          // style: GoogleFonts.poppins(textStyle: Constants.appBarHeading),
         ),
         centerTitle: true,
         backgroundColor: Colors.transparent,

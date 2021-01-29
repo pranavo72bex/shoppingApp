@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:shoppingApp/presentation/common_widget/text_style.dart';
 
 import 'app_router.gr.dart';
 
@@ -22,15 +21,13 @@ class ShoppingApp extends StatelessWidget {
             appBarTheme: AppBarTheme().copyWith(
               iconTheme:
                   IconThemeData(color: Color(0xAA504f57)), //back button theme
-              actionsIconTheme:
-                  IconThemeData(color: Color(0xAA504f57)), //actions theme
-              textTheme: TextTheme(
-                headline6: Theme.of(context).textTheme.headline6.copyWith(
-                      color: Color(0xAA504f57),
-                      fontWeight: FontWeight.bold,
-                    ),
-              ),
-
+              actionsIconTheme: IconThemeData(color: Color(0xAA504f57)),
+              textTheme: Theme.of(context).textTheme.copyWith(
+                    headline6: Theme.of(context).textTheme.headline6.copyWith(
+                          color: Color(0xAA504f57),
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
               centerTitle: true,
               brightness: Brightness.light,
               color: Colors.transparent,
