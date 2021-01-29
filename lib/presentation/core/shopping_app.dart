@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'app_router.gr.dart';
 
@@ -8,13 +9,15 @@ class ShoppingApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-
       title: 'Shopping App',
       builder: ExtendedNavigator.builder<AppRouter>(
         router: AppRouter(),
         builder: (context, extendedNav) => Theme(
           data: ThemeData(
+            fontFamily: 'GoogleFonts',
             appBarTheme: AppBarTheme(
+              textTheme:
+                  GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme),
               centerTitle: true,
               brightness: Brightness.light,
               color: Colors.transparent,

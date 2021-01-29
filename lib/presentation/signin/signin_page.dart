@@ -20,17 +20,10 @@ class _SigninPageState extends State<SigninPage> {
     return Scaffold(
         backgroundColor: Color(0xFFf2f1ee),
         appBar: AppBar(
-          leading: Icon(
-            Icons.arrow_back,
-            color: Colors.black,
-          ),
-          elevation: 0,
           title: Text(
             "Login",
-            style: GoogleFonts.poppins(textStyle: Constants.appBarHeading),
+            // style: GoogleFonts.poppins(textStyle: Constants.appBarHeading),
           ),
-          centerTitle: true,
-          backgroundColor: Colors.transparent,
         ),
         body: Center(
           child: SingleChildScrollView(
@@ -39,11 +32,7 @@ class _SigninPageState extends State<SigninPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                Text(
-                  "Welcome Back !",
-                  style:
-                      GoogleFonts.poppins(textStyle: Constants.regularHeading),
-                ),
+                Text("Welcome Back !", style: Constants.regularHeading),
                 Text(
                   "sign in to your account",
                   style: GoogleFonts.poppins(textStyle: Constants.signIn),
