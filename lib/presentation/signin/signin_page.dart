@@ -18,11 +18,11 @@ class _SigninPageState extends State<SigninPage> {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
-        backgroundColor: Color(0xFFf2f1ee),
+        // backgroundColor: Color(0xFFf2f1ee),
         appBar: AppBar(
           title: Text(
             "Login",
-            // style: GoogleFonts.poppins(textStyle: Constants.appBarHeading),
+            // style: Constants.appBarHeading,
           ),
         ),
         body: Center(
@@ -35,7 +35,7 @@ class _SigninPageState extends State<SigninPage> {
                 Text("Welcome Back !", style: Constants.regularHeading),
                 Text(
                   "sign in to your account",
-                  style: GoogleFonts.poppins(textStyle: Constants.signIn),
+                  style: Constants.signIn,
                 ),
                 SizedBox(
                   height: 50,
@@ -68,8 +68,7 @@ class _SigninPageState extends State<SigninPage> {
                     ),
                     Text(
                       "Remember me",
-                      style:
-                          GoogleFonts.poppins(textStyle: Constants.rememberMe),
+                      style: Constants.rememberMe,
                     ),
                     Spacer(),
                     InkWell(
@@ -81,9 +80,7 @@ class _SigninPageState extends State<SigninPage> {
                       ),
                       child: Text(
                         "Forget Password",
-                        style: GoogleFonts.poppins(
-                          textStyle: Constants.passwordHeading,
-                        ),
+                        style: Constants.passwordHeading,
                       ),
                     ),
                   ],
@@ -100,8 +97,7 @@ class _SigninPageState extends State<SigninPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text("Don't have an account?",
-                          style: GoogleFonts.poppins(
-                              textStyle: Constants.rememberMe)),
+                          style: Constants.rememberMe),
                       InkWell(
                         onTap: () => Navigator.push(
                           context,
@@ -111,9 +107,7 @@ class _SigninPageState extends State<SigninPage> {
                         ),
                         child: Text(
                           "Signup",
-                          style: GoogleFonts.poppins(
-                            textStyle: Constants.signIn,
-                          ),
+                          style: Constants.signIn,
                         ),
                       )
                     ],

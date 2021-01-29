@@ -12,6 +12,9 @@ class Constants {
       fontSize: 15.0, fontWeight: FontWeight.bold, color: Color(0xAAA6b99d3));
   static const signIn = TextStyle(
       fontSize: 15.0, fontWeight: FontWeight.bold, color: Color(0xAAA5c5b61));
-  static const appBarHeading =
-      TextStyle(color: Color(0xAAA3a3a43), fontWeight: FontWeight.bold);
+  static const appBarHeading = TextStyle(
+    fontSize: 20,
+    color: Color(0xAAA3a3a43),
+    fontWeight: FontWeight.bold,
+  );
 }
