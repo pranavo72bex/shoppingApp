@@ -87,14 +87,14 @@ class _SigninPageState extends State<SigninPage> {
                 Btns(
                   text: "Login",
                   onPressed: () => ExtendedNavigator.of(context)
-                      .push(Routes.bottomNavigationPage),
+                      .replace(Routes.bottomNavigationPage),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(12.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Don't have an account? ",
+                      Text("Don't have an account?",
                           style: Constants.rememberMe),
                       InkWell(
                         onTap: () => ExtendedNavigator.of(context)

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shoppingApp/presentation/about_me/about_me_page.dart';
+import 'package:shoppingApp/presentation/dashboard/dashboard_page.dart';
+import 'package:shoppingApp/presentation/favorites/favorites.dart';
 import 'package:shoppingApp/presentation/profile/profile_page.dart';
 
 class BottomNavigationPage extends StatefulWidget {
@@ -21,7 +22,8 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
           print('Page Changes to index $int');
         },
         children: <Widget>[
-          AboutMePage(),
+          DashboardPage(),
+          FavoritesPage(),
           ProfilePage(),
         ],
         physics:
@@ -41,27 +43,41 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               IconButton(
-                  icon: Icon(
-                    Icons.home_outlined,
-                    color: _cIndex == 0 ? Theme.of(context).primaryColor : null,
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      _cIndex = 0;
-                      _pageController.jumpToPage(0);
-                    });
-                  }),
+                icon: Icon(
+                  Icons.home_outlined,
+                  color: _cIndex == 0 ? Theme.of(context).primaryColor : null,
+                ),
+                onPressed: () {
+                  setState(() {
+                    _cIndex = 0;
+                    _pageController.jumpToPage(0);
+                  });
+                },
+              ),
               IconButton(
-                  icon: Icon(
-                    Icons.person_outlined,
-                    color: _cIndex == 1 ? Theme.of(context).primaryColor : null,
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      _cIndex = 1;
-                      _pageController.jumpToPage(1);
-                    });
-                  }),
+                icon: Icon(
+                  Icons.favorite_outline,
+                  color: _cIndex == 1 ? Theme.of(context).primaryColor : null,
+                ),
+                onPressed: () {
+                  setState(() {
+                    _cIndex = 1;
+                    _pageController.jumpToPage(1);
+                  });
+                },
+              ),
+              IconButton(
+                icon: Icon(
+                  Icons.person_outlined,
+                  color: _cIndex == 2 ? Theme.of(context).primaryColor : null,
+                ),
+                onPressed: () {
+                  setState(() {
+                    _cIndex = 2;
+                    _pageController.jumpToPage(2);
+                  });
+                },
+              ),
               SizedBox(),
             ],
           ),
