@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:shoppingApp/presentation/common_widget/custom_button.dart';
 import 'package:shoppingApp/presentation/common_widget/text_style.dart';
 
@@ -53,8 +52,7 @@ class _NotificationsPageState extends State<NotificationsPage> {
             ),
             Btns(
               text: "Save settings",
-              fillcolor: Color(0xff6cc41d),
-              textcolor: Colors.white,
+              // fillcolor: Color(0xff6cc41d),
               onPressed: () {},
             ),
           ],
