@@ -17,4 +17,6 @@ class Constants {
     color: Color(0xAAA3a3a43),
     fontWeight: FontWeight.bold,
   );
+  static const subtextHeading = TextStyle(
+      color: Color(0xAAA3a3a43), fontSize: 12, fontWeight: FontWeight.w300);
 }
