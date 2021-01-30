@@ -33,7 +33,7 @@ class ShoppingApp extends StatelessWidget {
                   ),
               centerTitle: true,
               brightness: Brightness.light,
-              color: Colors.transparent,
+              color: Colors.white,
               elevation: 0,
             ),
             // primaryColor: Colors.white,

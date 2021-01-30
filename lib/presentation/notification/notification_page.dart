@@ -13,97 +13,93 @@ class _NotificationsPageState extends State<NotificationsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
       appBar: AppBar(
-        leading: Icon(
-          Icons.arrow_back,
-          color: Colors.black,
-        ),
-        elevation: 0,
         title: Text(
           "Notifications",
-          style: GoogleFonts.poppins(textStyle: Constants.appBarHeading),
+          style: Constants.appBarHeading,
         ),
-        centerTitle: true,
-        backgroundColor: Colors.white,
       ),
       body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: Column(
-            children: [
-              customeContainer("Allow Notification",
-                  "Get notification about what is coming \nin the cart", true),
-              SizedBox(
-                height: 10,
-              ),
-              customeContainer("Email Notificaion",
-                  "Get notification about what is coming \nin the cart", false),
-              SizedBox(
-                height: 10,
-              ),
-              customeContainer("Order Notification",
-                  "Get notification about what is coming \nin the cart", true),
-              SizedBox(
-                height: 10,
-              ),
-              customeContainer("General Notification",
-                  "Get notification about what is coming \nin the cart", false),
-              SizedBox(
-                height: 40,
-              ),
-              Btns(
-                text: "Save settings",
-                fillcolor: Color(0xff6cc41d),
-                textcolor: Colors.white,
-                onPressed: () {},
-              ),
-            ],
-          ),
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            CustomCheckbox(
+                title: "Allow Notification",
+                subtitle: "Get notification about what is coming in the cart",
+                value: true),
+            SizedBox(
+              height: 10,
+            ),
+            CustomCheckbox(
+                title: "Email Notificaion",
+                subtitle: "Get notification about what is coming in the cart",
+                value: false),
+            SizedBox(
+              height: 10,
+            ),
+            CustomCheckbox(
+                title: "Order Notification",
+                subtitle: "Get notification about what is coming in the cart",
+                value: true),
+            SizedBox(
+              height: 10,
+            ),
+            CustomCheckbox(
+                title: "General Notification",
+                subtitle: "Get notification about what is coming in the cart",
+                value: false),
+            SizedBox(
+              height: 40,
+            ),
+            Btns(
+              text: "Save settings",
+              fillcolor: Color(0xff6cc41d),
+              textcolor: Colors.white,
+              onPressed: () {},
+            ),
+          ],
         ),
       ),
     );
   }
+}
 
-  Widget customeContainer(String header, String body, bool ischecked) {
+class CustomCheckbox extends StatefulWidget {
+  const CustomCheckbox({
+    Key key,
+    @required this.title,
+    @required this.subtitle,
+    @required this.value,
+  }) : super(key: key);
+
+  final String title;
+  final String subtitle;
+  final bool value;
+
+  @override
+  _CustomCheckboxState createState() => _CustomCheckboxState();
+}
+
+class _CustomCheckboxState extends State<CustomCheckbox> {
+  bool isChecked = true;
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
-      height: 120,
-      width: 350,
+      padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         color: Colors.white,
       ),
-      child: Padding(
-        padding: const EdgeInsets.only(
-          left: 10,
-          top: 8,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "$header",
-                  style:
-                      GoogleFonts.poppins(textStyle: Constants.appBarHeading),
-                ),
-                Checkbox(
-                  value: ischecked,
-                  onChanged: (_) {
-                    setState(() {
-                      ischecked = !ischecked;
-                    });
-                  },
-                ),
-              ],
-            ),
-            Text(
-              "$body",
-            ),
-          ],
-        ),
+      child: CheckboxListTile(
+        value: isChecked,
+        onChanged: (bool) {
+          setState(() {
+            isChecked = bool;
+          });
+        },
+        title: Text(widget.title),
+        subtitle: Text(widget.subtitle),
       ),
     );
   }
