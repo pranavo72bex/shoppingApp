@@ -95,8 +95,7 @@ class _AddShippingState extends State<AddShipping> {
               ),
               Btns(
                 text: "Next",
-                fillcolor: Color(0xff6cc41d),
-                textcolor: Colors.white,
+                onPressed: () {},
               ),
             ],
           ),

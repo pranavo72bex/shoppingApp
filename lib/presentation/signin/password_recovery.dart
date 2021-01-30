@@ -49,8 +49,7 @@ class PasswordRecovery extends StatelessWidget {
               ),
               Btns(
                 text: "send link",
-                fillcolor: Color(0xff6cc41d),
-                textcolor: Colors.white,
+                onPressed: () {},
               ),
             ],
           ),

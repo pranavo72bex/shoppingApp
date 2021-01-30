@@ -82,6 +82,7 @@ class _WriteReviewState extends State<WriteReview> {
                 text: "Submit",
                 fillcolor: Color(0xff6cc41d),
                 textcolor: Colors.white,
+                onPressed: () {},
               ),
             ],
           ),

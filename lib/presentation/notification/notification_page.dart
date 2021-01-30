@@ -56,6 +56,7 @@ class _NotificationsPageState extends State<NotificationsPage> {
                 text: "Save settings",
                 fillcolor: Color(0xff6cc41d),
                 textcolor: Colors.white,
+                onPressed: () {},
               ),
             ],
           ),

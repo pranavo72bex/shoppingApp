@@ -52,8 +52,7 @@ class SignupPage extends StatelessWidget {
                 SizedBox(height: height * 0.04),
                 Btns(
                   text: "Signup",
-                  fillcolor: Color(0xFF6cc41d),
-                  textcolor: Colors.white,
+                  onPressed: () {},
                 ),
                 Padding(
                   padding: const EdgeInsets.all(12.0),
