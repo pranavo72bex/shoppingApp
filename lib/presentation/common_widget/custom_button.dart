@@ -14,7 +14,7 @@ class Btns extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
+    // double height = MediaQuery.of(context).size.height;
 
     return RaisedButton(
       color: fillcolor ?? Theme.of(context).accentColor,
