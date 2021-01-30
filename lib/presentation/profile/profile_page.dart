@@ -73,6 +73,16 @@ class ProfilePage extends StatelessWidget {
                       ),
                     ),
                     InkWell(
+                      onTap: () =>
+                          ExtendedNavigator.of(context).push(Routes.reviewPage),
+                      child: ListTile(
+                        leading: Icon(Icons.person_outline,
+                            color: Theme.of(context).accentColor),
+                        title: Text('My Reviews'),
+                        trailing: Icon(Icons.navigate_next_outlined),
+                      ),
+                    ),
+                    InkWell(
                       onTap: () {},
                       child: ListTile(
                         leading: Icon(Icons.person_outline,

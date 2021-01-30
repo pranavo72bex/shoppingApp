@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 import '../about_me/about_me_page.dart';
 import '../cart/cart_page.dart';
 import '../notification/notification_page.dart';
+import '../review/review_page.dart';
 import '../signin/signin_page.dart';
 import '../signup/signup_page.dart';
 import 'bottom_navigation_page.dart';
@@ -23,6 +24,7 @@ class Routes {
   static const String aboutMePage = '/about-me-page';
   static const String cartPage = '/cart-page';
   static const String notificationsPage = '/notifications-page';
+  static const String reviewPage = '/review-page';
   static const all = <String>{
     signinPage,
     bottomNavigationPage,
@@ -30,6 +32,7 @@ class Routes {
     aboutMePage,
     cartPage,
     notificationsPage,
+    reviewPage,
   };
 }
 
@@ -43,6 +46,7 @@ class AppRouter extends RouterBase {
     RouteDef(Routes.aboutMePage, page: AboutMePage),
     RouteDef(Routes.cartPage, page: CartPage),
     RouteDef(Routes.notificationsPage, page: NotificationsPage),
+    RouteDef(Routes.reviewPage, page: ReviewPage),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -83,6 +87,12 @@ class AppRouter extends RouterBase {
         settings: data,
       );
     },
+    ReviewPage: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => ReviewPage(),
+        settings: data,
+      );
+    },
   };
 }
 
@@ -104,4 +114,6 @@ extension AppRouterExtendedNavigatorStateX on ExtendedNavigatorState {
 
   Future<dynamic> pushNotificationsPage() =>
       push<dynamic>(Routes.notificationsPage);
+
+  Future<dynamic> pushReviewPage() => push<dynamic>(Routes.reviewPage);
 }

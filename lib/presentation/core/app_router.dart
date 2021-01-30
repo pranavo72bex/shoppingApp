@@ -3,6 +3,7 @@ import 'package:shoppingApp/presentation/about_me/about_me_page.dart';
 import 'package:shoppingApp/presentation/cart/cart_page.dart';
 import 'package:shoppingApp/presentation/core/bottom_navigation_page.dart';
 import 'package:shoppingApp/presentation/notification/notification_page.dart';
+import 'package:shoppingApp/presentation/review/review_page.dart';
 import 'package:shoppingApp/presentation/signin/signin_page.dart';
 import 'package:shoppingApp/presentation/signup/signup_page.dart';
 
@@ -16,6 +17,7 @@ import 'package:shoppingApp/presentation/signup/signup_page.dart';
     MaterialRoute(page: AboutMePage),
     MaterialRoute(page: CartPage),
     MaterialRoute(page: NotificationsPage),
+    MaterialRoute(page: ReviewPage),
   ],
 )
 class $AppRouter {}
