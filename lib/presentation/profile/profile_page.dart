@@ -32,7 +32,7 @@ class ProfilePage extends StatelessWidget {
             Container(
               margin: EdgeInsets.symmetric(horizontal: 16),
               width: MediaQuery.of(context).size.width,
-              color: Colors.blueGrey[100],
+              color: Colors.grey[300],
               child: Column(
                 children: [
                   Text(
