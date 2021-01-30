@@ -8,6 +8,7 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: SingleChildScrollView(
+        padding: EdgeInsets.all(16),
         child: Column(
           children: [
             SizedBox(
@@ -17,9 +18,8 @@ class ProfilePage extends StatelessWidget {
                   Positioned(
                     bottom: 0,
                     child: Container(
-                      margin: EdgeInsets.symmetric(horizontal: 16),
-                      width: MediaQuery.of(context).size.width - 32,
                       height: 100,
+                      width: MediaQuery.of(context).size.width,
                       color: Colors.blueGrey[100],
                     ),
                   ),
@@ -30,9 +30,8 @@ class ProfilePage extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 16),
               width: MediaQuery.of(context).size.width,
-              color: Colors.grey[300],
+              color: Colors.blueGrey[100],
               child: Column(
                 children: [
                   Text(
@@ -47,7 +46,6 @@ class ProfilePage extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.fromLTRB(16, 0, 16, 16),
               padding: EdgeInsets.all(16.0),
               color: Colors.blueGrey[100],
               child: Material(
