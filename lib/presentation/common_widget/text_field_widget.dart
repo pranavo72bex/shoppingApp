@@ -28,10 +28,10 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
         hintText: widget.textelements,
         prefixIcon: Icon(widget.prefixIcon),
         suffixIcon: widget.isPassword ? prefixButton() : null,
-        contentPadding: EdgeInsets.all(18),
+        contentPadding: EdgeInsets.all(15),
         border: OutlineInputBorder(
           borderRadius: const BorderRadius.all(
-            const Radius.circular(22.0),
+            const Radius.circular(28.0),
           ),
         ),
       ),
