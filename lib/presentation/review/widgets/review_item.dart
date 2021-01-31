@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shoppingApp/presentation/common_widget/text_style.dart';
-import 'package:shoppingApp/presentation/review/widgets/star_rating.dart';
+import '../../common_widget/text_style.dart';
+import 'star_rating.dart';
 
 class ReviewItem extends StatefulWidget {
   const ReviewItem({Key key}) : super(key: key);

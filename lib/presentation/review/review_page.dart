@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shoppingApp/presentation/review/widgets/review_item.dart';
+
+import 'widgets/review_item.dart';
 
 class ReviewPage extends StatelessWidget {
   @override

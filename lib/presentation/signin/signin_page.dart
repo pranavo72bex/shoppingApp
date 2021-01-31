@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:shoppingApp/presentation/common_widget/custom_button.dart';
-import 'package:shoppingApp/presentation/common_widget/text_field_widget.dart';
-import 'package:shoppingApp/presentation/common_widget/text_style.dart';
-import 'package:shoppingApp/presentation/core/app_router.gr.dart';
-import 'package:shoppingApp/presentation/signin/password_recovery.dart';
+import '../common_widget/custom_button.dart';
+import '../common_widget/text_field_widget.dart';
+import '../common_widget/text_style.dart';
+import '../core/app_router.gr.dart';
+import 'password_recovery.dart';
 
 class SigninPage extends StatefulWidget {
   @override

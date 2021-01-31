@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:shoppingApp/presentation/common_widget/custom_button.dart';
-import 'package:shoppingApp/presentation/common_widget/text_style.dart';
-import 'package:shoppingApp/presentation/review/widgets/star_rating.dart';
+
+import '../common_widget/custom_button.dart';
+import '../common_widget/text_style.dart';
+import '../review/widgets/star_rating.dart';
 
 class WriteReview extends StatefulWidget {
   @override

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shoppingApp/presentation/dashboard/dashboard_page.dart';
-import 'package:shoppingApp/presentation/favorites/favorites.dart';
-import 'package:shoppingApp/presentation/profile/profile_page.dart';
+
+import '../dashboard/dashboard_page.dart';
+import '../favorites/favorites.dart';
+import '../profile/profile_page.dart';
 
 class BottomNavigationPage extends StatefulWidget {
   @override

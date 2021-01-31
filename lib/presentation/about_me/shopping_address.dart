@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:shoppingApp/presentation/about_me/timeline_widget.dart';
-import 'package:shoppingApp/presentation/common_widget/custom_button.dart';
-import 'package:shoppingApp/presentation/common_widget/text_field_widget.dart';
-import 'package:shoppingApp/presentation/common_widget/text_style.dart';
+
+import '../common_widget/custom_button.dart';
+import '../common_widget/text_field_widget.dart';
+import '../common_widget/text_style.dart';
+import 'timeline_widget.dart';
 
 class AddShipping extends StatefulWidget {
   @override

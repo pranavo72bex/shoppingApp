@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shoppingApp/presentation/common_widget/custom_button.dart';
-import 'package:shoppingApp/presentation/common_widget/text_style.dart';
+
+import '../common_widget/custom_button.dart';
+import '../common_widget/text_style.dart';
 
 class NotificationsPage extends StatefulWidget {
   @override

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shoppingApp/presentation/favorites/widgets/favorite_list_item.dart';
+import 'widgets/favorite_list_item.dart';
 
 class FavoritesPage extends StatelessWidget {
   @override
