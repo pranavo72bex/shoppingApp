@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class PopularDealsGrid extends StatelessWidget {
   @override
@@ -18,7 +17,7 @@ class PopularDealsGrid extends StatelessWidget {
         ),
         Container(
           child: GridView.count(
-            childAspectRatio: 0.65,
+            childAspectRatio: 0.55,
             physics: NeverScrollableScrollPhysics(),
             // padding: EdgeInsets.all(8),
             mainAxisSpacing: 16,
