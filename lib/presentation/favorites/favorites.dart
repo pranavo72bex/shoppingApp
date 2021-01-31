@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:shoppingApp/presentation/common_widget/text_style.dart';
 import 'package:shoppingApp/presentation/favorites/widgets/favorite_list_item.dart';
 
 class FavoritesPage extends StatelessWidget {
@@ -10,7 +8,6 @@ class FavoritesPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           "Favorites",
-          style: GoogleFonts.poppins(textStyle: Constants.appBarHeading),
         ),
       ),
       body: SingleChildScrollView(
