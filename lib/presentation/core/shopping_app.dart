@@ -42,20 +42,6 @@ class ShoppingApp extends StatelessWidget {
           child: extendedNav,
         ),
       ),
-      // home: Scaffold(
-      //   floatingActionButton: FloatingActionButton(
-      //     onPressed: () {},
-      //     child: Icon(Icons.add),
-      //   ),
-      //   appBar: AppBar(
-      //     title: Text('Shopping App'),
-      //   ),
-      //   body: Center(
-      //     child: Container(
-      //       child: Text('Hello World'),
-      //     ),
-      //   ),
-      // ),
     );
   }
 }

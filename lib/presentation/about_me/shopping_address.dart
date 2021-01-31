@@ -18,17 +18,9 @@ class _AddShippingState extends State<AddShipping> {
     return Scaffold(
       backgroundColor: Colors.grey[300],
       appBar: AppBar(
-        leading: Icon(
-          Icons.arrow_back,
-          color: Colors.black,
-        ),
-        elevation: 0,
         title: Text(
-          "Shipping Address",
-          style: GoogleFonts.poppins(textStyle: Constants.appBarHeading),
+          "Shopping Address",
         ),
-        centerTitle: true,
-        backgroundColor: Colors.white,
       ),
       body: SingleChildScrollView(
         child: Padding(
