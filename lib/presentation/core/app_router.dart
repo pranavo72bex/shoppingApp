@@ -1,4 +1,6 @@
 import 'package:auto_route/auto_route_annotations.dart';
+import 'package:shoppingApp/presentation/category_items_list/category_items_list.dart';
+import 'package:shoppingApp/presentation/detail_screen/detail_screen.dart';
 
 import '../about_me/about_me_page.dart';
 import '../cart/cart_page.dart';
@@ -23,6 +25,8 @@ import 'bottom_navigation_page.dart';
     MaterialRoute(page: CartPage),
     MaterialRoute(page: NotificationsPage),
     MaterialRoute(page: ReviewPage),
+    MaterialRoute(page: CategoryItemsList),
+    MaterialRoute(page: DetailsScreen),
   ],
 )
 class $AppRouter {}

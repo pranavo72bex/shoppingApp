@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:shoppingApp/presentation/core/app_router.gr.dart';
 
 class CategoriesGrid extends StatelessWidget {
   @override
@@ -88,60 +90,66 @@ class CategoryGridItem extends StatelessWidget {
       width: 100,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10),
-        child: Container(
-          color: color.withOpacity(0.2),
-          width: 100,
-          child: Stack(
-            alignment: AlignmentDirectional.bottomCenter,
-            children: [
-              Image.asset(
-                assetLocation,
-                height: 70,
-                width: double.infinity,
-                fit: BoxFit.cover,
-              ),
-              Positioned(
-                top: 0,
-                child: Container(
-                  padding: EdgeInsets.all(10),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        text1.toUpperCase(),
-                        style: TextStyle(
-                          color: color,
-                          fontSize: 12,
+        child: InkWell(
+          onTap: () => ExtendedNavigator.of(context).push(
+              Routes.categoryItemsList,
+              arguments: CategoryItemsListArguments(
+                  categoryName: text2.toUpperCase())),
+          child: Container(
+            color: color.withOpacity(0.2),
+            width: 100,
+            child: Stack(
+              alignment: AlignmentDirectional.bottomCenter,
+              children: [
+                Image.asset(
+                  assetLocation,
+                  height: 70,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                ),
+                Positioned(
+                  top: 0,
+                  child: Container(
+                    padding: EdgeInsets.all(10),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          text1.toUpperCase(),
+                          style: TextStyle(
+                            color: color,
+                            fontSize: 12,
+                          ),
                         ),
-                      ),
-                      Text(
-                        text2.toUpperCase(),
-                        style: TextStyle(
-                          color: color,
-                          fontWeight: FontWeight.w900,
+                        Text(
+                          text2.toUpperCase(),
+                          style: TextStyle(
+                            color: color,
+                            fontWeight: FontWeight.w900,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              Positioned(
-                bottom: 40,
-                child: Container(
-                  alignment: AlignmentDirectional.center,
-                  width: 50,
-                  height: 50,
-                  decoration: BoxDecoration(
-                    color: color,
-                    shape: BoxShape.circle,
-                  ),
-                  child: FaIcon(
-                    iconData,
-                    color: Colors.white,
+                Positioned(
+                  bottom: 40,
+                  child: Container(
+                    alignment: AlignmentDirectional.center,
+                    width: 50,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: color,
+                      shape: BoxShape.circle,
+                    ),
+                    child: FaIcon(
+                      iconData,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

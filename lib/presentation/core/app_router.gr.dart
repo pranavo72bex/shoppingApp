@@ -9,9 +9,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
+import '../../domain/product.dart';
 import '../about_me/about_me_page.dart';
 import '../cart/cart_page.dart';
+import '../category_items_list/category_items_list.dart';
 import '../dashboard/dashboard_page.dart';
+import '../detail_screen/detail_screen.dart';
 import '../favorites/favorites.dart';
 import '../notification/notification_page.dart';
 import '../review/review_page.dart';
@@ -29,6 +32,8 @@ class Routes {
   static const String cartPage = '/cart-page';
   static const String notificationsPage = '/notifications-page';
   static const String reviewPage = '/review-page';
+  static const String categoryItemsList = '/category-items-list';
+  static const String detailsScreen = '/details-screen';
   static const all = <String>{
     signinPage,
     bottomNavigationPage,
@@ -39,6 +44,8 @@ class Routes {
     cartPage,
     notificationsPage,
     reviewPage,
+    categoryItemsList,
+    detailsScreen,
   };
 }
 
@@ -55,6 +62,8 @@ class AppRouter extends RouterBase {
     RouteDef(Routes.cartPage, page: CartPage),
     RouteDef(Routes.notificationsPage, page: NotificationsPage),
     RouteDef(Routes.reviewPage, page: ReviewPage),
+    RouteDef(Routes.categoryItemsList, page: CategoryItemsList),
+    RouteDef(Routes.detailsScreen, page: DetailsScreen),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -113,6 +122,30 @@ class AppRouter extends RouterBase {
         settings: data,
       );
     },
+    CategoryItemsList: (data) {
+      final args = data.getArgs<CategoryItemsListArguments>(
+        orElse: () => CategoryItemsListArguments(),
+      );
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => CategoryItemsList(
+          key: args.key,
+          categoryName: args.categoryName,
+        ),
+        settings: data,
+      );
+    },
+    DetailsScreen: (data) {
+      final args = data.getArgs<DetailsScreenArguments>(
+        orElse: () => DetailsScreenArguments(),
+      );
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => DetailsScreen(
+          key: args.key,
+          product: args.product,
+        ),
+        settings: data,
+      );
+    },
   };
 }
 
@@ -140,4 +173,41 @@ extension AppRouterExtendedNavigatorStateX on ExtendedNavigatorState {
       push<dynamic>(Routes.notificationsPage);
 
   Future<dynamic> pushReviewPage() => push<dynamic>(Routes.reviewPage);
+
+  Future<dynamic> pushCategoryItemsList({
+    Key key,
+    String categoryName,
+  }) =>
+      push<dynamic>(
+        Routes.categoryItemsList,
+        arguments:
+            CategoryItemsListArguments(key: key, categoryName: categoryName),
+      );
+
+  Future<dynamic> pushDetailsScreen({
+    Key key,
+    Product product,
+  }) =>
+      push<dynamic>(
+        Routes.detailsScreen,
+        arguments: DetailsScreenArguments(key: key, product: product),
+      );
+}
+
+/// ************************************************************************
+/// Arguments holder classes
+/// *************************************************************************
+
+/// CategoryItemsList arguments holder class
+class CategoryItemsListArguments {
+  final Key key;
+  final String categoryName;
+  CategoryItemsListArguments({this.key, this.categoryName});
+}
+
+/// DetailsScreen arguments holder class
+class DetailsScreenArguments {
+  final Key key;
+  final Product product;
+  DetailsScreenArguments({this.key, this.product});
 }
