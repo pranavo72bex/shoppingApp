@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shoppingApp/domain/product.dart';
 
 class PopularDealsGrid extends StatelessWidget {
   @override
@@ -17,7 +18,7 @@ class PopularDealsGrid extends StatelessWidget {
         ),
         Container(
           child: GridView.count(
-            childAspectRatio: 0.55,
+            childAspectRatio: 0.65,
             physics: NeverScrollableScrollPhysics(),
             // padding: EdgeInsets.all(8),
             mainAxisSpacing: 16,
@@ -25,36 +26,17 @@ class PopularDealsGrid extends StatelessWidget {
             // scrollDirection: Axis.horizontal,
             shrinkWrap: true,
             crossAxisCount: 2,
-            children: [
-              CategoryGridItem(
-                price: '\$10',
-                itemName: 'Organic Oranges',
-                quantity: '1 Kg',
-                assetLocation: 'assets/products/orange.png',
-                color: Colors.orange[100],
-              ),
-              CategoryGridItem(
-                price: '\$10',
-                itemName: 'Organic Oranges',
-                quantity: '1 Kg',
-                assetLocation: 'assets/products/orange.png',
-                color: Colors.orange[100],
-              ),
-              CategoryGridItem(
-                price: '\$10',
-                itemName: 'Organic Oranges',
-                quantity: '1 Kg',
-                assetLocation: 'assets/products/orange.png',
-                color: Colors.orange[100],
-              ),
-              CategoryGridItem(
-                price: '\$10',
-                itemName: 'Organic Oranges',
-                quantity: '1 Kg',
-                assetLocation: 'assets/products/orange.png',
-                color: Colors.orange[100],
-              ),
-            ],
+            children: products
+                .map(
+                  (product) => ProductItem(
+                    color: product.color.withOpacity(0.3),
+                    price: product.price.toString(),
+                    itemName: product.title,
+                    assetLocation: product.image,
+                    quantity: product.quantity.toString(),
+                  ),
+                )
+                .toList(),
           ),
         )
       ],
@@ -62,14 +44,14 @@ class PopularDealsGrid extends StatelessWidget {
   }
 }
 
-class CategoryGridItem extends StatefulWidget {
+class ProductItem extends StatefulWidget {
   final String price;
   final String itemName;
   final String assetLocation;
   final String quantity;
   final Color color;
 
-  const CategoryGridItem({
+  const ProductItem({
     Key key,
     @required this.color,
     @required this.price,
@@ -79,10 +61,10 @@ class CategoryGridItem extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _CategoryGridItemState createState() => _CategoryGridItemState();
+  _ProductItemState createState() => _ProductItemState();
 }
 
-class _CategoryGridItemState extends State<CategoryGridItem> {
+class _ProductItemState extends State<ProductItem> {
   bool isFavorite = false;
   @override
   Widget build(BuildContext context) {
@@ -90,9 +72,10 @@ class _CategoryGridItemState extends State<CategoryGridItem> {
       color: Colors.white,
       borderRadius: BorderRadius.circular(10),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
-            height: 130,
+            padding: EdgeInsets.only(top: 10),
             child: Stack(
               children: [
                 Positioned(
@@ -109,25 +92,29 @@ class _CategoryGridItemState extends State<CategoryGridItem> {
                 ),
                 Center(
                   child: Container(
-                    width: 80,
-                    height: 80,
+                    width: 100,
+                    height: 100,
                     decoration: BoxDecoration(
                       color: widget.color,
                       shape: BoxShape.circle,
                     ),
+                    child: Container(),
                   ),
                 ),
-                Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Image.asset(
-                    widget.assetLocation,
-                    width: 80,
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 30),
+                  child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Image.asset(
+                      widget.assetLocation,
+                      // width: 100,
+                    ),
                   ),
                 ),
               ],
             ),
           ),
-          SizedBox(height: 15),
+          SizedBox(height: 10),
           Text(
             widget.price,
             style: TextStyle(color: Colors.green),
