@@ -14,23 +14,24 @@ class Btns extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-    // double height = MediaQuery.of(context).size.height;
-
-    return RaisedButton(
-      color: fillcolor ?? Theme.of(context).accentColor,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(25),
-      ),
-      // textTheme: ButtonTextTheme.accent,
-      onPressed: onPressed,
-      padding: EdgeInsets.all(14),
-      textColor: textcolor ?? Colors.white,
-      child: Text(
-        text,
-        style: TextStyle(
-          color: textcolor,
-          fontSize: 16,
-          fontWeight: FontWeight.bold,
+    return SizedBox(
+      height: 60,
+      width: 350,
+      child: RaisedButton(
+        color: fillcolor ?? Theme.of(context).accentColor,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(25),
+        ),
+        onPressed: onPressed,
+        padding: EdgeInsets.all(14),
+        textColor: textcolor ?? Colors.white,
+        child: Text(
+          text,
+          style: TextStyle(
+            color: textcolor,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
     );

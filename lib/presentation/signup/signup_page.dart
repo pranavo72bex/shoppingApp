@@ -13,10 +13,7 @@ class SignupPage extends StatelessWidget {
     return Scaffold(
         backgroundColor: Color(0xFFf2f1ee),
         appBar: AppBar(
-          elevation: 0,
           title: Text("Signup", style: Constants.appBarHeading),
-          centerTitle: true,
-          backgroundColor: Colors.transparent,
         ),
         body: Center(
           child: SingleChildScrollView(
@@ -46,9 +43,6 @@ class SignupPage extends StatelessWidget {
                   textelements: "Password",
                   prefixIcon: Icons.lock_outline_rounded,
                   suffixIcon: Icons.remove_red_eye_outlined,
-                ),
-                SizedBox(
-                  height: height * 0.02,
                 ),
                 SizedBox(height: height * 0.04),
                 Btns(
