@@ -1,10 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../common_widget/custom_button.dart';
-import '../common_widget/text_field_widget.dart';
-import '../common_widget/text_style.dart';
-import '../core/app_router.gr.dart';
-import 'password_recovery.dart';
+import 'package:shoppingApp/presentation/common_widget/inputdecoration.dart';
+import 'package:shoppingApp/presentation/common_widget/text_style.dart';
+import 'package:shoppingApp/presentation/core/app_router.gr.dart';
+import 'package:shoppingApp/presentation/signin/password_recovery.dart';
 
 class SigninPage extends StatefulWidget {
   @override
@@ -12,64 +11,104 @@ class SigninPage extends StatefulWidget {
 }
 
 class _SigninPageState extends State<SigninPage> {
+  String name, email, phone;
   bool isChecked = false;
+
+  TextEditingController password = TextEditingController();
+  TextEditingController confirmpassword = TextEditingController();
+
+  final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
     return Scaffold(
-        appBar: AppBar(
-          title: Text(
-            "Login",
-          ),
+      appBar: AppBar(
+        title: Text(
+          "Login",
         ),
-        body: Center(
-          child: SingleChildScrollView(
-            padding: EdgeInsets.all(20),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Text("Welcome Back !", style: Constants.regularHeading),
-                Text(
-                  "sign in to your account",
-                  style: Constants.signIn,
+      ),
+      body: SingleChildScrollView(
+        child: Form(
+          key: _formkey,
+          child: Column(
+            children: [
+              SizedBox(
+                height: 50,
+              ),
+              Text(
+                "Welcome Back !",
+                style: Constants.regularHeading,
+              ),
+              Text(
+                "sign in to your account",
+                style: Constants.signIn,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                    bottom: 15, left: 15, right: 15, top: 30),
+                child: TextFormField(
+                  keyboardType: TextInputType.text,
+                  decoration: buildInputDecoration(Icons.email, "Email"),
+                  validator: (String value) {
+                    if (value.isEmpty) {
+                      return 'Please a Enter';
+                    }
+                    if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]")
+                        .hasMatch(value)) {
+                      return 'Please a valid Email';
+                    }
+                    return null;
+                  },
+                  onSaved: (String value) {
+                    email = value;
+                  },
                 ),
-                SizedBox(
-                  height: 50,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 15, left: 15, right: 15),
+                child: TextFormField(
+                  controller: password,
+                  keyboardType: TextInputType.text,
+                  decoration: buildInputDecoration(Icons.lock, "Password"),
+                  validator: (String value) {
+                    if (value.isEmpty) {
+                      return 'Please a Enter Password';
+                    }
+                    return null;
+                  },
                 ),
-                TextFieldWidget(
-                  textelements: "Email Address",
-                  prefixIcon: Icons.email_outlined,
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                TextFieldWidget(
-                  isPassword: true,
-                  textelements: "Password",
-                  prefixIcon: Icons.lock_outline_rounded,
-                  suffixIcon: Icons.remove_red_eye_outlined,
-                ),
-                SizedBox(
-                  height: height * 0.02,
-                ),
-                Row(
-                  children: [
-                    Checkbox(
-                      value: isChecked,
-                      onChanged: (_) {
+              ),
+              Row(
+                children: [
+                  Checkbox(
+                    value: isChecked,
+                    onChanged: (_) {
+                      setState(() {
+                        isChecked = !isChecked;
+                      });
+                    },
+                  ),
+                  InkWell(
+                    onTap: () {
+                      setState(() {
+                        isChecked = !isChecked;
+                      });
+                    },
+                    child: InkWell(
+                      onTap: () {
                         setState(() {
                           isChecked = !isChecked;
                         });
                       },
+                      child: Text(
+                        "Remember me",
+                        style: Constants.rememberMe,
+                      ),
                     ),
-                    Text(
-                      "Remember me",
-                      style: Constants.rememberMe,
-                    ),
-                    Spacer(),
-                    InkWell(
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 60.0),
+                    child: InkWell(
                       onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -81,39 +120,60 @@ class _SigninPageState extends State<SigninPage> {
                         style: Constants.passwordHeading,
                       ),
                     ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                width: 300,
+                height: 60,
+                child: RaisedButton(
+                  color: Colors.green,
+                  onPressed: () {
+                    if (_formkey.currentState.validate()) {
+                      print("successful");
+
+                      return;
+                    } else {
+                      print("UnSuccessfull");
+                    }
+                  },
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0),
+                  ),
+                  textColor: Colors.white,
+                  child: Text("Login"),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Don't have an account?",
+                      style: Constants.rememberMe,
+                    ),
+                    InkWell(
+                      onTap: () =>
+                          ExtendedNavigator.of(context).push(Routes.signupPage),
+                      child: Text(
+                        "Signup",
+                        style: Constants.signIn,
+                      ),
+                    )
                   ],
                 ),
-                SizedBox(height: height * 0.04),
-                Btns(
-                  text: "Login",
-                  onPressed: () => ExtendedNavigator.of(context)
-                      .replace(Routes.bottomNavigationPage),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text("Don't have an account?",
-                          style: Constants.rememberMe),
-                      InkWell(
-                        onTap: () => ExtendedNavigator.of(context)
-                            .push(Routes.signupPage),
-                        child: Text(
-                          "Signup",
-                          style: Constants.signIn,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                Image.asset(
-                  'assets/background.png',
-                  fit: BoxFit.scaleDown,
-                ),
-              ],
-            ),
+              ),
+              Image.asset(
+                'assets/background.png',
+                height: 200,
+                width: 350,
+                fit: BoxFit.scaleDown,
+              ),
+            ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
