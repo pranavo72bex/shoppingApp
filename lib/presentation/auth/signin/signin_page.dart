@@ -17,6 +17,7 @@ class _SigninPageState extends State<SigninPage> {
         title: Text(
           "Login",
         ),
+        backgroundColor: Colors.transparent,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -33,30 +34,27 @@ class _SigninPageState extends State<SigninPage> {
               style: Constants.signIn,
             ),
             SigninForm(),
-            Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "Don't have an account?",
-                    style: Constants.rememberMe,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Don't have an account? ",
+                  style: Constants.rememberMe,
+                ),
+                InkWell(
+                  onTap: () =>
+                      ExtendedNavigator.of(context).push(Routes.signupPage),
+                  child: Text(
+                    "Signup",
+                    style: Constants.signIn,
                   ),
-                  InkWell(
-                    onTap: () =>
-                        ExtendedNavigator.of(context).push(Routes.signupPage),
-                    child: Text(
-                      "Signup",
-                      style: Constants.signIn,
-                    ),
-                  )
-                ],
-              ),
+                ),
+              ],
             ),
             Image.asset(
               'assets/background.png',
               height: 200,
-              width: 350,
+              // width: 350,
               fit: BoxFit.scaleDown,
             ),
           ],
