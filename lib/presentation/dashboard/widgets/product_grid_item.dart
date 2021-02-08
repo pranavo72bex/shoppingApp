@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shoppingApp/domain/product.dart';
 import 'package:shoppingApp/presentation/core/app_router.gr.dart';
 
@@ -84,15 +85,42 @@ class _ProductItemState extends State<ProductGridItem> {
               style: Theme.of(context).textTheme.caption,
             ),
             SizedBox(height: 5),
-            Divider(
-              thickness: 1,
-              height: 4,
+            // Divider(
+            //   thickness: 1,
+            //   height: 4,
+            // ),
+            Material(
+              color: Theme.of(context).accentColor,
+              child: InkWell(
+                onTap: () {},
+                child: Container(
+                  alignment: Alignment.center,
+                  height: 50,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      FaIcon(
+                        FontAwesomeIcons.cartPlus,
+                        color: Theme.of(context).primaryTextTheme.button.color,
+                      ),
+                      VerticalDivider(),
+                      Text(
+                        'Add to cart'.toUpperCase(),
+                        style: TextStyle(
+                          color:
+                              Theme.of(context).primaryTextTheme.button.color,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ),
-            FlatButton(
-              // minWidth: double.infinity,
-              onPressed: () {},
-              child: Text('Add to cart'),
-            ),
+            // FlatButton(
+            //   // minWidth: double.infinity,
+            //   onPressed: () {},
+            //   child: Text('Add to cart'),
+            // ),
           ],
         ),
       ),
