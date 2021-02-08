@@ -13,7 +13,7 @@ class SignupForm extends StatefulWidget {
 class _SignupFormState extends State<SignupForm> {
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
 
-  // final nameValidator = ValidationBuilder().required().build();
+  final nameValidator = ValidationBuilder().required().build();
   final emailValidator = ValidationBuilder().email().build();
   final phoneValidator = ValidationBuilder().phone().build();
   final passwordValidator = ValidationBuilder().minLength(6).build();
@@ -53,19 +53,7 @@ class _SignupFormState extends State<SignupForm> {
                 labelText: 'Email',
               ),
               validator: emailValidator,
-              // validator: (String value) {
-              //   if (value.isEmpty) {
-              //     return 'Please a Enter';
-              //   }
-              //   if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]")
-              //       .hasMatch(value)) {
-              //     return 'Please a valid Email';
-              //   }
-              //   return null;
-              // },
-              onSaved: (String value) {
-                // email = value;
-              },
+              onSaved: (String value) {},
             ),
             SizedBox(height: 20),
             TextFormField(
@@ -75,15 +63,7 @@ class _SignupFormState extends State<SignupForm> {
                 labelText: 'Phone',
               ),
               validator: phoneValidator,
-              // validator: (String value) {
-              //   if (value.isEmpty) {
-              //     return 'Please enter phone no ';
-              //   }
-              //   return null;
-              // },
-              onSaved: (String value) {
-                // phone = value;
-              },
+              onSaved: (String value) {},
             ),
             SizedBox(height: 20),
             TextFormField(
@@ -106,12 +86,6 @@ class _SignupFormState extends State<SignupForm> {
               ),
               obscureText: isObscured,
               validator: passwordValidator,
-              // validator: (String value) {
-              //   if (value.isEmpty) {
-              //     return 'Please a Enter Password';
-              //   }
-              //   return null;
-              // },
             ),
             SizedBox(height: 20),
             CustomFullWidthButton(

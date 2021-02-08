@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:form_validator/form_validator.dart';
+
 import 'package:shoppingApp/presentation/common_widget/custom_button.dart';
 import 'package:shoppingApp/presentation/common_widget/text_style.dart';
 import 'package:shoppingApp/presentation/core/app_router.gr.dart';
@@ -14,7 +15,7 @@ class _SigninFormState extends State<SigninForm> {
   bool isChecked = false;
   bool isObscured = true;
   TextEditingController passwordController = TextEditingController();
-  // TextEditingController confirmpasswordController = TextEditingController();
+  TextEditingController confirmpasswordController = TextEditingController();
   TextEditingController emailController = TextEditingController();
 
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
@@ -37,7 +38,7 @@ class _SigninFormState extends State<SigninForm> {
                 prefixIcon: Icon(Icons.email_outlined),
                 labelText: 'Email Address',
               ),
-              validator: emailValidator,
+              // validator: emailValidator,
               // validator: (String value) {
               //   if (value.isEmpty) {
               //     return 'Email field should not be empty';
@@ -73,7 +74,7 @@ class _SigninFormState extends State<SigninForm> {
                 labelText: 'Password',
               ),
               obscureText: isObscured,
-              validator: passwordValidator,
+              // validator: passwordValidator,
               // validator: (String value) {
               //   if (value.isEmpty) {
               //     return 'Password field should not be empty';
