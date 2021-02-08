@@ -11,7 +11,7 @@ import 'package:flutter/material.dart';
 
 import '../../domain/product.dart';
 import '../about_me/about_me_page.dart';
-import '../auth/signin/password_recovery.dart';
+import '../auth/common/password_recovery.dart';
 import '../auth/signin/signin_page.dart';
 import '../auth/signup/signup_page.dart';
 import '../cart/cart_page.dart';

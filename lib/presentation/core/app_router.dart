@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route_annotations.dart';
-import 'package:shoppingApp/presentation/auth/signin/password_recovery.dart';
+import 'package:shoppingApp/presentation/auth/common/password_recovery.dart';
 import 'package:shoppingApp/presentation/auth/signin/signin_page.dart';
 import 'package:shoppingApp/presentation/auth/signup/signup_page.dart';
 import 'package:shoppingApp/presentation/category_items_list/category_items_list.dart';

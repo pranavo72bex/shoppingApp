@@ -17,9 +17,7 @@ class ShoppingApp extends StatelessWidget {
             textTheme: GoogleFonts.poppinsTextTheme(
               Theme.of(context).textTheme,
             ),
-            // scaffoldBackgroundColor: Color(0xFFF2F1EE),
             scaffoldBackgroundColor: Color(0xFFF8F8FF),
-            // scaffoldBackgroundColor: Colors.lightBlue[50],
             appBarTheme: AppBarTheme().copyWith(
               iconTheme:
                   IconThemeData(color: Color(0xAA504f57)), //back button theme
@@ -48,7 +46,10 @@ class ShoppingApp extends StatelessWidget {
               ),
             ),
             // primaryColor: Colors.white,
-            primarySwatch: Colors.green,
+            // primarySwatch: Colors.green,
+            // primaryColor: Color(0xFF04AB4C),
+            // accentColor: Color(0xFFF78909),
+            accentColor: Color(0xFF04AB4C),
           ),
           child: extendedNav,
         ),
