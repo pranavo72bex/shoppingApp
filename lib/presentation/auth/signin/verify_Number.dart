@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../common_widget/text_style.dart';
+import 'package:shoppingApp/presentation/common_widget/text_style.dart';
 
 class EnterOTP extends StatelessWidget {
   @override

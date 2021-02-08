@@ -35,6 +35,18 @@ class ShoppingApp extends StatelessWidget {
               color: Colors.white,
               elevation: 0,
             ),
+            inputDecorationTheme: InputDecorationTheme(
+              contentPadding: EdgeInsets.all(15),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(20.0),
+              ),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(20.0),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(20.0),
+              ),
+            ),
             // primaryColor: Colors.white,
             primarySwatch: Colors.green,
           ),

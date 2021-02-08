@@ -109,7 +109,7 @@ class _MyAddressState extends State<MyAddress> {
             SizedBox(
               height: 20,
             ),
-            Btns(
+            CustomFullWidthButton(
               text: "Save Setting",
               fillcolor: Color(0xff6cc41d),
               textcolor: Colors.white,

@@ -51,7 +51,7 @@ class _NotificationsPageState extends State<NotificationsPage> {
             SizedBox(
               height: 40,
             ),
-            Btns(
+            CustomFullWidthButton(
               text: "Save settings",
               // fillcolor: Color(0xff6cc41d),
               onPressed: () {},

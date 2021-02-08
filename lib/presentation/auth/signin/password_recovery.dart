@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../common_widget/custom_button.dart';
-import '../common_widget/text_field_widget.dart';
-import '../common_widget/text_style.dart';
+import 'package:shoppingApp/presentation/common_widget/custom_button.dart';
+import 'package:shoppingApp/presentation/common_widget/text_style.dart';
 
 class PasswordRecovery extends StatelessWidget {
   @override
@@ -38,14 +36,26 @@ class PasswordRecovery extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              TextFieldWidget(
-                textelements: "Email Address",
-                prefixIcon: Icons.email_outlined,
+              TextFormField(
+                keyboardType: TextInputType.text,
+                validator: (String value) {
+                  if (value.isEmpty) {
+                    return 'Email field should not be empty';
+                  }
+                  if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]")
+                      .hasMatch(value)) {
+                    return 'Invalid Email';
+                  }
+                  return null;
+                },
+                onSaved: (String value) {
+                  // email = value;
+                },
               ),
               SizedBox(
                 height: 20,
               ),
-              Btns(
+              CustomFullWidthButton(
                 text: "send link",
                 onPressed: () {},
               ),

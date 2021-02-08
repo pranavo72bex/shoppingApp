@@ -1,8 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:shoppingApp/presentation/auth/signin/signin_page.dart';
 import 'package:shoppingApp/presentation/common_widget/inputdecoration.dart';
 import 'package:shoppingApp/presentation/common_widget/profile_pic_upload.dart';
 import 'package:shoppingApp/presentation/common_widget/text_style.dart';
-import 'package:shoppingApp/presentation/signin/signin_page.dart';
+import 'package:shoppingApp/presentation/core/app_router.gr.dart';
 
 class SignupPage extends StatefulWidget {
   @override
@@ -138,12 +140,8 @@ class _SignupPageState extends State<SignupPage> {
                         style: Constants.rememberMe,
                       ),
                       InkWell(
-                        onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => SigninPage(),
-                          ),
-                        ),
+                        onTap: () => ExtendedNavigator.of(context)
+                            .push(Routes.signinPage),
                         child: Text(
                           "Login",
                           style: Constants.signIn,

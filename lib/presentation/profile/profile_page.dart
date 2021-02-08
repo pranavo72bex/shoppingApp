@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:shoppingApp/presentation/signin/signout_dialog.dart';
+import 'package:shoppingApp/presentation/auth/signin/signout_dialog.dart';
 
 import '../common_widget/profile_pic_upload.dart';
 import '../core/app_router.gr.dart';

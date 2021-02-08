@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Btns extends StatelessWidget {
-  final void Function() onPressed;
+class CustomFullWidthButton extends StatelessWidget {
+  final VoidCallback onPressed;
   final String text;
-  final dynamic fillcolor;
-  final dynamic textcolor;
-  Btns({
+  final Color fillcolor;
+  final Color textcolor;
+  CustomFullWidthButton({
     @required this.text,
     this.fillcolor,
     this.textcolor,
@@ -15,12 +15,12 @@ class Btns extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 60,
-      width: 350,
+      // height: 60,
+      width: double.infinity,
       child: RaisedButton(
         color: fillcolor ?? Theme.of(context).accentColor,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(25),
+          borderRadius: BorderRadius.circular(30),
         ),
         onPressed: onPressed,
         padding: EdgeInsets.all(14),
@@ -29,7 +29,7 @@ class Btns extends StatelessWidget {
           text,
           style: TextStyle(
             color: textcolor,
-            fontSize: 16,
+            fontSize: 18,
             fontWeight: FontWeight.bold,
           ),
         ),

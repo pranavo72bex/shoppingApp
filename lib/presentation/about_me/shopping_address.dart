@@ -86,7 +86,7 @@ class _AddShippingState extends State<AddShipping> {
               SizedBox(
                 height: 40,
               ),
-              Btns(
+              CustomFullWidthButton(
                 text: "Next",
                 onPressed: () {},
               ),

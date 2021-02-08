@@ -73,7 +73,7 @@ class AboutMePage extends StatelessWidget {
             SizedBox(
               height: 40,
             ),
-            Btns(
+            CustomFullWidthButton(
               text: "Save settings",
               onPressed: () {},
             ),

@@ -24,7 +24,7 @@ class CartPage extends StatelessWidget {
                   style: Constants.subHeading),
               Text(" to purchase them", style: Constants.subHeading),
               SizedBox(height: height * 0.2),
-              Btns(
+              CustomFullWidthButton(
                 text: "Submit",
                 fillcolor: Theme.of(context).accentColor,
                 textcolor: Colors.white,

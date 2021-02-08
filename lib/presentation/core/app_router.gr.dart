@@ -11,6 +11,9 @@ import 'package:flutter/material.dart';
 
 import '../../domain/product.dart';
 import '../about_me/about_me_page.dart';
+import '../auth/signin/password_recovery.dart';
+import '../auth/signin/signin_page.dart';
+import '../auth/signup/signup_page.dart';
 import '../cart/cart_page.dart';
 import '../category_items_list/category_items_list.dart';
 import '../dashboard/dashboard_page.dart';
@@ -18,8 +21,6 @@ import '../detail_screen/detail_screen.dart';
 import '../favorites/favorites.dart';
 import '../notification/notification_page.dart';
 import '../review/review_page.dart';
-import '../signin/signin_page.dart';
-import '../signup/signup_page.dart';
 import 'bottom_navigation_page.dart';
 
 class Routes {
@@ -34,6 +35,7 @@ class Routes {
   static const String reviewPage = '/review-page';
   static const String categoryItemsList = '/category-items-list';
   static const String detailsScreen = '/details-screen';
+  static const String passwordRecovery = '/password-recovery';
   static const all = <String>{
     signinPage,
     bottomNavigationPage,
@@ -46,6 +48,7 @@ class Routes {
     reviewPage,
     categoryItemsList,
     detailsScreen,
+    passwordRecovery,
   };
 }
 
@@ -64,6 +67,7 @@ class AppRouter extends RouterBase {
     RouteDef(Routes.reviewPage, page: ReviewPage),
     RouteDef(Routes.categoryItemsList, page: CategoryItemsList),
     RouteDef(Routes.detailsScreen, page: DetailsScreen),
+    RouteDef(Routes.passwordRecovery, page: PasswordRecovery),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -146,6 +150,12 @@ class AppRouter extends RouterBase {
         settings: data,
       );
     },
+    PasswordRecovery: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => PasswordRecovery(),
+        settings: data,
+      );
+    },
   };
 }
 
@@ -192,6 +202,9 @@ extension AppRouterExtendedNavigatorStateX on ExtendedNavigatorState {
         Routes.detailsScreen,
         arguments: DetailsScreenArguments(key: key, product: product),
       );
+
+  Future<dynamic> pushPasswordRecovery() =>
+      push<dynamic>(Routes.passwordRecovery);
 }
 
 /// ************************************************************************
