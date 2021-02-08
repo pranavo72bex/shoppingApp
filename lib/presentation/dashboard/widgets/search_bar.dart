@@ -20,6 +20,8 @@ class _SearchBarState extends State<SearchBar> {
           hintText: "search here",
           prefixIcon: Icon(Icons.search),
           border: InputBorder.none,
+          enabledBorder: InputBorder.none,
+          focusedBorder: InputBorder.none,
         ),
       ),
     );

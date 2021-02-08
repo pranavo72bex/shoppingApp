@@ -25,6 +25,7 @@ class _SignupPageState extends State<SignupPage> {
         title: Text(
           "Signup",
         ),
+        backgroundColor: Colors.transparent,
       ),
       body: Center(
         child: SingleChildScrollView(

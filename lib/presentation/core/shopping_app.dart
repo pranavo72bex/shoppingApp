@@ -33,6 +33,7 @@ class ShoppingApp extends StatelessWidget {
               color: Colors.white,
               elevation: 0,
             ),
+            cursorColor: Color(0xFF04AB4C),
             inputDecorationTheme: InputDecorationTheme(
               contentPadding: EdgeInsets.all(15),
               focusedBorder: OutlineInputBorder(
@@ -46,7 +47,7 @@ class ShoppingApp extends StatelessWidget {
               ),
             ),
             // primaryColor: Colors.white,
-            // primarySwatch: Colors.green,
+            primarySwatch: Colors.green,
             // primaryColor: Color(0xFF04AB4C),
             // accentColor: Color(0xFFF78909),
             accentColor: Color(0xFF04AB4C),

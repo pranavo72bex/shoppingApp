@@ -12,7 +12,7 @@ class SigninForm extends StatefulWidget {
 
 class _SigninFormState extends State<SigninForm> {
   bool isChecked = false;
-
+  bool isObscured = true;
   TextEditingController passwordController = TextEditingController();
   // TextEditingController confirmpasswordController = TextEditingController();
   TextEditingController emailController = TextEditingController();
@@ -58,8 +58,21 @@ class _SigninFormState extends State<SigninForm> {
                 prefixIcon: Icon(
                   Icons.lock_outline,
                 ),
+                suffixIcon: IconButton(
+                  onPressed: () {
+                    setState(() {
+                      isObscured = !isObscured;
+                    });
+                  },
+                  icon: Icon(
+                    isObscured
+                        ? Icons.visibility_off_outlined
+                        : Icons.visibility_outlined,
+                  ),
+                ),
                 labelText: 'Password',
               ),
+              obscureText: isObscured,
               validator: passwordValidator,
               // validator: (String value) {
               //   if (value.isEmpty) {
@@ -113,11 +126,11 @@ class _SigninFormState extends State<SigninForm> {
               onPressed: () {
                 if (_formkey.currentState.validate()) {
                   print("successful");
-                  ExtendedNavigator.of(context).replace(Routes.dashboardPage);
                   return;
                 } else {
                   print("UnSuccessfull");
                 }
+                ExtendedNavigator.of(context).replace(Routes.dashboardPage);
               },
             ),
           ],
