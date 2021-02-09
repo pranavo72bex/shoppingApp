@@ -34,13 +34,15 @@ class _ProductItemState extends State<ProductGridItem> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            SizedBox(height: 10),
             Container(
               // height: 100,
               child: Stack(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 30),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 30,
+                      vertical: 10,
+                    ),
                     child: Align(
                       alignment: Alignment.bottomCenter,
                       child: Image.asset(
@@ -99,8 +101,6 @@ class _ProductItemState extends State<ProductGridItem> {
                 ],
               ),
             ),
-            SizedBox(height: 10),
-
             Text(widget.product.title,
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
