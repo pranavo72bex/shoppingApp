@@ -1,3 +1,4 @@
+import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -5,7 +6,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shoppingApp/domain/product.dart';
 import 'package:shoppingApp/presentation/core/app_router.gr.dart';
 import 'package:shoppingApp/presentation/core/konstants.dart';
-import 'package:shoppingApp/presentation/review/widgets/star_rating.dart';
 
 class ProductGridItem extends StatefulWidget {
   final Product product;
@@ -77,15 +77,19 @@ class _ProductItemState extends State<ProductGridItem> {
                     right: 0,
                     bottom: -10,
                     child: IconButton(
-                        icon: Icon(isFavorite
-                            ? Icons.favorite
-                            : Icons.favorite_outline),
-                        color: isFavorite ? Colors.red : Colors.grey,
-                        onPressed: () {
-                          setState(() {
-                            isFavorite = !isFavorite;
-                          });
-                        }),
+                      icon: Icon(
+                          isFavorite ? Icons.favorite : Icons.favorite_outline),
+                      color: isFavorite ? Colors.red : Colors.grey,
+                      onPressed: () async {
+                        setState(() {
+                          isFavorite = !isFavorite;
+                        });
+                        await FlushbarHelper.createSuccess(
+                                message:
+                                    '${widget.product.title} ${isFavorite ? 'added to' : 'removed from'} favourite')
+                            .show(context);
+                      },
+                    ),
                   ),
                   // Center(
                   //   child: Container(
@@ -164,7 +168,11 @@ class _ProductItemState extends State<ProductGridItem> {
             Material(
               color: Theme.of(context).accentColor,
               child: InkWell(
-                onTap: () {},
+                onTap: () async {
+                  await FlushbarHelper.createSuccess(
+                          message: '${widget.product.title} added to cart')
+                      .show(context);
+                },
                 child: Container(
                   alignment: Alignment.center,
                   height: buttonWidth,

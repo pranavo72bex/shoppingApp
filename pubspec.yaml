@@ -23,13 +23,14 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  another_flushbar: ^1.10.8
   auto_route: ^0.6.9
   carousel_slider: ^3.0.0
   cupertino_icons: ^1.0.0
+  flutter_rating_bar: ^3.2.0+1
   font_awesome_flutter: ^8.11.0
   form_validator: ^0.1.7
   google_fonts: ^1.1.2
-  flutter_rating_bar: ^3.2.0+1
 
 dev_dependencies:
   flutter_test:
