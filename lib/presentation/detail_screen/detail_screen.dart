@@ -73,17 +73,23 @@ class DetailsScreen extends StatelessWidget {
       //   ),
       //   onPressed: () => Navigator.pop(context),
       // ),
-      actions: <Widget>[
-        IconButton(
-          icon: Icon(Icons.search),
-          onPressed: () {},
-        ),
-        IconButton(
-          icon: FaIcon(FontAwesomeIcons.cartPlus),
-          onPressed: () {},
-        ),
-        SizedBox(width: 16 / 2)
-      ],
+      // actions: <Widget>[
+      //   // IconButton(
+      //   //   icon: Icon(
+      //   //     Icons.search,
+      //   //     color: Colors.white,
+      //   //   ),
+      //   //   onPressed: () {},
+      //   // ),
+      //   // IconButton(
+      //   //   color: Colors.white,
+      //   //   icon: FaIcon(
+      //   //     FontAwesomeIcons.cartPlus,
+      //   //   ),
+      //   //   onPressed: () {},
+      //   // ),
+      //   // SizedBox(width: 16 / 2)
+      // ],
     );
   }
 }

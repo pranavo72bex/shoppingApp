@@ -75,10 +75,10 @@ class _ProductItemState extends State<ProductGridItem> {
             //     child: Container(),
             //   ),
             // ),
-
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                SizedBox(height: 10),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 30),
                   child: Align(
