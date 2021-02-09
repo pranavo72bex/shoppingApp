@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:shoppingApp/domain/product.dart';
+import 'package:shoppingApp/presentation/core/app_router.gr.dart';
 import 'package:shoppingApp/presentation/dashboard/widgets/product_grid_item.dart';
 
 class PopularDealsGrid extends StatelessWidget {
@@ -14,7 +16,13 @@ class PopularDealsGrid extends StatelessWidget {
               'Popular Deals'.toUpperCase(),
               style: Theme.of(context).textTheme.headline6,
             ),
-            IconButton(icon: Icon(Icons.arrow_forward), onPressed: () {})
+            IconButton(
+                icon: Icon(Icons.arrow_forward),
+                onPressed: () {
+                  ExtendedNavigator.of(context).push(Routes.categoryItemsList,
+                      arguments: CategoryItemsListArguments(
+                          categoryName: 'Popular Deals'.toUpperCase()));
+                })
           ],
         ),
         Container(
