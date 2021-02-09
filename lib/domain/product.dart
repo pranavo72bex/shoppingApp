@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class Product {
   final String image, title, description;
   final int price, id;
-  final double quantity;
+  final double quantity, rating;
 
   final Color color;
   Product({
@@ -14,6 +14,7 @@ class Product {
     this.description,
     this.quantity,
     this.color,
+    this.rating,
   });
 }
 
@@ -25,6 +26,7 @@ List<Product> products = [
       quantity: 12,
       description: dummyText,
       image: "assets/products/apple.png",
+      rating: 3.5,
       color: Color(0xFFEE5052)),
   Product(
       id: 2,
@@ -33,6 +35,7 @@ List<Product> products = [
       quantity: 8,
       description: dummyText,
       image: "assets/products/avocado.png",
+      rating: 5,
       color: Color(0xFF486E25)),
   Product(
       id: 3,
@@ -41,6 +44,7 @@ List<Product> products = [
       quantity: 10,
       description: dummyText,
       image: "assets/products/lemon.png",
+      rating: 4,
       color: Color(0xFFFDDF28)),
   Product(
       id: 4,
@@ -49,6 +53,7 @@ List<Product> products = [
       quantity: 11,
       description: dummyText,
       image: "assets/products/mango.png",
+      rating: 1,
       color: Color(0xFFDFA402)),
   Product(
       id: 5,
@@ -57,6 +62,7 @@ List<Product> products = [
       quantity: 12,
       description: dummyText,
       image: "assets/products/orange.png",
+      rating: 3,
       color: Color(0xFFF49A2F)),
   Product(
     id: 6,
@@ -65,6 +71,7 @@ List<Product> products = [
     quantity: 12,
     description: dummyText,
     image: "assets/products/strawberry.png",
+    rating: 4.5,
     color: Color(0xFFC7030B),
   ),
 ];
