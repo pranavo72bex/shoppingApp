@@ -131,7 +131,8 @@ class _SigninFormState extends State<SigninForm> {
                 } else {
                   print("UnSuccessfull");
                 }
-                ExtendedNavigator.of(context).replace(Routes.dashboardPage);
+                ExtendedNavigator.of(context)
+                    .replace(Routes.bottomNavigationPage);
               },
             ),
           ],
