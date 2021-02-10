@@ -10,8 +10,13 @@ class FavoriteListItem extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(8),
       margin: EdgeInsets.symmetric(vertical: 8),
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(18.0), color: Colors.white),
+      decoration: BoxDecoration(boxShadow: [
+        BoxShadow(
+          color: Colors.black26,
+          offset: Offset(0, 2),
+          blurRadius: 6.0,
+        )
+      ], borderRadius: BorderRadius.circular(18.0), color: Colors.white),
       child: FittedBox(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
