@@ -40,7 +40,7 @@ class _ProductItemState extends State<ProductGridItem> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.symmetric(
-                      horizontal: 30,
+                      horizontal: 10,
                       vertical: 10,
                     ),
                     child: Align(
@@ -160,7 +160,7 @@ class _ProductItemState extends State<ProductGridItem> {
                 ],
               ),
             ),
-            SizedBox(height: 5),
+            // SizedBox(height: 5),
             // Divider(
             //   thickness: 1,
             //   height: 4,
