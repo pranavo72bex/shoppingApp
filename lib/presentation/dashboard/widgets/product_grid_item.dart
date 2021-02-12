@@ -46,7 +46,7 @@ class _ProductItemState extends State<ProductGridItem> {
                     ),
                     child: Align(
                       alignment: Alignment.bottomCenter,
-                      child: Image.asset(
+                      child: Image.network(
                         widget.product.image,
                         // width: 100,
                       ),
@@ -120,6 +120,7 @@ class _ProductItemState extends State<ProductGridItem> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   RatingBarIndicator(
+                    // rating: 3,
                     rating: double.tryParse(widget.product.avgRating),
                     itemSize: 16,
                     direction: Axis.horizontal,

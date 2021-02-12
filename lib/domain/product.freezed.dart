@@ -8,6 +8,9 @@ part of 'product.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+Product _$ProductFromJson(Map<String, dynamic> json) {
+  return _Product.fromJson(json);
+}
 
 /// @nodoc
 class _$ProductTearOff {
@@ -19,7 +22,7 @@ class _$ProductTearOff {
       String quantity,
       String title,
       String description,
-      @JsonKey(name: 'avg_rating') String avgRating,
+      @JsonKey(name: 'avg_rating', defaultValue: '0') String avgRating,
       @JsonKey(name: 'old_price') String oldPrice,
       String price,
       @JsonKey(name: 'discount_name') String discountName,
@@ -36,6 +39,11 @@ class _$ProductTearOff {
       image: image,
     );
   }
+
+// ignore: unused_element
+  Product fromJson(Map<String, Object> json) {
+    return Product.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -48,7 +56,7 @@ mixin _$Product {
   String get quantity;
   String get title;
   String get description;
-  @JsonKey(name: 'avg_rating')
+  @JsonKey(name: 'avg_rating', defaultValue: '0')
   String get avgRating;
   @JsonKey(name: 'old_price')
   String get oldPrice;
@@ -57,6 +65,7 @@ mixin _$Product {
   String get discountName;
   String get image;
 
+  Map<String, dynamic> toJson();
   @JsonKey(ignore: true)
   $ProductCopyWith<Product> get copyWith;
 }
@@ -70,7 +79,7 @@ abstract class $ProductCopyWith<$Res> {
       String quantity,
       String title,
       String description,
-      @JsonKey(name: 'avg_rating') String avgRating,
+      @JsonKey(name: 'avg_rating', defaultValue: '0') String avgRating,
       @JsonKey(name: 'old_price') String oldPrice,
       String price,
       @JsonKey(name: 'discount_name') String discountName,
@@ -124,7 +133,7 @@ abstract class _$ProductCopyWith<$Res> implements $ProductCopyWith<$Res> {
       String quantity,
       String title,
       String description,
-      @JsonKey(name: 'avg_rating') String avgRating,
+      @JsonKey(name: 'avg_rating', defaultValue: '0') String avgRating,
       @JsonKey(name: 'old_price') String oldPrice,
       String price,
       @JsonKey(name: 'discount_name') String discountName,
@@ -169,6 +178,8 @@ class __$ProductCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_Product implements _Product {
   const _$_Product(
@@ -176,11 +187,14 @@ class _$_Product implements _Product {
       this.quantity,
       this.title,
       this.description,
-      @JsonKey(name: 'avg_rating') this.avgRating,
+      @JsonKey(name: 'avg_rating', defaultValue: '0') this.avgRating,
       @JsonKey(name: 'old_price') this.oldPrice,
       this.price,
       @JsonKey(name: 'discount_name') this.discountName,
       this.image});
+
+  factory _$_Product.fromJson(Map<String, dynamic> json) =>
+      _$_$_ProductFromJson(json);
 
   @override
   final String id;
@@ -191,7 +205,7 @@ class _$_Product implements _Product {
   @override
   final String description;
   @override
-  @JsonKey(name: 'avg_rating')
+  @JsonKey(name: 'avg_rating', defaultValue: '0')
   final String avgRating;
   @override
   @JsonKey(name: 'old_price')
@@ -255,6 +269,11 @@ class _$_Product implements _Product {
   @override
   _$ProductCopyWith<_Product> get copyWith =>
       __$ProductCopyWithImpl<_Product>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ProductToJson(this);
+  }
 }
 
 abstract class _Product implements Product {
@@ -263,11 +282,13 @@ abstract class _Product implements Product {
       String quantity,
       String title,
       String description,
-      @JsonKey(name: 'avg_rating') String avgRating,
+      @JsonKey(name: 'avg_rating', defaultValue: '0') String avgRating,
       @JsonKey(name: 'old_price') String oldPrice,
       String price,
       @JsonKey(name: 'discount_name') String discountName,
       String image}) = _$_Product;
+
+  factory _Product.fromJson(Map<String, dynamic> json) = _$_Product.fromJson;
 
   @override
   String get id;
@@ -278,7 +299,7 @@ abstract class _Product implements Product {
   @override
   String get description;
   @override
-  @JsonKey(name: 'avg_rating')
+  @JsonKey(name: 'avg_rating', defaultValue: '0')
   String get avgRating;
   @override
   @JsonKey(name: 'old_price')
