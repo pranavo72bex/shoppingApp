@@ -1,13 +1,13 @@
 import 'package:auto_route/auto_route_annotations.dart';
-import 'package:shoppingApp/presentation/auth/common/password_recovery.dart';
-import 'package:shoppingApp/presentation/auth/signin/signin_page.dart';
-import 'package:shoppingApp/presentation/auth/signup/signup_page.dart';
-import 'package:shoppingApp/presentation/category_items_list/category_items_list.dart';
-import 'package:shoppingApp/presentation/detail_screen/detail_screen.dart';
 
 import '../about_me/about_me_page.dart';
+import '../auth/common/password_recovery.dart';
+import '../auth/signin/signin_page.dart';
+import '../auth/signup/signup_page.dart';
 import '../cart/cart_page.dart';
+import '../category_items_list/category_items_list.dart';
 import '../dashboard/dashboard_page.dart';
+import '../detail_screen/detail_screen.dart';
 import '../favorites/favorites.dart';
 import '../notification/notification_page.dart';
 import '../review/review_page.dart';

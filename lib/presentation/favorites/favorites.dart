@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'widgets/favorite_list_item.dart';
 
 class FavoritesPage extends StatelessWidget {

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:shoppingApp/presentation/dashboard/widgets/categories_grid.dart';
-import 'package:shoppingApp/presentation/dashboard/widgets/homepage_slider.dart';
-import 'package:shoppingApp/presentation/dashboard/widgets/popular_deals_grid.dart';
-import 'package:shoppingApp/presentation/dashboard/widgets/search_bar.dart';
+
+import 'widgets/categories_grid.dart';
+import 'widgets/homepage_slider.dart';
+import 'widgets/popular_deals_grid.dart';
+import 'widgets/search_bar.dart';
 
 class DashboardPage extends StatelessWidget {
   @override

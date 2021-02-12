@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shoppingApp/domain/product.dart';
+
+import '../../../domain/product.dart';
 
 class ProductTitleWithImage extends StatelessWidget {
   const ProductTitleWithImage({

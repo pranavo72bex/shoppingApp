@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shoppingApp/domain/product.dart';
+
+import '../../../domain/product.dart';
 
 class Description extends StatelessWidget {
   const Description({

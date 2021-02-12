@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:shoppingApp/domain/product.dart';
+
+import '../../../domain/product.dart';
 
 class AddToCart extends StatelessWidget {
   const AddToCart({

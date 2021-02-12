@@ -1,9 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:form_validator/form_validator.dart';
-import 'package:shoppingApp/presentation/common_widget/custom_button.dart';
-import 'package:shoppingApp/presentation/common_widget/text_style.dart';
-import 'package:shoppingApp/presentation/core/app_router.gr.dart';
+
+import '../../../common_widget/custom_button.dart';
+import '../../../common_widget/text_style.dart';
+import '../../../core/app_router.gr.dart';
 
 class SignupForm extends StatefulWidget {
   @override

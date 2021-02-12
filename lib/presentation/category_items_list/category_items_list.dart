@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shoppingApp/domain/product.dart';
-import 'package:shoppingApp/presentation/dashboard/widgets/product_grid_item.dart';
+
+import '../../domain/product.dart';
+import '../dashboard/widgets/product_grid_item.dart';
 
 class CategoryItemsList extends StatelessWidget {
   final String categoryName;

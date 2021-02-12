@@ -1,8 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:shoppingApp/domain/product.dart';
-import 'package:shoppingApp/presentation/core/app_router.gr.dart';
-import 'package:shoppingApp/presentation/dashboard/widgets/product_grid_item.dart';
+
+import '../../../domain/product.dart';
+import '../../core/app_router.gr.dart';
+import 'product_grid_item.dart';
 
 class PopularDealsGrid extends StatelessWidget {
   @override

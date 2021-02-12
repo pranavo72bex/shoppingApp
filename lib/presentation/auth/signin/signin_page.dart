@@ -1,8 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:shoppingApp/presentation/auth/signin/widgets/signin_form.dart';
-import 'package:shoppingApp/presentation/common_widget/text_style.dart';
-import 'package:shoppingApp/presentation/core/app_router.gr.dart';
+
+import '../../common_widget/text_style.dart';
+import '../../core/app_router.gr.dart';
+import 'widgets/signin_form.dart';
 
 class SigninPage extends StatefulWidget {
   @override
