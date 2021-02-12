@@ -36,7 +36,7 @@ class _ProductItemState extends State<ProductGridItem> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              // height: 100,
+              height: 150,
               child: Stack(
                 children: [
                   Padding(
@@ -44,12 +44,10 @@ class _ProductItemState extends State<ProductGridItem> {
                       horizontal: 10,
                       vertical: 10,
                     ),
-                    child: Align(
-                      alignment: Alignment.bottomCenter,
-                      child: Image.network(
-                        widget.product.image,
-                        // width: 100,
-                      ),
+                    child: Image.network(
+                      widget.product.image,
+                      fit: BoxFit.cover,
+                      // width: 100,
                     ),
                   ),
                   Positioned(
