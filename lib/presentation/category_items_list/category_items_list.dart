@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-import '../../domain/product.dart';
 import '../dashboard/widgets/product_grid_item.dart';
 
 class CategoryItemsList extends StatelessWidget {

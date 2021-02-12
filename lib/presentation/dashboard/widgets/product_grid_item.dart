@@ -120,7 +120,7 @@ class _ProductItemState extends State<ProductGridItem> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   RatingBarIndicator(
-                    rating: widget.product.rating,
+                    rating: double.tryParse(widget.product.avgRating),
                     itemSize: 16,
                     direction: Axis.horizontal,
                     itemCount: 5,

@@ -23,14 +23,14 @@ class AddToCart extends StatelessWidget {
             width: 58,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(18),
-              border: Border.all(
-                color: product.color,
-              ),
+              // border: Border.all(
+              //     color: product.color,
+              //     ),
             ),
             child: IconButton(
               icon: FaIcon(
                 FontAwesomeIcons.cartPlus,
-                color: product.color,
+                // color: product.color,
               ),
               onPressed: () {},
             ),
@@ -41,7 +41,7 @@ class AddToCart extends StatelessWidget {
               child: FlatButton(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(18)),
-                color: product.color,
+                // color: product.color,
                 onPressed: () {},
                 child: Text(
                   "Buy  Now".toUpperCase(),

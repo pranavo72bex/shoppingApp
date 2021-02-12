@@ -16,7 +16,7 @@ class DetailsScreen extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       // each product have a color
-      backgroundColor: product.color,
+      // backgroundColor: product.color,
       appBar: buildAppBar(context),
       body: SingleChildScrollView(
         child: Column(
@@ -64,7 +64,7 @@ class DetailsScreen extends StatelessWidget {
 
   AppBar buildAppBar(BuildContext context) {
     return AppBar(
-      backgroundColor: product.color,
+      // backgroundColor: product.color,
       elevation: 0,
       // leading: IconButton(
       //   icon: SvgPicture.asset(
