@@ -1,8 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shoppingApp/application/bloc/popular_deals_bloc.dart';
-import 'package:shoppingApp/infrastructure/product/product_repo.dart';
+import 'package:shoppingApp/application/popular_deals/popular_deals_bloc.dart';
 
 import '../../core/app_router.gr.dart';
 import 'product_grid_item.dart';

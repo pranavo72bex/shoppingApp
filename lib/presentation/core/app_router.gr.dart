@@ -9,7 +9,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import '../../domain/product.dart';
+import '../../domain/product/product.dart';
 import '../about_me/about_me_page.dart';
 import '../auth/common/password_recovery.dart';
 import '../auth/signin/signin_page.dart';

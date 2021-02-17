@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:shoppingApp/domain/i_product_repo.dart';
-import 'package:shoppingApp/domain/product.dart';
+import 'package:shoppingApp/domain/product/i_product_repo.dart';
+import 'package:shoppingApp/domain/product/product.dart';
 
 class ProductRepo implements IProductRepo {
   final Dio _dio = Dio(

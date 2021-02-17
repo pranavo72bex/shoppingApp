@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../../../domain/product.dart';
+import '../../../domain/product/product.dart';
 import '../../core/app_router.gr.dart';
 import '../../core/konstants.dart';
 

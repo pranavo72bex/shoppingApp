@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shoppingApp/application/bloc/popular_deals_bloc.dart';
+import 'package:shoppingApp/application/popular_deals/popular_deals_bloc.dart';
 import '../dashboard/widgets/product_grid_item.dart';
 
 class CategoryItemsList extends StatelessWidget {

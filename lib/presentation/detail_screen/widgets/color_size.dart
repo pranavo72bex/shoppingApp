@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../domain/product.dart';
+import '../../../domain/product/product.dart';
 
 class ColorAndSize extends StatelessWidget {
   const ColorAndSize({
