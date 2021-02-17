@@ -1,10 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:form_validator/form_validator.dart';
+import 'package:shoppingApp/application/auth/auth_bloc.dart';
 
 import '../../../common_widget/custom_button.dart';
 import '../../../common_widget/text_style.dart';
 import '../../../core/app_router.gr.dart';
+
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SigninForm extends StatefulWidget {
   @override
@@ -15,7 +18,7 @@ class _SigninFormState extends State<SigninForm> {
   bool isChecked = false;
   bool isObscured = true;
   TextEditingController passwordController = TextEditingController();
-  TextEditingController confirmpasswordController = TextEditingController();
+  // TextEditingController confirmpasswordController = TextEditingController();
   TextEditingController emailController = TextEditingController();
 
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
@@ -39,16 +42,6 @@ class _SigninFormState extends State<SigninForm> {
                 labelText: 'Email Address',
               ),
               validator: emailValidator,
-              // validator: (String value) {
-              //   if (value.isEmpty) {
-              //     return 'Email field should not be empty';
-              //   }
-              //   if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]")
-              //       .hasMatch(value)) {
-              //     return 'Invalid Email';
-              //   }
-              //   return null;
-              // },
               onSaved: (String value) {},
             ),
             SizedBox(height: 20),
@@ -75,15 +68,6 @@ class _SigninFormState extends State<SigninForm> {
               ),
               obscureText: isObscured,
               validator: passwordValidator,
-              // validator: (String value) {
-              //   if (value.isEmpty) {
-              //     return 'Password field should not be empty';
-              //   }
-              //   if (value.length < 6) {
-              //     return 'Password too short';
-              //   }
-              //   return null;
-              // },
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -125,14 +109,19 @@ class _SigninFormState extends State<SigninForm> {
             CustomFullWidthButton(
               text: 'Login',
               onPressed: () {
+                context.read<AuthBloc>().add(
+                      AuthEvent.loginRequested(
+                        username: emailController.text,
+                        password: passwordController.text,
+                      ),
+                    );
                 if (_formkey.currentState.validate()) {
                   print("successful");
+
                   return;
                 } else {
                   print("UnSuccessfull");
                 }
-                ExtendedNavigator.of(context)
-                    .replace(Routes.bottomNavigationPage);
               },
             ),
           ],

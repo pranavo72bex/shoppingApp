@@ -22,9 +22,11 @@ import '../favorites/favorites.dart';
 import '../notification/notification_page.dart';
 import '../review/review_page.dart';
 import 'bottom_navigation_page.dart';
+import 'splash_screen.dart';
 
 class Routes {
-  static const String signinPage = '/';
+  static const String splashScreen = '/';
+  static const String signinPage = '/signin-page';
   static const String bottomNavigationPage = '/bottom-navigation-page';
   static const String dashboardPage = '/dashboard-page';
   static const String signupPage = '/signup-page';
@@ -37,6 +39,7 @@ class Routes {
   static const String detailsScreen = '/details-screen';
   static const String passwordRecovery = '/password-recovery';
   static const all = <String>{
+    splashScreen,
     signinPage,
     bottomNavigationPage,
     dashboardPage,
@@ -56,6 +59,7 @@ class AppRouter extends RouterBase {
   @override
   List<RouteDef> get routes => _routes;
   final _routes = <RouteDef>[
+    RouteDef(Routes.splashScreen, page: SplashScreen),
     RouteDef(Routes.signinPage, page: SigninPage),
     RouteDef(Routes.bottomNavigationPage, page: BottomNavigationPage),
     RouteDef(Routes.dashboardPage, page: DashboardPage),
@@ -72,6 +76,12 @@ class AppRouter extends RouterBase {
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
   final _pagesMap = <Type, AutoRouteFactory>{
+    SplashScreen: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => SplashScreen(),
+        settings: data,
+      );
+    },
     SigninPage: (data) {
       return MaterialPageRoute<dynamic>(
         builder: (context) => SigninPage(),
@@ -164,6 +174,8 @@ class AppRouter extends RouterBase {
 /// *************************************************************************
 
 extension AppRouterExtendedNavigatorStateX on ExtendedNavigatorState {
+  Future<dynamic> pushSplashScreen() => push<dynamic>(Routes.splashScreen);
+
   Future<dynamic> pushSigninPage() => push<dynamic>(Routes.signinPage);
 
   Future<dynamic> pushBottomNavigationPage() =>
