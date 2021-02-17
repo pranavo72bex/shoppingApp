@@ -1,7 +1,9 @@
 import 'dart:async';
 
+import 'package:injectable/injectable.dart';
 import 'package:shoppingApp/domain/auth/i_auth_repo.dart';
 
+@LazySingleton(as: IAuthRepo)
 class AuthRepo implements IAuthRepo {
   final _controller = StreamController<AuthenticationStatus>();
 

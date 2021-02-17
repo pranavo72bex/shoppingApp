@@ -1,9 +1,11 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
+import 'package:injectable/injectable.dart';
 import 'package:shoppingApp/domain/product/i_product_repo.dart';
 import 'package:shoppingApp/domain/product/product.dart';
 
+@LazySingleton(as: IProductRepo)
 class ProductRepo implements IProductRepo {
   final Dio _dio = Dio(
     BaseOptions(

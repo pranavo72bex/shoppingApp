@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:shoppingApp/domain/auth/i_auth_repo.dart';
 import 'package:shoppingApp/domain/user/i_user_repo.dart';
 import 'package:shoppingApp/domain/user/user.dart';
@@ -10,6 +11,7 @@ part 'auth_event.dart';
 part 'auth_state.dart';
 part 'auth_bloc.freezed.dart';
 
+@injectable
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc({@required this.authRepo, @required this.userRepo})
       : super(_Unknown()) {

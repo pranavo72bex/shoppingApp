@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shoppingApp/application/auth/auth_bloc.dart';
+import 'package:shoppingApp/dependency_injection.dart';
 import 'package:shoppingApp/infrastructure/auth/auth_repo.dart';
 import 'package:shoppingApp/infrastructure/user/user_repo.dart';
 
@@ -12,7 +13,7 @@ class ShoppingApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => AuthBloc(authRepo: AuthRepo(), userRepo: UserRepo()),
+      create: (context) => getIt.get<AuthBloc>(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Shopping App',
