@@ -18,15 +18,15 @@ class _$UserTearOff {
 
 // ignore: unused_element
   _User call(
-      {String id,
-      String name,
-      String email,
-      String phone,
-      String status,
-      @JsonKey(name: 'is_mobile_verified') String isMobileVerified,
-      @JsonKey(name: 'is_email_verified') String isEmailVerified,
-      @JsonKey(name: 'created_date') String createdDate,
-      String token}) {
+      {@required String id,
+      @required String name,
+      @required String email,
+      @required String phone,
+      @required String status,
+      @required @JsonKey(name: 'is_mobile_verified') String isMobileVerified,
+      @required @JsonKey(name: 'is_email_verified') String isEmailVerified,
+      @required @JsonKey(name: 'created_date') String createdDate,
+      @required String token}) {
     return _User(
       id: id,
       name: name,
@@ -187,15 +187,24 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
 /// @nodoc
 class _$_User implements _User {
   const _$_User(
-      {this.id,
-      this.name,
-      this.email,
-      this.phone,
-      this.status,
-      @JsonKey(name: 'is_mobile_verified') this.isMobileVerified,
-      @JsonKey(name: 'is_email_verified') this.isEmailVerified,
-      @JsonKey(name: 'created_date') this.createdDate,
-      this.token});
+      {@required this.id,
+      @required this.name,
+      @required this.email,
+      @required this.phone,
+      @required this.status,
+      @required @JsonKey(name: 'is_mobile_verified') this.isMobileVerified,
+      @required @JsonKey(name: 'is_email_verified') this.isEmailVerified,
+      @required @JsonKey(name: 'created_date') this.createdDate,
+      @required this.token})
+      : assert(id != null),
+        assert(name != null),
+        assert(email != null),
+        assert(phone != null),
+        assert(status != null),
+        assert(isMobileVerified != null),
+        assert(isEmailVerified != null),
+        assert(createdDate != null),
+        assert(token != null);
 
   factory _$_User.fromJson(Map<String, dynamic> json) =>
       _$_$_UserFromJson(json);
@@ -280,15 +289,15 @@ class _$_User implements _User {
 
 abstract class _User implements User {
   const factory _User(
-      {String id,
-      String name,
-      String email,
-      String phone,
-      String status,
-      @JsonKey(name: 'is_mobile_verified') String isMobileVerified,
-      @JsonKey(name: 'is_email_verified') String isEmailVerified,
-      @JsonKey(name: 'created_date') String createdDate,
-      String token}) = _$_User;
+      {@required String id,
+      @required String name,
+      @required String email,
+      @required String phone,
+      @required String status,
+      @required @JsonKey(name: 'is_mobile_verified') String isMobileVerified,
+      @required @JsonKey(name: 'is_email_verified') String isEmailVerified,
+      @required @JsonKey(name: 'created_date') String createdDate,
+      @required String token}) = _$_User;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
 

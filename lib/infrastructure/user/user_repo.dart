@@ -1,0 +1,27 @@
+import 'package:shoppingApp/domain/user/i_user_repo.dart';
+import 'package:shoppingApp/domain/user/user.dart';
+
+class UserRepo implements IUserRepo {
+  @override
+  Future<User> getUser() {
+    User _user;
+
+    Future<User> getUser() async {
+      if (_user != null) return _user;
+      return Future.delayed(
+        const Duration(milliseconds: 300),
+        () => _user = User(
+          id: null,
+          name: null,
+          email: null,
+          phone: null,
+          status: null,
+          isMobileVerified: null,
+          isEmailVerified: null,
+          createdDate: null,
+          token: null,
+        ),
+      );
+    }
+  }
+}
