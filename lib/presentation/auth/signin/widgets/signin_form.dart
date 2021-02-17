@@ -23,7 +23,12 @@ class _SigninFormState extends State<SigninForm> {
 
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
 
-  final emailValidator = ValidationBuilder().email().build();
+  final emailValidator = ValidationBuilder()
+      .or(
+        (builder) => builder.phone(),
+        (builder) => builder.email(),
+      )
+      .build();
   final passwordValidator = ValidationBuilder().minLength(6).build();
 
   @override

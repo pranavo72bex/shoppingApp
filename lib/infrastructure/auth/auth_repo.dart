@@ -35,10 +35,11 @@ class AuthRepo implements IAuthRepo {
 
     if (decodedData["responseCode"] == 1) {
       _controller.add(AuthenticationStatus.authenticated);
-    } else {
-      //handel exception
-      throw Exception();
     }
+    // else {
+    //   //handel exception
+    //   throw Exception();
+    // }
 
     // await Future.delayed(
     //   const Duration(milliseconds: 300),
