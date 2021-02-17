@@ -11,7 +11,7 @@ abstract class RegisterModule {
           'device_id': '12345',
           'device_version': '1.0',
           'device_type': '1',
-          'store_id': '9'
+          'store_id': '14'
         },
       ));
 }
