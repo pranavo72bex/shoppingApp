@@ -46,7 +46,7 @@ class SigninPage extends StatelessWidget {
                 children: [
                   Text(
                     "Don't have an account? ",
-                    style: Constants.rememberMe,
+                    style: Constants.donthave,
                   ),
                   InkWell(
                     onTap: () =>

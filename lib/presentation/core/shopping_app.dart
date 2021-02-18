@@ -31,7 +31,7 @@ class ShoppingApp extends StatelessWidget {
                 actionsIconTheme: IconThemeData(color: Color(0xAA504f57)),
                 textTheme: Theme.of(context).textTheme.copyWith(
                       headline6: Theme.of(context).textTheme.headline6.copyWith(
-                            color: Color(0xAA504f57),
+                            color: Colors.black,
                             fontWeight: FontWeight.bold,
                           ),
                     ),
@@ -44,19 +44,16 @@ class ShoppingApp extends StatelessWidget {
               inputDecorationTheme: InputDecorationTheme(
                 contentPadding: EdgeInsets.all(15),
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20.0),
+                  borderRadius: BorderRadius.circular(30.0),
                 ),
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20.0),
+                  borderRadius: BorderRadius.circular(30.0),
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20.0),
+                  borderRadius: BorderRadius.circular(30.0),
                 ),
               ),
-              // primaryColor: Colors.white,
               primarySwatch: Colors.green,
-              // primaryColor: Color(0xFF04AB4C),
-              // accentColor: Color(0xFFF78909),
               accentColor: Color(0xFF04AB4C),
             ),
             child: extendedNav,
