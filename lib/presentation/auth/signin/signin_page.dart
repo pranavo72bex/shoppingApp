@@ -24,7 +24,7 @@ class SigninPage extends StatelessWidget {
           title: Text(
             "Login",
           ),
-          backgroundColor: Colors.transparent,
+          // backgroundColor: Colors.transparent,
         ),
         body: SingleChildScrollView(
           child: Column(
