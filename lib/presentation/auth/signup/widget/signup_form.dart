@@ -108,7 +108,7 @@ class _SignupFormState extends State<SignupForm> {
                 children: [
                   Text(
                     "Already have an account?",
-                    style: Constants.rememberMe,
+                    style: Constants.donthave,
                   ),
                   InkWell(
                     onTap: () =>
