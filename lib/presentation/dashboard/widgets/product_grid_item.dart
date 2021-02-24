@@ -51,7 +51,6 @@ class _ProductItemState extends State<ProductGridItem> {
                     ),
                   ),
                   Positioned(
-                    left: 0,
                     child: Container(
                       alignment: Alignment.center,
                       height: 40,
@@ -73,7 +72,7 @@ class _ProductItemState extends State<ProductGridItem> {
                     ),
                   ),
                   Positioned(
-                    right: 0,
+                    right: -10,
                     bottom: -10,
                     child: IconButton(
                       icon: Icon(
@@ -90,24 +89,16 @@ class _ProductItemState extends State<ProductGridItem> {
                       },
                     ),
                   ),
-                  // Center(
-                  //   child: Container(
-                  //     width: 100,
-                  //     height: 100,
-                  //     decoration: BoxDecoration(
-                  //       color: widget.product.color.withOpacity(0.3),
-                  //       shape: BoxShape.circle,
-                  //     ),
-                  //     child: Container(),
-                  //   ),
-                  // ),
                 ],
               ),
+            ), // //
+
+            Text(
+              widget.product.title,
+              style: Theme.of(context).textTheme.subtitle2,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
             ),
-            Text(widget.product.title,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                )),
             Text(
               widget.product.quantity.toString() + ' Kg',
               style: Theme.of(context).textTheme.caption,
@@ -160,11 +151,7 @@ class _ProductItemState extends State<ProductGridItem> {
                 ],
               ),
             ),
-            // SizedBox(height: 5),
-            // Divider(
-            //   thickness: 1,
-            //   height: 4,
-            // ),
+
             Material(
               color: Theme.of(context).accentColor,
               child: InkWell(
