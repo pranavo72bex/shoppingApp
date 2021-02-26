@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:shoppingApp/presentation/core/app_router.gr.dart';
-import 'package:shoppingApp/presentation/core/konstants.dart';
 
 class OnboardingPage extends StatelessWidget {
   final listPagesViewModel = [
@@ -12,6 +11,7 @@ class OnboardingPage extends StatelessWidget {
         pageColor: Colors.white,
         titleTextStyle: TextStyle(
           color: Colors.black,
+          fontWeight: FontWeight.bold,
           fontSize: 26,
         ),
         bodyTextStyle: TextStyle(
@@ -25,8 +25,8 @@ class OnboardingPage extends StatelessWidget {
         children: [
           Center(
             child: Container(
-              width: 280,
-              height: 280,
+              width: 260,
+              height: 240,
               decoration: BoxDecoration(
                 border: Border.all(
                   color: Colors.green,
@@ -49,6 +49,7 @@ class OnboardingPage extends StatelessWidget {
         pageColor: Colors.white,
         titleTextStyle: TextStyle(
           color: Colors.black,
+          fontWeight: FontWeight.bold,
           fontSize: 26,
         ),
         bodyTextStyle: TextStyle(
@@ -63,7 +64,7 @@ class OnboardingPage extends StatelessWidget {
           Center(
             child: Container(
               width: 280,
-              height: 280,
+              height: 240,
               decoration: BoxDecoration(
                 border: Border.all(
                   color: Colors.green,
@@ -72,7 +73,7 @@ class OnboardingPage extends StatelessWidget {
                 shape: BoxShape.circle,
                 image: const DecorationImage(
                   fit: BoxFit.cover,
-                  image: AssetImage('assets/app_icon.png'),
+                  image: AssetImage('assets/category/veg.jpg'),
                 ),
               ),
             ),
@@ -86,6 +87,7 @@ class OnboardingPage extends StatelessWidget {
         pageColor: Colors.white,
         titleTextStyle: TextStyle(
           color: Colors.black,
+          fontWeight: FontWeight.bold,
           fontSize: 26,
         ),
         bodyTextStyle: TextStyle(
@@ -100,7 +102,7 @@ class OnboardingPage extends StatelessWidget {
           Center(
             child: Container(
               width: 280,
-              height: 280,
+              height: 240,
               decoration: BoxDecoration(
                 border: Border.all(
                   color: Colors.green,
@@ -123,6 +125,7 @@ class OnboardingPage extends StatelessWidget {
         pageColor: Colors.white,
         titleTextStyle: TextStyle(
           color: Colors.black,
+          fontWeight: FontWeight.bold,
           fontSize: 26,
         ),
         bodyTextStyle: TextStyle(
@@ -137,7 +140,7 @@ class OnboardingPage extends StatelessWidget {
           Center(
             child: Container(
               width: 280,
-              height: 280,
+              height: 240,
               decoration: BoxDecoration(
                 border: Border.all(
                   color: Colors.green,

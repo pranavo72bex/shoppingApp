@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:shoppingApp/presentation/dashboard/widgets/our_brand.dart';
+import 'package:shoppingApp/presentation/dashboard/widgets/recent_product.dart';
+import 'package:shoppingApp/presentation/dashboard/widgets/top_product.dart';
 
 import 'widgets/categories_grid.dart';
 import 'widgets/homepage_slider.dart';
@@ -21,6 +24,9 @@ class DashboardPage extends StatelessWidget {
             HomepageSlider(),
             CategoriesGrid(),
             PopularDealsGrid(),
+            TopProduct(),
+            RecentProduct(),
+            OurBrand()
           ],
         ),
       ),
