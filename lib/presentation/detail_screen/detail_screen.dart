@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../domain/product/product.dart';
 import 'widgets/add_to_cart.dart';
 import 'widgets/color_size.dart';
