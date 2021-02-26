@@ -17,6 +17,7 @@ import '../auth/signup/signup_page.dart';
 import '../cart/cart_page.dart';
 import '../category_items_list/category_items_list.dart';
 import '../dashboard/dashboard_page.dart';
+import '../dashboard/onboarding/onboarding.dart';
 import '../detail_screen/detail_screen.dart';
 import '../favorites/favorites.dart';
 import '../notification/notification_page.dart';
@@ -25,7 +26,8 @@ import 'bottom_navigation_page.dart';
 import 'splash_screen.dart';
 
 class Routes {
-  static const String splashScreen = '/';
+  static const String splashScreen = '/splash-screen';
+  static const String onboardingPage = '/';
   static const String signinPage = '/signin-page';
   static const String bottomNavigationPage = '/bottom-navigation-page';
   static const String dashboardPage = '/dashboard-page';
@@ -40,6 +42,7 @@ class Routes {
   static const String passwordRecovery = '/password-recovery';
   static const all = <String>{
     splashScreen,
+    onboardingPage,
     signinPage,
     bottomNavigationPage,
     dashboardPage,
@@ -60,6 +63,7 @@ class AppRouter extends RouterBase {
   List<RouteDef> get routes => _routes;
   final _routes = <RouteDef>[
     RouteDef(Routes.splashScreen, page: SplashScreen),
+    RouteDef(Routes.onboardingPage, page: OnboardingPage),
     RouteDef(Routes.signinPage, page: SigninPage),
     RouteDef(Routes.bottomNavigationPage, page: BottomNavigationPage),
     RouteDef(Routes.dashboardPage, page: DashboardPage),
@@ -79,6 +83,12 @@ class AppRouter extends RouterBase {
     SplashScreen: (data) {
       return MaterialPageRoute<dynamic>(
         builder: (context) => SplashScreen(),
+        settings: data,
+      );
+    },
+    OnboardingPage: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => OnboardingPage(),
         settings: data,
       );
     },
@@ -175,6 +185,8 @@ class AppRouter extends RouterBase {
 
 extension AppRouterExtendedNavigatorStateX on ExtendedNavigatorState {
   Future<dynamic> pushSplashScreen() => push<dynamic>(Routes.splashScreen);
+
+  Future<dynamic> pushOnboardingPage() => push<dynamic>(Routes.onboardingPage);
 
   Future<dynamic> pushSigninPage() => push<dynamic>(Routes.signinPage);
 

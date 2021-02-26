@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route_annotations.dart';
 import 'package:shoppingApp/presentation/core/splash_screen.dart';
+import 'package:shoppingApp/presentation/dashboard/onboarding/onboarding.dart';
 
 import '../about_me/about_me_page.dart';
 import '../auth/common/password_recovery.dart';
@@ -19,7 +20,8 @@ import 'bottom_navigation_page.dart';
   routes: <AutoRoute>[
     // initial route is named "/"
 
-    MaterialRoute(page: SplashScreen, initial: true),
+    MaterialRoute(page: SplashScreen),
+    MaterialRoute(page: OnboardingPage, initial: true),
     MaterialRoute(page: SigninPage),
     MaterialRoute(page: BottomNavigationPage),
     MaterialRoute(page: DashboardPage),
