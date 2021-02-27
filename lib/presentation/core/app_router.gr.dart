@@ -27,7 +27,7 @@ import 'splash_screen.dart';
 
 class Routes {
   static const String splashScreen = '/splash-screen';
-  static const String onboardingPage = '/';
+  static const String onboardingPage = '/onboarding-page';
   static const String signinPage = '/signin-page';
   static const String bottomNavigationPage = '/bottom-navigation-page';
   static const String dashboardPage = '/dashboard-page';

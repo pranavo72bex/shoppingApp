@@ -21,7 +21,7 @@ import 'bottom_navigation_page.dart';
     // initial route is named "/"
 
     MaterialRoute(page: SplashScreen),
-    MaterialRoute(page: OnboardingPage, initial: true),
+    MaterialRoute(page: OnboardingPage),
     MaterialRoute(page: SigninPage),
     MaterialRoute(page: BottomNavigationPage),
     MaterialRoute(page: DashboardPage),

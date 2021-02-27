@@ -6,6 +6,9 @@ import 'package:shoppingApp/application/auth/auth_bloc.dart';
 import 'package:shoppingApp/dependency_injection.dart';
 import 'package:shoppingApp/infrastructure/auth/auth_repo.dart';
 import 'package:shoppingApp/infrastructure/user/user_repo.dart';
+import 'package:shoppingApp/main.dart';
+import 'package:shoppingApp/presentation/dashboard/dashboard_page.dart';
+import 'package:shoppingApp/presentation/dashboard/onboarding/onboarding.dart';
 
 import 'app_router.gr.dart';
 
@@ -16,6 +19,12 @@ class ShoppingApp extends StatelessWidget {
       create: (context) => getIt.get<AuthBloc>(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
+        initialRoute:
+            initScreen == 0 || initScreen == null ? 'onboard' : 'home',
+        routes: {
+          'home': (context) => DashboardPage(),
+          'onboard': (context) => OnboardingPage(),
+        },
         title: 'Shopping App',
         builder: ExtendedNavigator.builder<AppRouter>(
           router: AppRouter(),
