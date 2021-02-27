@@ -16,15 +16,12 @@ class ShoppingApp extends StatelessWidget {
       create: (context) => getIt.get<AuthBloc>(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute:
-            initScreen == 0 || initScreen == null ? 'OnboardingPage' : '/',
-        routes: {
-          '/': (context) => DashboardPage(),
-          'OnboardingPage': (context) => OnboardingPage(),
-        },
         title: 'Shopping App',
         builder: ExtendedNavigator.builder<AppRouter>(
           router: AppRouter(),
+          initialRoute: initScreen == 0 || initScreen == null
+              ? Routes.dashboardPage
+              : Routes.onboardingPage,
           builder: (context, extendedNav) => Theme(
             data: ThemeData(
               primaryColor: Color(0xFFF78909),
