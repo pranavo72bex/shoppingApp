@@ -5,12 +5,12 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'dependency_injection.dart';
 import 'presentation/core/shopping_app.dart';
 
-int initScreen;
+bool initScreen;
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences preferences = await SharedPreferences.getInstance();
-  initScreen = await preferences.getInt('initScreen');
-  await preferences.setInt('initScreen', 1);
+  initScreen = await preferences.getBool('initScreen');
+  await preferences.setBool('initScreen', true);
   LicenseRegistry.addLicense(() async* {
     final license = await rootBundle.loadString('google_fonts/OFL.txt');
     yield LicenseEntryWithLineBreaks(['google_fonts'], license);
