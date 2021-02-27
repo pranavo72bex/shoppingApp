@@ -4,12 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shoppingApp/application/auth/auth_bloc.dart';
 import 'package:shoppingApp/dependency_injection.dart';
-import 'package:shoppingApp/infrastructure/auth/auth_repo.dart';
-import 'package:shoppingApp/infrastructure/user/user_repo.dart';
 import 'package:shoppingApp/main.dart';
 import 'package:shoppingApp/presentation/dashboard/dashboard_page.dart';
 import 'package:shoppingApp/presentation/dashboard/onboarding/onboarding.dart';
-
 import 'app_router.gr.dart';
 
 class ShoppingApp extends StatelessWidget {
@@ -20,10 +17,10 @@ class ShoppingApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         initialRoute:
-            initScreen == 0 || initScreen == null ? 'onboard' : 'home',
+            initScreen == 0 || initScreen == null ? 'OnboardingPage' : '/',
         routes: {
-          'home': (context) => DashboardPage(),
-          'onboard': (context) => OnboardingPage(),
+          '/': (context) => DashboardPage(),
+          'OnboardingPage': (context) => OnboardingPage(),
         },
         title: 'Shopping App',
         builder: ExtendedNavigator.builder<AppRouter>(
