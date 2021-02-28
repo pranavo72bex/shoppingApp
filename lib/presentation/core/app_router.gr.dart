@@ -8,7 +8,6 @@
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-
 import '../../domain/product/product.dart';
 import '../about_me/about_me_page.dart';
 import '../auth/common/password_recovery.dart';
@@ -23,10 +22,8 @@ import '../favorites/favorites.dart';
 import '../notification/notification_page.dart';
 import '../review/review_page.dart';
 import 'bottom_navigation_page.dart';
-import 'splash_screen.dart';
 
 class Routes {
-  static const String splashScreen = '/splash-screen';
   static const String onboardingPage = '/onboarding-page';
   static const String signinPage = '/signin-page';
   static const String bottomNavigationPage = '/bottom-navigation-page';
@@ -41,7 +38,6 @@ class Routes {
   static const String detailsScreen = '/details-screen';
   static const String passwordRecovery = '/password-recovery';
   static const all = <String>{
-    splashScreen,
     onboardingPage,
     signinPage,
     bottomNavigationPage,
@@ -62,7 +58,6 @@ class AppRouter extends RouterBase {
   @override
   List<RouteDef> get routes => _routes;
   final _routes = <RouteDef>[
-    RouteDef(Routes.splashScreen, page: SplashScreen),
     RouteDef(Routes.onboardingPage, page: OnboardingPage),
     RouteDef(Routes.signinPage, page: SigninPage),
     RouteDef(Routes.bottomNavigationPage, page: BottomNavigationPage),
@@ -80,12 +75,6 @@ class AppRouter extends RouterBase {
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
   final _pagesMap = <Type, AutoRouteFactory>{
-    SplashScreen: (data) {
-      return MaterialPageRoute<dynamic>(
-        builder: (context) => SplashScreen(),
-        settings: data,
-      );
-    },
     OnboardingPage: (data) {
       return MaterialPageRoute<dynamic>(
         builder: (context) => OnboardingPage(),
@@ -184,8 +173,6 @@ class AppRouter extends RouterBase {
 /// *************************************************************************
 
 extension AppRouterExtendedNavigatorStateX on ExtendedNavigatorState {
-  Future<dynamic> pushSplashScreen() => push<dynamic>(Routes.splashScreen);
-
   Future<dynamic> pushOnboardingPage() => push<dynamic>(Routes.onboardingPage);
 
   Future<dynamic> pushSigninPage() => push<dynamic>(Routes.signinPage);
