@@ -17,9 +17,9 @@ class ShoppingApp extends StatelessWidget {
         title: 'Shopping App',
         builder: ExtendedNavigator.builder<AppRouter>(
           router: AppRouter(),
-          initialRoute: initScreen == 1 || initScreen == null
-              ? Routes.signinPage
-              : Routes.onboardingPage,
+          initialRoute: initScreen == 0 || initScreen == null
+              ? Routes.onboardingPage
+              : Routes.signinPage,
           builder: (context, extendedNav) => Theme(
             data: ThemeData(
               primaryColor: Color(0xFFF78909),

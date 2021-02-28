@@ -9,8 +9,9 @@ int initScreen;
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences preferences = await SharedPreferences.getInstance();
-  initScreen = preferences.getInt('initScreen');
-  await preferences.setInt('initScreen', 1);
+  int initScreen = (preferences.getInt('initScreen') != null ? 0 : 1);
+  await preferences.setInt('initScreen', initScreen);
+  print(initScreen);
   LicenseRegistry.addLicense(() async* {
     final license = await rootBundle.loadString('google_fonts/OFL.txt');
     yield LicenseEntryWithLineBreaks(['google_fonts'], license);
