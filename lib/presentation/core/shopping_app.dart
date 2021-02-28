@@ -5,8 +5,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:shoppingApp/application/auth/auth_bloc.dart';
 import 'package:shoppingApp/dependency_injection.dart';
 import 'package:shoppingApp/main.dart';
-import 'package:shoppingApp/presentation/dashboard/dashboard_page.dart';
-import 'package:shoppingApp/presentation/dashboard/onboarding/onboarding.dart';
 import 'app_router.gr.dart';
 
 class ShoppingApp extends StatelessWidget {
@@ -20,7 +18,7 @@ class ShoppingApp extends StatelessWidget {
         builder: ExtendedNavigator.builder<AppRouter>(
           router: AppRouter(),
           initialRoute: initScreen == 0 || initScreen == null
-              ? Routes.signupPage
+              ? Routes.signinPage
               : Routes.onboardingPage,
           builder: (context, extendedNav) => Theme(
             data: ThemeData(
