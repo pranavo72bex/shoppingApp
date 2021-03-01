@@ -37,17 +37,22 @@ class _ProductItemState extends State<ProductGridItem> {
           children: [
             Container(
               height: 150,
+              width: double.infinity,
               child: Stack(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 10,
-                      vertical: 10,
-                    ),
-                    child: Image.network(
-                      widget.product.image,
-                      fit: BoxFit.cover,
-                      // width: 100,
+                  Positioned.fill(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 10,
+                        vertical: 10,
+                      ),
+                      child:
+                          Ink.image(image: NetworkImage(widget.product.image)),
+                      // child: Image.network(
+                      //   widget.product.image,
+                      //   fit: BoxFit.cover,
+                      //   // width: 100,
+                      // ),
                     ),
                   ),
                   Positioned(
@@ -168,14 +173,13 @@ class _ProductItemState extends State<ProductGridItem> {
                     children: [
                       FaIcon(
                         FontAwesomeIcons.cartPlus,
-                        color: Theme.of(context).primaryTextTheme.button.color,
+                        color: Colors.white,
                       ),
                       VerticalDivider(),
                       Text(
                         'Add to cart'.toUpperCase(),
                         style: TextStyle(
-                          color:
-                              Theme.of(context).primaryTextTheme.button.color,
+                          color: Colors.white,
                         ),
                       ),
                     ],
