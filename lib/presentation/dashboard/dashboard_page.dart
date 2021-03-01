@@ -26,7 +26,7 @@ class DashboardPage extends StatelessWidget {
                 loaded: (s) => Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    HomepageSlider(),
+                    HomepageSlider(slider: s.dashboard.slider),
                     CategoriesGrid(),
                     PopularDealsGrid(
                       topProducts: s.dashboard.topProducts,
