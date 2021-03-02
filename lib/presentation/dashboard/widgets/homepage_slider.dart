@@ -14,43 +14,6 @@ class HomepageSlider extends StatefulWidget {
 class _HomepageSliderState extends State<HomepageSlider> {
   int _current = 0;
   CarouselController buttonCarouselController = CarouselController();
-  // Widget sliderImage(int index) {
-  //   return Image.asset('assets/slider/slider1.jpg');
-  // }
-
-  // final sliderImageList = [
-  //   Image.asset(
-  //     'assets/slider/slider0.jpg',
-  //     fit: BoxFit.cover,
-  //     height: 400,
-  //     width: double.infinity,
-  //   ),
-  //   Image.asset(
-  //     'assets/slider/slider1.jpg',
-  //     fit: BoxFit.cover,
-  //     height: 400,
-  //     width: double.infinity,
-  //   ),
-  //   Image.asset(
-  //     'assets/slider/slider2.jpg',
-  //     fit: BoxFit.cover,
-  //     height: 400,
-  //     width: double.infinity,
-  //   ),
-  //   Image.asset(
-  //     'assets/slider/slider3.jpg',
-  //     fit: BoxFit.cover,
-  //     height: 400,
-  //     width: double.infinity,
-  //   ),
-  //   Image.asset(
-  //     'assets/slider/slider4.jpg',
-  //     fit: BoxFit.cover,
-  //     height: 400,
-  //     width: double.infinity,
-  //   ),
-  // ];
-
   @override
   Widget build(BuildContext context) {
     return Container(
