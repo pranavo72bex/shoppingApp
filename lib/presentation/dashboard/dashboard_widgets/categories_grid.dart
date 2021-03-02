@@ -26,11 +26,10 @@ class CategoriesGrid extends StatelessWidget {
         Container(
           height: 155,
           child: ListView.builder(
-            itemCount: 3,
+            itemCount: shopByCategory.length,
             scrollDirection: Axis.horizontal,
             itemBuilder: (BuildContext context, int index) => CategoryGridItem(
-              text1: shopByCategory[index].name,
-              text2: 'vegetables',
+              text: shopByCategory[index].name,
               imageUrl: shopByCategory[index].image,
               color: Colors.lightGreen,
             ),
@@ -42,15 +41,13 @@ class CategoriesGrid extends StatelessWidget {
 }
 
 class CategoryGridItem extends StatelessWidget {
-  final String text1;
-  final String text2;
+  final String text;
   final String imageUrl;
   // final IconData iconData;
   final Color color;
   const CategoryGridItem({
     Key key,
-    @required this.text1,
-    @required this.text2,
+    @required this.text,
     @required this.imageUrl,
     // @required this.iconData,
     @required this.color,
@@ -67,8 +64,8 @@ class CategoryGridItem extends StatelessWidget {
         child: InkWell(
           onTap: () => ExtendedNavigator.of(context).push(
               Routes.categoryItemsList,
-              arguments: CategoryItemsListArguments(
-                  categoryName: text2.toUpperCase())),
+              arguments:
+                  CategoryItemsListArguments(categoryName: text.toUpperCase())),
           child: Container(
             color: color.withOpacity(0.2),
             width: 100,
@@ -85,24 +82,13 @@ class CategoryGridItem extends StatelessWidget {
                   top: 0,
                   child: Container(
                     padding: EdgeInsets.all(10),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "FRESH",
-                          style: TextStyle(
-                            color: color,
-                            fontSize: 12,
-                          ),
-                        ),
-                        Text(
-                          text2.toUpperCase(),
-                          style: TextStyle(
-                            color: color,
-                            fontWeight: FontWeight.w900,
-                          ),
-                        ),
-                      ],
+                    child: Text(
+                      text.toUpperCase(),
+                      softWrap: true,
+                      style: TextStyle(
+                        color: color,
+                        fontWeight: FontWeight.w900,
+                      ),
                     ),
                   ),
                 ),
