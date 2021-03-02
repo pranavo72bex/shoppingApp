@@ -2,12 +2,13 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:shoppingApp/domain/dashboard/dashboard.dart';
+import 'package:shoppingApp/domain/product/product.dart';
 
 import '../../core/app_router.gr.dart';
 import 'product_grid_item.dart';
 
 class PopularDealsGrid extends StatelessWidget {
-  final List<FeaturedProductElement> featureProducts;
+  final List<Product> featureProducts;
 
   const PopularDealsGrid({Key key, @required this.featureProducts})
       : super(key: key);
@@ -43,8 +44,7 @@ class PopularDealsGrid extends StatelessWidget {
             crossAxisCount: 2,
             children: featureProducts
                 .map(
-                  (featuredProductElement) => FeaturedProductGridItem(
-                      featuredProductElement: featuredProductElement),
+                  (product) => ProductGridItem(product: product),
                 )
                 .toList(),
           ),

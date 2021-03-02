@@ -25,10 +25,11 @@ class ProductRepo implements IProductRepo {
     final res = await _dio.get('/dashboard');
     if (res.statusCode == 200) {
       // print(res.data['responsedata']);
-      // final decodedData = jsonDecode(res.data);
-
+      final decodedData = jsonDecode(res.data);
+      //TODO when not using freezed data class usind jsonDecode cause exception
+      // need to find when should use jsonDecode() and when not to use
       // print(decodedData);
-      return Dashboard.fromJson(res.data);
+      return Dashboard.fromJson(decodedData);
       // return (decodedData['responsedata'] as List)
       //     .cast<Map<String, dynamic>>()
       //     .map((e) => Product.fromJson(e))

@@ -3,22 +3,20 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:shoppingApp/domain/dashboard/dashboard.dart';
+import 'package:shoppingApp/domain/product/product.dart';
 
 import '../../core/konstants.dart';
 
-class FeaturedProductGridItem extends StatefulWidget {
-  final FeaturedProductElement featuredProductElement;
+class ProductGridItem extends StatefulWidget {
+  final Product product;
 
-  const FeaturedProductGridItem(
-      {Key key, @required this.featuredProductElement})
-      : super(key: key);
+  const ProductGridItem({Key key, @required this.product}) : super(key: key);
 
   @override
   _ProductItemState createState() => _ProductItemState();
 }
 
-class _ProductItemState extends State<FeaturedProductGridItem> {
+class _ProductItemState extends State<ProductGridItem> {
   bool isFavorite = false;
   final double buttonWidth = 40;
   @override
@@ -30,7 +28,7 @@ class _ProductItemState extends State<FeaturedProductGridItem> {
         // onTap: () => ExtendedNavigator.of(context).push(
         //   Routes.detailsScreen,
         //   arguments: DetailsScreenArguments(
-        //     product: widget.featuredProductElement,
+        //     product: widget.productElement,
         //   ),
         // ),
         child: Column(
@@ -47,9 +45,8 @@ class _ProductItemState extends State<FeaturedProductGridItem> {
                         horizontal: 10,
                         vertical: 10,
                       ),
-                      child: Ink.image(
-                          image: NetworkImage(
-                              widget.featuredProductElement.image)),
+                      child:
+                          Ink.image(image: NetworkImage(widget.product.image)),
                       // child: Image.network(
                       //   widget.product.image,
                       //   fit: BoxFit.cover,
@@ -91,7 +88,7 @@ class _ProductItemState extends State<FeaturedProductGridItem> {
                         });
                         await FlushbarHelper.createSuccess(
                                 message:
-                                    '${widget.featuredProductElement.title} ${isFavorite ? 'added to' : 'removed from'} favourite')
+                                    '${widget.product.title} ${isFavorite ? 'added to' : 'removed from'} favourite')
                             .show(context);
                       },
                     ),
@@ -101,13 +98,13 @@ class _ProductItemState extends State<FeaturedProductGridItem> {
             ), // //
 
             Text(
-              widget.featuredProductElement.title,
+              widget.product.title,
               style: Theme.of(context).textTheme.subtitle2,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
             ),
             Text(
-              widget.featuredProductElement.quantity.toString() + ' Kg',
+              widget.product.quantity.toString() + ' Kg',
               style: Theme.of(context).textTheme.caption,
             ),
             Padding(
@@ -117,8 +114,7 @@ class _ProductItemState extends State<FeaturedProductGridItem> {
                 children: [
                   RatingBarIndicator(
                     // rating: 3,
-                    rating: double.tryParse(
-                        widget.featuredProductElement.avgRating ?? '0'),
+                    rating: double.tryParse(widget.product.avgRating ?? '0'),
                     itemSize: 16,
                     direction: Axis.horizontal,
                     itemCount: 5,
@@ -141,7 +137,7 @@ class _ProductItemState extends State<FeaturedProductGridItem> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    '₹ ' + widget.featuredProductElement.price.toString(),
+                    '₹ ' + widget.product.price.toString(),
                     style: TextStyle(
                       color: Colors.grey,
                       fontWeight: FontWeight.bold,
@@ -149,7 +145,7 @@ class _ProductItemState extends State<FeaturedProductGridItem> {
                     ),
                   ),
                   Text(
-                    '₹ ' + widget.featuredProductElement.price.toString(),
+                    '₹ ' + widget.product.price.toString(),
                     style: TextStyle(
                       color: Colors.green,
                       fontWeight: FontWeight.bold,
@@ -165,8 +161,7 @@ class _ProductItemState extends State<FeaturedProductGridItem> {
               child: InkWell(
                 onTap: () async {
                   await FlushbarHelper.createSuccess(
-                          message:
-                              '${widget.featuredProductElement.title} added to cart')
+                          message: '${widget.product.title} added to cart')
                       .show(context);
                 },
                 child: Container(

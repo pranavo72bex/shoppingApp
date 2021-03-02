@@ -410,6 +410,8 @@ abstract class _$LoadedCopyWith<$Res> {
   factory _$LoadedCopyWith(_Loaded value, $Res Function(_Loaded) then) =
       __$LoadedCopyWithImpl<$Res>;
   $Res call({Dashboard dashboard});
+
+  $DashboardCopyWith<$Res> get dashboard;
 }
 
 /// @nodoc
@@ -429,6 +431,16 @@ class __$LoadedCopyWithImpl<$Res> extends _$DashboardStateCopyWithImpl<$Res>
       dashboard:
           dashboard == freezed ? _value.dashboard : dashboard as Dashboard,
     ));
+  }
+
+  @override
+  $DashboardCopyWith<$Res> get dashboard {
+    if (_value.dashboard == null) {
+      return null;
+    }
+    return $DashboardCopyWith<$Res>(_value.dashboard, (value) {
+      return _then(_value.copyWith(dashboard: value));
+    });
   }
 }
 

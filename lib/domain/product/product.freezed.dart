@@ -18,15 +18,40 @@ class _$ProductTearOff {
 
 // ignore: unused_element
   _Product call(
-      {String id,
-      String quantity,
-      String title,
-      String description,
-      @JsonKey(name: 'avg_rating', defaultValue: '0') String avgRating,
-      @JsonKey(name: 'old_price') String oldPrice,
-      String price,
-      @JsonKey(name: 'discount_name') String discountName,
-      String image}) {
+      {@required
+          String id,
+      @required
+          String quantity,
+      @required
+          String title,
+      @required
+          String description,
+      @required
+      @JsonKey(name: 'avg_rating', defaultValue: '0')
+          dynamic avgRating,
+      @required
+      @JsonKey(name: 'old_price')
+          String oldPrice,
+      @required
+          String price,
+      @required
+      @JsonKey(name: 'discount_name')
+          String discountName,
+      @required
+      @JsonKey(name: 'is_veg')
+          String isVeg,
+      @required
+          String time,
+      @required
+      @JsonKey(name: 'short_description')
+          String shortDescription,
+      @required
+      @JsonKey(name: 'quantity_info')
+          String quantityInfo,
+      @required
+          String url,
+      @required
+          String image}) {
     return _Product(
       id: id,
       quantity: quantity,
@@ -36,6 +61,11 @@ class _$ProductTearOff {
       oldPrice: oldPrice,
       price: price,
       discountName: discountName,
+      isVeg: isVeg,
+      time: time,
+      shortDescription: shortDescription,
+      quantityInfo: quantityInfo,
+      url: url,
       image: image,
     );
   }
@@ -57,12 +87,20 @@ mixin _$Product {
   String get title;
   String get description;
   @JsonKey(name: 'avg_rating', defaultValue: '0')
-  String get avgRating;
+  dynamic get avgRating;
   @JsonKey(name: 'old_price')
   String get oldPrice;
   String get price;
   @JsonKey(name: 'discount_name')
   String get discountName;
+  @JsonKey(name: 'is_veg')
+  String get isVeg;
+  String get time;
+  @JsonKey(name: 'short_description')
+  String get shortDescription;
+  @JsonKey(name: 'quantity_info')
+  String get quantityInfo;
+  String get url;
   String get image;
 
   Map<String, dynamic> toJson();
@@ -79,10 +117,15 @@ abstract class $ProductCopyWith<$Res> {
       String quantity,
       String title,
       String description,
-      @JsonKey(name: 'avg_rating', defaultValue: '0') String avgRating,
+      @JsonKey(name: 'avg_rating', defaultValue: '0') dynamic avgRating,
       @JsonKey(name: 'old_price') String oldPrice,
       String price,
       @JsonKey(name: 'discount_name') String discountName,
+      @JsonKey(name: 'is_veg') String isVeg,
+      String time,
+      @JsonKey(name: 'short_description') String shortDescription,
+      @JsonKey(name: 'quantity_info') String quantityInfo,
+      String url,
       String image});
 }
 
@@ -104,6 +147,11 @@ class _$ProductCopyWithImpl<$Res> implements $ProductCopyWith<$Res> {
     Object oldPrice = freezed,
     Object price = freezed,
     Object discountName = freezed,
+    Object isVeg = freezed,
+    Object time = freezed,
+    Object shortDescription = freezed,
+    Object quantityInfo = freezed,
+    Object url = freezed,
     Object image = freezed,
   }) {
     return _then(_value.copyWith(
@@ -112,12 +160,21 @@ class _$ProductCopyWithImpl<$Res> implements $ProductCopyWith<$Res> {
       title: title == freezed ? _value.title : title as String,
       description:
           description == freezed ? _value.description : description as String,
-      avgRating: avgRating == freezed ? _value.avgRating : avgRating as String,
+      avgRating: avgRating == freezed ? _value.avgRating : avgRating as dynamic,
       oldPrice: oldPrice == freezed ? _value.oldPrice : oldPrice as String,
       price: price == freezed ? _value.price : price as String,
       discountName: discountName == freezed
           ? _value.discountName
           : discountName as String,
+      isVeg: isVeg == freezed ? _value.isVeg : isVeg as String,
+      time: time == freezed ? _value.time : time as String,
+      shortDescription: shortDescription == freezed
+          ? _value.shortDescription
+          : shortDescription as String,
+      quantityInfo: quantityInfo == freezed
+          ? _value.quantityInfo
+          : quantityInfo as String,
+      url: url == freezed ? _value.url : url as String,
       image: image == freezed ? _value.image : image as String,
     ));
   }
@@ -133,10 +190,15 @@ abstract class _$ProductCopyWith<$Res> implements $ProductCopyWith<$Res> {
       String quantity,
       String title,
       String description,
-      @JsonKey(name: 'avg_rating', defaultValue: '0') String avgRating,
+      @JsonKey(name: 'avg_rating', defaultValue: '0') dynamic avgRating,
       @JsonKey(name: 'old_price') String oldPrice,
       String price,
       @JsonKey(name: 'discount_name') String discountName,
+      @JsonKey(name: 'is_veg') String isVeg,
+      String time,
+      @JsonKey(name: 'short_description') String shortDescription,
+      @JsonKey(name: 'quantity_info') String quantityInfo,
+      String url,
       String image});
 }
 
@@ -159,6 +221,11 @@ class __$ProductCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
     Object oldPrice = freezed,
     Object price = freezed,
     Object discountName = freezed,
+    Object isVeg = freezed,
+    Object time = freezed,
+    Object shortDescription = freezed,
+    Object quantityInfo = freezed,
+    Object url = freezed,
     Object image = freezed,
   }) {
     return _then(_Product(
@@ -167,12 +234,21 @@ class __$ProductCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
       title: title == freezed ? _value.title : title as String,
       description:
           description == freezed ? _value.description : description as String,
-      avgRating: avgRating == freezed ? _value.avgRating : avgRating as String,
+      avgRating: avgRating == freezed ? _value.avgRating : avgRating as dynamic,
       oldPrice: oldPrice == freezed ? _value.oldPrice : oldPrice as String,
       price: price == freezed ? _value.price : price as String,
       discountName: discountName == freezed
           ? _value.discountName
           : discountName as String,
+      isVeg: isVeg == freezed ? _value.isVeg : isVeg as String,
+      time: time == freezed ? _value.time : time as String,
+      shortDescription: shortDescription == freezed
+          ? _value.shortDescription
+          : shortDescription as String,
+      quantityInfo: quantityInfo == freezed
+          ? _value.quantityInfo
+          : quantityInfo as String,
+      url: url == freezed ? _value.url : url as String,
       image: image == freezed ? _value.image : image as String,
     ));
   }
@@ -183,15 +259,34 @@ class __$ProductCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
 /// @nodoc
 class _$_Product implements _Product {
   const _$_Product(
-      {this.id,
-      this.quantity,
-      this.title,
-      this.description,
-      @JsonKey(name: 'avg_rating', defaultValue: '0') this.avgRating,
-      @JsonKey(name: 'old_price') this.oldPrice,
-      this.price,
-      @JsonKey(name: 'discount_name') this.discountName,
-      this.image});
+      {@required this.id,
+      @required this.quantity,
+      @required this.title,
+      @required this.description,
+      @required @JsonKey(name: 'avg_rating', defaultValue: '0') this.avgRating,
+      @required @JsonKey(name: 'old_price') this.oldPrice,
+      @required this.price,
+      @required @JsonKey(name: 'discount_name') this.discountName,
+      @required @JsonKey(name: 'is_veg') this.isVeg,
+      @required this.time,
+      @required @JsonKey(name: 'short_description') this.shortDescription,
+      @required @JsonKey(name: 'quantity_info') this.quantityInfo,
+      @required this.url,
+      @required this.image})
+      : assert(id != null),
+        assert(quantity != null),
+        assert(title != null),
+        assert(description != null),
+        assert(avgRating != null),
+        assert(oldPrice != null),
+        assert(price != null),
+        assert(discountName != null),
+        assert(isVeg != null),
+        assert(time != null),
+        assert(shortDescription != null),
+        assert(quantityInfo != null),
+        assert(url != null),
+        assert(image != null);
 
   factory _$_Product.fromJson(Map<String, dynamic> json) =>
       _$_$_ProductFromJson(json);
@@ -206,7 +301,7 @@ class _$_Product implements _Product {
   final String description;
   @override
   @JsonKey(name: 'avg_rating', defaultValue: '0')
-  final String avgRating;
+  final dynamic avgRating;
   @override
   @JsonKey(name: 'old_price')
   final String oldPrice;
@@ -216,11 +311,24 @@ class _$_Product implements _Product {
   @JsonKey(name: 'discount_name')
   final String discountName;
   @override
+  @JsonKey(name: 'is_veg')
+  final String isVeg;
+  @override
+  final String time;
+  @override
+  @JsonKey(name: 'short_description')
+  final String shortDescription;
+  @override
+  @JsonKey(name: 'quantity_info')
+  final String quantityInfo;
+  @override
+  final String url;
+  @override
   final String image;
 
   @override
   String toString() {
-    return 'Product(id: $id, quantity: $quantity, title: $title, description: $description, avgRating: $avgRating, oldPrice: $oldPrice, price: $price, discountName: $discountName, image: $image)';
+    return 'Product(id: $id, quantity: $quantity, title: $title, description: $description, avgRating: $avgRating, oldPrice: $oldPrice, price: $price, discountName: $discountName, isVeg: $isVeg, time: $time, shortDescription: $shortDescription, quantityInfo: $quantityInfo, url: $url, image: $image)';
   }
 
   @override
@@ -248,6 +356,18 @@ class _$_Product implements _Product {
             (identical(other.discountName, discountName) ||
                 const DeepCollectionEquality()
                     .equals(other.discountName, discountName)) &&
+            (identical(other.isVeg, isVeg) ||
+                const DeepCollectionEquality().equals(other.isVeg, isVeg)) &&
+            (identical(other.time, time) ||
+                const DeepCollectionEquality().equals(other.time, time)) &&
+            (identical(other.shortDescription, shortDescription) ||
+                const DeepCollectionEquality()
+                    .equals(other.shortDescription, shortDescription)) &&
+            (identical(other.quantityInfo, quantityInfo) ||
+                const DeepCollectionEquality()
+                    .equals(other.quantityInfo, quantityInfo)) &&
+            (identical(other.url, url) ||
+                const DeepCollectionEquality().equals(other.url, url)) &&
             (identical(other.image, image) ||
                 const DeepCollectionEquality().equals(other.image, image)));
   }
@@ -263,6 +383,11 @@ class _$_Product implements _Product {
       const DeepCollectionEquality().hash(oldPrice) ^
       const DeepCollectionEquality().hash(price) ^
       const DeepCollectionEquality().hash(discountName) ^
+      const DeepCollectionEquality().hash(isVeg) ^
+      const DeepCollectionEquality().hash(time) ^
+      const DeepCollectionEquality().hash(shortDescription) ^
+      const DeepCollectionEquality().hash(quantityInfo) ^
+      const DeepCollectionEquality().hash(url) ^
       const DeepCollectionEquality().hash(image);
 
   @JsonKey(ignore: true)
@@ -278,15 +403,40 @@ class _$_Product implements _Product {
 
 abstract class _Product implements Product {
   const factory _Product(
-      {String id,
-      String quantity,
-      String title,
-      String description,
-      @JsonKey(name: 'avg_rating', defaultValue: '0') String avgRating,
-      @JsonKey(name: 'old_price') String oldPrice,
-      String price,
-      @JsonKey(name: 'discount_name') String discountName,
-      String image}) = _$_Product;
+      {@required
+          String id,
+      @required
+          String quantity,
+      @required
+          String title,
+      @required
+          String description,
+      @required
+      @JsonKey(name: 'avg_rating', defaultValue: '0')
+          dynamic avgRating,
+      @required
+      @JsonKey(name: 'old_price')
+          String oldPrice,
+      @required
+          String price,
+      @required
+      @JsonKey(name: 'discount_name')
+          String discountName,
+      @required
+      @JsonKey(name: 'is_veg')
+          String isVeg,
+      @required
+          String time,
+      @required
+      @JsonKey(name: 'short_description')
+          String shortDescription,
+      @required
+      @JsonKey(name: 'quantity_info')
+          String quantityInfo,
+      @required
+          String url,
+      @required
+          String image}) = _$_Product;
 
   factory _Product.fromJson(Map<String, dynamic> json) = _$_Product.fromJson;
 
@@ -300,7 +450,7 @@ abstract class _Product implements Product {
   String get description;
   @override
   @JsonKey(name: 'avg_rating', defaultValue: '0')
-  String get avgRating;
+  dynamic get avgRating;
   @override
   @JsonKey(name: 'old_price')
   String get oldPrice;
@@ -309,6 +459,19 @@ abstract class _Product implements Product {
   @override
   @JsonKey(name: 'discount_name')
   String get discountName;
+  @override
+  @JsonKey(name: 'is_veg')
+  String get isVeg;
+  @override
+  String get time;
+  @override
+  @JsonKey(name: 'short_description')
+  String get shortDescription;
+  @override
+  @JsonKey(name: 'quantity_info')
+  String get quantityInfo;
+  @override
+  String get url;
   @override
   String get image;
   @override

@@ -1,11 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:shoppingApp/domain/dashboard/dashboard.dart';
+import 'package:shoppingApp/domain/product/product.dart';
 import '../../core/app_router.gr.dart';
 import 'product_grid_item.dart';
 
 class TopProduct extends StatelessWidget {
-  final List<FeaturedProductElement> topProducts;
+  final List<Product> topProducts;
 
   const TopProduct({Key key, this.topProducts}) : super(key: key);
   @override
@@ -40,8 +41,7 @@ class TopProduct extends StatelessWidget {
             crossAxisCount: 2,
             children: topProducts
                 .map(
-                  (featuredProductElement) => FeaturedProductGridItem(
-                      featuredProductElement: featuredProductElement),
+                  (product) => ProductGridItem(product: product),
                 )
                 .toList(),
           ),
