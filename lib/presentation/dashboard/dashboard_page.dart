@@ -23,7 +23,7 @@ class DashboardPage extends StatelessWidget {
           child: BlocBuilder<DashboardBloc, DashboardState>(
             builder: (context, state) {
               return state.map(
-                loading: (_) => CircularProgressIndicator(),
+                loading: (_) => Center(child: CircularProgressIndicator()),
                 failure: (_) => Text('error occured'),
                 loaded: (s) => Column(
                   mainAxisAlignment: MainAxisAlignment.start,
