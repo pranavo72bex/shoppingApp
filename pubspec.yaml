@@ -25,6 +25,7 @@ dependencies:
     sdk: flutter
   another_flushbar: ^1.10.10
   auto_route: ^0.6.9
+  cached_network_image: ^2.5.0
   carousel_slider: ^3.0.0
   cupertino_icons: ^1.0.0
   dio: ^3.0.10
@@ -36,8 +37,8 @@ dependencies:
   get_it: ^5.0.6
   google_fonts: ^1.1.2
   injectable: ^1.0.7
-  json_annotation: ^3.1.1
   introduction_screen: ^1.0.9
+  json_annotation: ^3.1.1
   shared_preferences: ^0.5.12+4
   shimmer: ^1.1.2
 
@@ -46,20 +47,20 @@ dev_dependencies:
     sdk: flutter
   auto_route_generator: ^0.6.10
   build_runner: ^1.11.0
+  flutter_launcher_icons: ^0.8.0
+  flutter_native_splash: ^0.3.0
   freezed: ^0.12.7
   injectable_generator: ^1.0.7
   json_serializable: ^3.5.1
-  flutter_launcher_icons: ^0.8.0
-  flutter_native_splash: ^0.3.0
 flutter_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "assets/icon.jpg"  
+  image_path: "assets/icon.jpg"
 flutter_native_splash:
   color: "#ffffff"
   image: "assets/app_icon.jpg"
   android: true
-  ios: true  
+  ios: true
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

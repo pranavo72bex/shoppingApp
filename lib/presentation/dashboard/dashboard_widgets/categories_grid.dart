@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:shoppingApp/domain/dashboard/dashboard.dart';
 
@@ -24,40 +25,15 @@ class CategoriesGrid extends StatelessWidget {
         ),
         Container(
           height: 155,
-          child: ListView(
+          child: ListView.builder(
+            itemCount: 3,
             scrollDirection: Axis.horizontal,
-            children: [
-              CategoryGridItem(
-                text1: 'fresh',
-                text2: 'vegetables',
-                assetLocation: 'assets/category/veg.jpg',
-                color: Colors.lightGreen,
-              ),
-              CategoryGridItem(
-                text1: 'fresh',
-                text2: 'fruits',
-                assetLocation: 'assets/category/fruit.jpg',
-                color: Colors.red[400],
-              ),
-              CategoryGridItem(
-                text1: 'delicious',
-                text2: 'bakery',
-                assetLocation: 'assets/category/bakery.jpg',
-                color: Colors.orangeAccent,
-              ),
-              CategoryGridItem(
-                text1: 'fresh',
-                text2: 'dairy',
-                assetLocation: 'assets/category/dairy.jpg',
-                color: Colors.orangeAccent,
-              ),
-              CategoryGridItem(
-                text1: 'tasty',
-                text2: 'prepared',
-                assetLocation: 'assets/category/prepared.jpg',
-                color: Colors.yellow[800],
-              ),
-            ],
+            itemBuilder: (BuildContext context, int index) => CategoryGridItem(
+              text1: shopByCategory[index].name,
+              text2: 'vegetables',
+              imageUrl: shopByCategory[index].image,
+              color: Colors.lightGreen,
+            ),
           ),
         )
       ],
@@ -68,14 +44,14 @@ class CategoriesGrid extends StatelessWidget {
 class CategoryGridItem extends StatelessWidget {
   final String text1;
   final String text2;
-  final String assetLocation;
+  final String imageUrl;
   // final IconData iconData;
   final Color color;
   const CategoryGridItem({
     Key key,
     @required this.text1,
     @required this.text2,
-    @required this.assetLocation,
+    @required this.imageUrl,
     // @required this.iconData,
     @required this.color,
   }) : super(key: key);
@@ -99,8 +75,8 @@ class CategoryGridItem extends StatelessWidget {
             child: Stack(
               alignment: AlignmentDirectional.bottomCenter,
               children: [
-                Image.asset(
-                  assetLocation,
+                CachedNetworkImage(
+                  imageUrl: imageUrl,
                   height: 70,
                   width: double.infinity,
                   fit: BoxFit.cover,

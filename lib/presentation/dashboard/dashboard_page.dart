@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shoppingApp/application/dashboard/dashboard_bloc.dart';
 import 'package:shoppingApp/presentation/dashboard/widgets/sale_product.dart';
 import 'package:shoppingApp/presentation/dashboard/widgets/top_product.dart';
-import 'widgets/categories_grid.dart';
+import 'dashboard_widgets/categories_grid.dart';
 import 'widgets/homepage_slider.dart';
 import 'widgets/popular_deals_grid.dart';
 import 'widgets/search_bar.dart';
