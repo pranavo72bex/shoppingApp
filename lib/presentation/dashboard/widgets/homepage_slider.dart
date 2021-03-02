@@ -13,43 +13,7 @@ class HomepageSlider extends StatefulWidget {
 
 class _HomepageSliderState extends State<HomepageSlider> {
   int _current = 0;
-  // Widget sliderImage(int index) {
-  //   return Image.asset('assets/slider/slider1.jpg');
-  // }
-
-  // final sliderImageList = [
-  //   Image.asset(
-  //     'assets/slider/slider0.jpg',
-  //     fit: BoxFit.cover,
-  //     height: 400,
-  //     width: double.infinity,
-  //   ),
-  //   Image.asset(
-  //     'assets/slider/slider1.jpg',
-  //     fit: BoxFit.cover,
-  //     height: 400,
-  //     width: double.infinity,
-  //   ),
-  //   Image.asset(
-  //     'assets/slider/slider2.jpg',
-  //     fit: BoxFit.cover,
-  //     height: 400,
-  //     width: double.infinity,
-  //   ),
-  //   Image.asset(
-  //     'assets/slider/slider3.jpg',
-  //     fit: BoxFit.cover,
-  //     height: 400,
-  //     width: double.infinity,
-  //   ),
-  //   Image.asset(
-  //     'assets/slider/slider4.jpg',
-  //     fit: BoxFit.cover,
-  //     height: 400,
-  //     width: double.infinity,
-  //   ),
-  // ];
-
+  CarouselController buttonCarouselController = CarouselController();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -57,9 +21,9 @@ class _HomepageSliderState extends State<HomepageSlider> {
         alignment: Alignment.bottomLeft,
         children: [
           CarouselSlider.builder(
-            // items: sliderImageList,
+            carouselController: buttonCarouselController,
             options: CarouselOptions(
-                // height: 500,
+                autoPlay: true,
                 viewportFraction: 1,
                 onPageChanged: (index, reason) {
                   setState(() {
@@ -73,13 +37,11 @@ class _HomepageSliderState extends State<HomepageSlider> {
               height: 400,
               width: double.infinity,
             ),
-
             itemCount: widget.slider.length,
           ),
           Positioned(
             left: 8,
             child: Row(
-              // mainAxisAlignment: MainAxisAlignment.center,
               children: widget.slider.map((image) {
                 int index = widget.slider.indexOf(image);
                 return Container(

@@ -4,10 +4,10 @@ import 'package:shoppingApp/domain/dashboard/dashboard.dart';
 import '../../core/app_router.gr.dart';
 import 'product_grid_item.dart';
 
-class TopProduct extends StatelessWidget {
-  final List<FeaturedProductElement> topProducts;
+class SaleProduct extends StatelessWidget {
+  final List<FeaturedProductElement> saleProducts;
 
-  const TopProduct({Key key, this.topProducts}) : super(key: key);
+  const SaleProduct({Key key, this.saleProducts}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -16,7 +16,7 @@ class TopProduct extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              'Top Product'.toUpperCase(),
+              'Sale Product'.toUpperCase(),
               style: Theme.of(context).textTheme.headline6,
             ),
             IconButton(
@@ -24,7 +24,7 @@ class TopProduct extends StatelessWidget {
                 onPressed: () {
                   ExtendedNavigator.of(context).push(Routes.categoryItemsList,
                       arguments: CategoryItemsListArguments(
-                          categoryName: 'Top Product'.toUpperCase()));
+                          categoryName: 'Sale Product'.toUpperCase()));
                 })
           ],
         ),
@@ -38,7 +38,7 @@ class TopProduct extends StatelessWidget {
             // scrollDirection: Axis.horizontal,
             shrinkWrap: true,
             crossAxisCount: 2,
-            children: topProducts
+            children: saleProducts
                 .map(
                   (featuredProductElement) => FeaturedProductGridItem(
                       featuredProductElement: featuredProductElement),
