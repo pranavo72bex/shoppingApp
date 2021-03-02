@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:shoppingApp/domain/dashboard/dashboard.dart';
+import 'package:shoppingApp/presentation/core/konstants.dart';
 
 import '../../core/app_router.gr.dart';
 
@@ -57,8 +58,11 @@ class CategoryGridItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(8),
-      // height: 150,
-      width: 100,
+      width: 120,
+      decoration: BoxDecoration(
+        boxShadow: kShadow,
+        borderRadius: BorderRadius.circular(10),
+      ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10),
         child: InkWell(
@@ -67,28 +71,26 @@ class CategoryGridItem extends StatelessWidget {
               arguments:
                   CategoryItemsListArguments(categoryName: text.toUpperCase())),
           child: Container(
-            color: color.withOpacity(0.2),
             width: 100,
             child: Stack(
               alignment: AlignmentDirectional.bottomCenter,
               children: [
                 CachedNetworkImage(
                   imageUrl: imageUrl,
-                  height: 70,
                   width: double.infinity,
+                  height: double.infinity,
                   fit: BoxFit.cover,
                 ),
                 Positioned(
-                  top: 0,
-                  child: Container(
-                    padding: EdgeInsets.all(10),
-                    child: Text(
-                      text.toUpperCase(),
-                      softWrap: true,
-                      style: TextStyle(
-                        color: color,
-                        fontWeight: FontWeight.w900,
-                      ),
+                  top: 5,
+                  left: 5,
+                  right: 5,
+                  child: Text(
+                    text.toUpperCase(),
+                    softWrap: true,
+                    style: TextStyle(
+                      color: color,
+                      fontWeight: FontWeight.w900,
                     ),
                   ),
                 ),
