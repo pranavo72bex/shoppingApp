@@ -1,10 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:shoppingApp/domain/dashboard/dashboard.dart';
 
 import '../../core/app_router.gr.dart';
 
 class CategoriesGrid extends StatelessWidget {
+  final List<Category> shopByCategory;
+
+  const CategoriesGrid({Key key, this.shopByCategory}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -28,35 +31,30 @@ class CategoriesGrid extends StatelessWidget {
                 text1: 'fresh',
                 text2: 'vegetables',
                 assetLocation: 'assets/category/veg.jpg',
-                iconData: FontAwesomeIcons.carrot,
                 color: Colors.lightGreen,
               ),
               CategoryGridItem(
                 text1: 'fresh',
                 text2: 'fruits',
                 assetLocation: 'assets/category/fruit.jpg',
-                iconData: FontAwesomeIcons.appleAlt,
                 color: Colors.red[400],
               ),
               CategoryGridItem(
                 text1: 'delicious',
                 text2: 'bakery',
                 assetLocation: 'assets/category/bakery.jpg',
-                iconData: FontAwesomeIcons.breadSlice,
                 color: Colors.orangeAccent,
               ),
               CategoryGridItem(
                 text1: 'fresh',
                 text2: 'dairy',
                 assetLocation: 'assets/category/dairy.jpg',
-                iconData: FontAwesomeIcons.cheese,
                 color: Colors.orangeAccent,
               ),
               CategoryGridItem(
                 text1: 'tasty',
                 text2: 'prepared',
                 assetLocation: 'assets/category/prepared.jpg',
-                iconData: FontAwesomeIcons.pizzaSlice,
                 color: Colors.yellow[800],
               ),
             ],
@@ -71,15 +69,14 @@ class CategoryGridItem extends StatelessWidget {
   final String text1;
   final String text2;
   final String assetLocation;
-  final IconData iconData;
+  // final IconData iconData;
   final Color color;
-
   const CategoryGridItem({
     Key key,
     @required this.text1,
     @required this.text2,
     @required this.assetLocation,
-    @required this.iconData,
+    // @required this.iconData,
     @required this.color,
   }) : super(key: key);
 
@@ -116,7 +113,7 @@ class CategoryGridItem extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          text1.toUpperCase(),
+                          "FRESH",
                           style: TextStyle(
                             color: color,
                             fontSize: 12,
@@ -133,22 +130,22 @@ class CategoryGridItem extends StatelessWidget {
                     ),
                   ),
                 ),
-                Positioned(
-                  bottom: 40,
-                  child: Container(
-                    alignment: AlignmentDirectional.center,
-                    width: 50,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      color: color,
-                      shape: BoxShape.circle,
-                    ),
-                    child: FaIcon(
-                      iconData,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
+                // Positioned(
+                //   bottom: 40,
+                //   child: Container(
+                //     alignment: AlignmentDirectional.center,
+                //     width: 50,
+                //     height: 50,
+                //     decoration: BoxDecoration(
+                //       color: color,
+                //       shape: BoxShape.circle,
+                //     ),
+                //     child: FaIcon(
+                //       iconData,
+                //       color: Colors.white,
+                //     ),
+                //   ),
+                // ),
               ],
             ),
           ),
