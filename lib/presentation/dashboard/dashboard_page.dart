@@ -29,7 +29,9 @@ class DashboardPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     HomepageSlider(slider: s.dashboard.slider),
-                    CategoriesGrid(),
+                    CategoriesGrid(
+                      shopByCategory: s.dashboard.shopByCategory,
+                    ),
                     PopularDealsGrid(
                       featureProducts: s.dashboard.featuredProducts,
                     ),
