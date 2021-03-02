@@ -7,9 +7,9 @@ import '../../core/app_router.gr.dart';
 import 'product_grid_item.dart';
 
 class PopularDealsGrid extends StatelessWidget {
-  final List<FeaturedProductElement> topProducts;
+  final List<FeaturedProductElement> featureProducts;
 
-  const PopularDealsGrid({Key key, @required this.topProducts})
+  const PopularDealsGrid({Key key, @required this.featureProducts})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -41,7 +41,7 @@ class PopularDealsGrid extends StatelessWidget {
             // scrollDirection: Axis.horizontal,
             shrinkWrap: true,
             crossAxisCount: 2,
-            children: topProducts
+            children: featureProducts
                 .map(
                   (featuredProductElement) => FeaturedProductGridItem(
                       featuredProductElement: featuredProductElement),
