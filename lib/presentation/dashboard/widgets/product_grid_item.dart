@@ -67,7 +67,7 @@ class _ProductItemState extends State<ProductGridItem> {
                         color: kSecondaryColor,
                       ),
                       child: Text(
-                        '80%',
+                        widget.product.discountName + "%",
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 14,
@@ -104,7 +104,7 @@ class _ProductItemState extends State<ProductGridItem> {
               overflow: TextOverflow.ellipsis,
             ),
             Text(
-              widget.product.quantity.toString() + ' Kg',
+              widget.product.quantity.toString() + widget.product.quantityInfo,
               style: Theme.of(context).textTheme.caption,
             ),
             Padding(
@@ -124,9 +124,11 @@ class _ProductItemState extends State<ProductGridItem> {
                     ),
                   ),
                   Image.asset(
-                    'assets/veg60.png',
-                    color: Colors.green,
+                    widget.product.isVeg == "0"
+                        ? 'assets/veg.png'
+                        : 'assets/nonveg.jpg',
                     width: 20,
+                    height: 20,
                   ),
                 ],
               ),
@@ -145,7 +147,7 @@ class _ProductItemState extends State<ProductGridItem> {
                     ),
                   ),
                   Text(
-                    '₹ ' + widget.product.price.toString(),
+                    '₹ ' + widget.product.oldPrice.toString(),
                     style: TextStyle(
                       color: Colors.green,
                       fontWeight: FontWeight.bold,

@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
-import 'package:shoppingApp/domain/dashboard/dashboard.dart';
 import 'package:shoppingApp/domain/product/product.dart';
 
 import '../../core/app_router.gr.dart';
