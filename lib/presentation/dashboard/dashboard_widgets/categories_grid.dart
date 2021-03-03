@@ -56,8 +56,9 @@ class CategoryGridItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(8),
-      padding: EdgeInsets.all(5),
+      // padding: EdgeInsets.all(5),
       decoration: BoxDecoration(
+        color: Colors.white,
         boxShadow: kShadow,
         borderRadius: BorderRadius.circular(12),
       ),
@@ -74,8 +75,8 @@ class CategoryGridItem extends StatelessWidget {
               children: [
                 CachedNetworkImage(
                   imageUrl: imageUrl,
-                  height: 130,
-                  width: 130,
+                  height: double.infinity,
+                  width: 150,
                   fit: BoxFit.cover,
                 ),
                 Positioned(

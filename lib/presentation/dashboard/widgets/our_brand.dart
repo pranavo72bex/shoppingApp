@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:shoppingApp/domain/dashboard/dashboard.dart';
 import 'package:shoppingApp/presentation/core/konstants.dart';
@@ -18,11 +19,7 @@ class OurBrand extends StatefulWidget {
 class _OurBrandState extends State<OurBrand> {
   @override
   Widget build(BuildContext context) {
-    ScrollController _scrollController = ScrollController();
-    @override
-    void initState() {
-      super.initState();
-    }
+    // ScrollController _scrollController = ScrollController();
 
     return Column(
       children: [
@@ -36,30 +33,47 @@ class _OurBrandState extends State<OurBrand> {
             IconButton(icon: Icon(Icons.arrow_forward), onPressed: () {})
           ],
         ),
-        Container(
-          height: 155,
-          child: ListView.builder(
-            itemCount: widget.brands.length,
-            controller: _scrollController,
-            reverse: true,
-            shrinkWrap: true,
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (BuildContext context, int index) => CategoryGridItem(
-                imageUrl: widget.brands[index].image,
-                color: Colors.lightGreen,
-                id: widget.brands[index].id),
+        // Container(
+        //   height: 155,
+        //   child: ListView.builder(
+        //     itemCount: widget.brands.length,
+        //     controller: _scrollController,
+        //     reverse: true,
+        //     shrinkWrap: true,
+        //     scrollDirection: Axis.horizontal,
+        //   itemBuilder: (BuildContext context, int index) => BrandGridItem(
+        //       imageUrl: widget.brands[index].image,
+        //       color: Colors.lightGreen,
+        //       id: widget.brands[index].id),
+        // ),
+        // ),
+        CarouselSlider.builder(
+          itemCount: widget.brands.length,
+          itemBuilder: (BuildContext context, int index, _) => BrandGridItem(
+              imageUrl: widget.brands[index].image,
+              color: Colors.lightGreen,
+              id: widget.brands[index].id),
+          options: CarouselOptions(
+            autoPlayInterval: const Duration(seconds: 2),
+            // pageSnapping: false,
+            disableCenter: true,
+            enlargeCenterPage: true,
+            autoPlay: true,
+            viewportFraction: 0.5,
+            height: 150,
+            // aspectRatio: 1,
           ),
-        )
+        ),
       ],
     );
   }
 }
 
-class CategoryGridItem extends StatelessWidget {
+class BrandGridItem extends StatelessWidget {
   final String imageUrl;
   final Color color;
   final String id;
-  const CategoryGridItem({
+  const BrandGridItem({
     Key key,
     @required this.imageUrl,
     @required this.color,
@@ -75,10 +89,11 @@ class CategoryGridItem extends StatelessWidget {
             arguments: CategoryItemsListArguments(categoryName: id)),
         child: Container(
           margin: EdgeInsets.all(5),
-          padding: EdgeInsets.all(5),
+          // padding: EdgeInsets.all(5),
           width: 150,
           height: 100,
           decoration: BoxDecoration(
+            color: Colors.white,
             boxShadow: kShadow,
             borderRadius: BorderRadius.circular(12),
           ),
@@ -90,7 +105,7 @@ class CategoryGridItem extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12),
                   image: DecorationImage(
                     image: imageProvider,
-                    fit: BoxFit.fill,
+                    fit: BoxFit.scaleDown,
                   ),
                 ),
               ),
