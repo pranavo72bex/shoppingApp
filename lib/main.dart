@@ -9,7 +9,7 @@ int initScreen;
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences preferences = await SharedPreferences.getInstance();
-  initScreen = await preferences.getInt("initScreen");
+  initScreen = preferences.getInt("initScreen");
   await preferences.setInt("initScreen", 1);
   print(initScreen);
   LicenseRegistry.addLicense(() async* {

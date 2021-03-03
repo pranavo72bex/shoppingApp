@@ -44,13 +44,11 @@ class CategoriesGrid extends StatelessWidget {
 class CategoryGridItem extends StatelessWidget {
   final String text;
   final String imageUrl;
-  // final IconData iconData;
   final Color color;
   const CategoryGridItem({
     Key key,
     @required this.text,
     @required this.imageUrl,
-    // @required this.iconData,
     @required this.color,
   }) : super(key: key);
 
@@ -58,27 +56,26 @@ class CategoryGridItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(8),
-      width: 120,
+      padding: EdgeInsets.all(5),
       decoration: BoxDecoration(
         boxShadow: kShadow,
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(14),
       ),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(14),
         child: InkWell(
           onTap: () => ExtendedNavigator.of(context).push(
               Routes.categoryItemsList,
               arguments:
                   CategoryItemsListArguments(categoryName: text.toUpperCase())),
           child: Container(
-            width: 100,
             child: Stack(
               alignment: AlignmentDirectional.bottomCenter,
               children: [
                 CachedNetworkImage(
                   imageUrl: imageUrl,
-                  width: double.infinity,
-                  height: double.infinity,
+                  height: 130,
+                  width: 130,
                   fit: BoxFit.cover,
                 ),
                 Positioned(
@@ -87,29 +84,12 @@ class CategoryGridItem extends StatelessWidget {
                   right: 5,
                   child: Text(
                     text.toUpperCase(),
-                    softWrap: true,
                     style: TextStyle(
                       color: color,
                       fontWeight: FontWeight.w900,
                     ),
                   ),
                 ),
-                // Positioned(
-                //   bottom: 40,
-                //   child: Container(
-                //     alignment: AlignmentDirectional.center,
-                //     width: 50,
-                //     height: 50,
-                //     decoration: BoxDecoration(
-                //       color: color,
-                //       shape: BoxShape.circle,
-                //     ),
-                //     child: FaIcon(
-                //       iconData,
-                //       color: Colors.white,
-                //     ),
-                //   ),
-                // ),
               ],
             ),
           ),
