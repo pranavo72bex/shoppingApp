@@ -59,10 +59,10 @@ class CategoryGridItem extends StatelessWidget {
       padding: EdgeInsets.all(5),
       decoration: BoxDecoration(
         boxShadow: kShadow,
-        borderRadius: BorderRadius.circular(14),
+        borderRadius: BorderRadius.circular(12),
       ),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(14),
+        borderRadius: BorderRadius.circular(12),
         child: InkWell(
           onTap: () => ExtendedNavigator.of(context).push(
               Routes.categoryItemsList,
