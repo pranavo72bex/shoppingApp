@@ -17,38 +17,25 @@ class ProductTitleWithImage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text(
-            "Aristocratic Hand Bag",
-            style: TextStyle(color: Colors.white),
-          ),
-          Text(
-            product.title,
-            style: Theme.of(context)
-                .textTheme
-                .headline4
-                .copyWith(color: Colors.white, fontWeight: FontWeight.bold),
-          ),
-          SizedBox(height: 16),
           Row(
             children: <Widget>[
-              RichText(
-                text: TextSpan(
-                  children: [
-                    TextSpan(text: "Price\n"),
-                    TextSpan(
-                      text: "\$${product.price}",
-                      style: Theme.of(context).textTheme.headline4.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
-                    ),
-                  ],
+              Expanded(
+                child: Text(
+                  product.title + " " + "(${product.quantityInfo})",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18),
                 ),
               ),
-              SizedBox(width: 16),
-              Expanded(
+              ClipRRect(
+                borderRadius: BorderRadius.circular(12.0),
                 child: Hero(
                   tag: "${product.id}",
                   child: Image.network(
                     product.image,
+                    height: 250,
+                    width: 190,
                     fit: BoxFit.fill,
                   ),
                 ),
