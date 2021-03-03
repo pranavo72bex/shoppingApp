@@ -124,9 +124,9 @@ class _ProductItemState extends State<ProductGridItem> {
                     ),
                   ),
                   Image.asset(
-                    widget.product.isVeg == "0"
-                        ? 'assets/veg.png'
-                        : 'assets/nonveg.jpg',
+                    'assets/veg60.png',
+                    color:
+                        widget.product.isVeg == "0" ? Colors.green : Colors.red,
                     width: 20,
                     height: 20,
                   ),
