@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shoppingApp/application/dashboard/dashboard_bloc.dart';
+import 'package:shoppingApp/presentation/dashboard/widgets/our_brand.dart';
 import 'package:shoppingApp/presentation/dashboard/widgets/sale_product.dart';
 import 'package:shoppingApp/presentation/dashboard/widgets/top_product.dart';
 import 'dashboard_widgets/categories_grid.dart';
@@ -48,7 +49,7 @@ class DashboardPage extends StatelessWidget {
                     ),
 
                     // RecentProduct(),
-                    // OurBrand(),
+                    OurBrand(brands: s.dashboard.brands),
                   ],
                 ),
               );
