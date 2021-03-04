@@ -3,11 +3,11 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shoppingApp/presentation/core/konstants.dart';
 import 'package:shoppingApp/presentation/detail_screen/widgets/isveg.dart';
 import 'package:shoppingApp/presentation/detail_screen/widgets/price_product.dart';
+import 'package:shoppingApp/presentation/detail_screen/widgets/product_image.dart';
+import 'package:shoppingApp/presentation/detail_screen/widgets/product_title.dart';
 import '../../domain/product/product.dart';
-import 'widgets/add_to_cart.dart';
 import 'widgets/counter_with_fav_button.dart';
 import 'widgets/description.dart';
-import 'widgets/product_title_image.dart';
 
 class DetailsScreen extends StatelessWidget {
   final Product product;
@@ -26,10 +26,11 @@ class DetailsScreen extends StatelessWidget {
               height: size.height,
               child: Stack(
                 children: <Widget>[
+                  ProductImage(product: product),
                   Container(
-                    margin: EdgeInsets.only(top: size.height * 0.3),
+                    margin: EdgeInsets.only(top: size.height * 0.34),
                     padding: EdgeInsets.only(
-                      top: size.height * 0.12,
+                      top: size.height * 0.02,
                       left: 16,
                       right: 16,
                     ),
@@ -44,6 +45,7 @@ class DetailsScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
+                        ProductTitle(product: product),
                         Isveg(product: product),
                         ProductPrice(product: product),
                         CounterWithFavBtn(),
@@ -52,7 +54,6 @@ class DetailsScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  ProductTitleWithImage(product: product)
                 ],
               ),
             )
