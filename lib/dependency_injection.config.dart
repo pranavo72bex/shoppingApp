@@ -9,12 +9,13 @@ import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
 import 'application/auth/auth_bloc.dart' as _i11;
+import 'application/category/category_bloc.dart' as _i12;
 import 'application/dashboard/dashboard_bloc.dart' as _i3;
 import 'domain/auth/i_auth_repo.dart' as _i4;
 import 'domain/product/i_product_repo.dart' as _i7;
 import 'domain/user/i_user_repo.dart' as _i9;
 import 'infrastructure/auth/auth_repo.dart' as _i5;
-import 'infrastructure/core/injectable_module.dart' as _i12;
+import 'infrastructure/core/injectable_module.dart' as _i13;
 import 'infrastructure/product/product_repo.dart' as _i8;
 import 'infrastructure/user/user_repo.dart'
     as _i10; // ignore_for_file: unnecessary_lambdas
@@ -31,8 +32,10 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i9.IUserRepo>(() => _i10.UserRepo());
   gh.factory<_i11.AuthBloc>(() => _i11.AuthBloc(
       authRepo: get<_i4.IAuthRepo>(), userRepo: get<_i9.IUserRepo>()));
+  gh.factory<_i12.CategoryBloc>(
+      () => _i12.CategoryBloc(get<_i7.IProductRepo>()));
   gh.singleton<_i6.Dio>(registerModule.dio);
   return get;
 }
 
-class _$RegisterModule extends _i12.RegisterModule {}
+class _$RegisterModule extends _i13.RegisterModule {}

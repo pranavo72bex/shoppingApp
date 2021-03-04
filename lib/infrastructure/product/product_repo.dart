@@ -4,6 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shoppingApp/domain/dashboard/dashboard.dart';
 import 'package:shoppingApp/domain/product/i_product_repo.dart';
+import 'package:shoppingApp/domain/product/product.dart';
 
 @LazySingleton(as: IProductRepo)
 class ProductRepo implements IProductRepo {
@@ -35,6 +36,26 @@ class ProductRepo implements IProductRepo {
       //     .cast<Map<String, dynamic>>()
       //     .map((e) => Product.fromJson(e))
       //     .toList();
+    } else {
+      throw Exception();
+    }
+  }
+
+  @override
+  Future<List<Product>> getTopProducts() async {
+    final res = await _dio.get('getTopProducts');
+    if (res.statusCode == 200) {
+      // print(res.data['responsedata']);
+      final decodedData = jsonDecode(res.data);
+      // ignore: todo
+      //TODO when not using freezed data class usind jsonDecode cause exception
+      // need to find when should use jsonDecode() and when not to use
+      // print(decodedData);
+      // return Dashboard.fromJson(decodedData);
+      return (decodedData['responsedata'] as List)
+          .cast<Map<String, dynamic>>()
+          .map((e) => Product.fromJson(e))
+          .toList();
     } else {
       throw Exception();
     }

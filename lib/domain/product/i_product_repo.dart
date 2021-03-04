@@ -3,4 +3,6 @@ import 'package:shoppingApp/domain/product/product.dart';
 
 abstract class IProductRepo {
   Future<Dashboard> getDashboardData();
+
+  Future<List<Product>> getTopProducts();
 }
