@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shoppingApp/presentation/core/konstants.dart';
 import 'package:shoppingApp/presentation/detail_screen/widgets/add_to_cart.dart';
 import 'package:shoppingApp/presentation/detail_screen/widgets/price_product.dart';
