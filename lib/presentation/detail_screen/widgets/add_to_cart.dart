@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:shoppingApp/presentation/core/konstants.dart';
 
 import '../../../domain/product/product.dart';
 
@@ -22,15 +23,11 @@ class AddToCart extends StatelessWidget {
             height: 50,
             width: 58,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(18),
-              // border: Border.all(
-              //     color: product.color,
-              //     ),
-            ),
+                borderRadius: BorderRadius.circular(18), color: Colors.green),
             child: IconButton(
               icon: FaIcon(
                 FontAwesomeIcons.cartPlus,
-                // color: product.color,
+                color: Colors.white,
               ),
               onPressed: () {},
             ),
@@ -38,10 +35,11 @@ class AddToCart extends StatelessWidget {
           Expanded(
             child: SizedBox(
               height: 50,
-              child: FlatButton(
+              // ignore: deprecated_member_use
+              child: RaisedButton(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(18)),
-                // color: product.color,
+                color: kSecondaryColor,
                 onPressed: () {},
                 child: Text(
                   "Buy  Now".toUpperCase(),

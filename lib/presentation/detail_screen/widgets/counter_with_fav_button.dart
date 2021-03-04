@@ -25,7 +25,7 @@ class _CounterWithFavBtnState extends State<CounterWithFavBtn> {
       children: <Widget>[
         CartCounter(),
         Container(
-          padding: EdgeInsets.all(8),
+          padding: EdgeInsets.all(5),
           decoration: BoxDecoration(
               color: Colors.white, shape: BoxShape.circle, boxShadow: kShadow),
           child: IconButton(

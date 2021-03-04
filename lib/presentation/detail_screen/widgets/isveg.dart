@@ -15,8 +15,8 @@ class Isveg extends StatelessWidget {
     return Image.asset(
       'assets/veg60.png',
       color: product.isVeg == "0" ? Colors.green : Colors.red,
-      width: 35,
-      height: 35,
+      width: 30,
+      height: 30,
     );
   }
 }

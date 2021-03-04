@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shoppingApp/presentation/core/konstants.dart';
-import 'package:shoppingApp/presentation/detail_screen/widgets/isveg.dart';
+import 'package:shoppingApp/presentation/detail_screen/widgets/add_to_cart.dart';
 import 'package:shoppingApp/presentation/detail_screen/widgets/price_product.dart';
 import 'package:shoppingApp/presentation/detail_screen/widgets/product_image.dart';
 import 'package:shoppingApp/presentation/detail_screen/widgets/product_title.dart';
@@ -51,6 +51,7 @@ class DetailsScreen extends StatelessWidget {
                         CounterWithFavBtn(),
                         SizedBox(height: 16 / 2),
                         Description(product: product),
+                        AddToCart(product: product)
                       ],
                     ),
                   ),
@@ -74,16 +75,6 @@ class DetailsScreen extends StatelessWidget {
         ),
         onPressed: () => Navigator.pop(context),
       ),
-      actions: <Widget>[
-        IconButton(
-          color: Colors.white,
-          icon: FaIcon(
-            FontAwesomeIcons.cartPlus,
-          ),
-          onPressed: () {},
-        ),
-        SizedBox(width: 16 / 2)
-      ],
     );
   }
 }
