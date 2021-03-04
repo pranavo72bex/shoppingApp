@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shoppingApp/presentation/detail_screen/widgets/isveg.dart';
 
 import '../../../domain/product/product.dart';
 
@@ -21,13 +22,14 @@ class ProductTitle extends StatelessWidget {
             children: <Widget>[
               Expanded(
                 child: Text(
-                  product.title + " " + "(${product.quantityInfo})",
+                  product.title + "(${product.quantityInfo})",
                   style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
                       fontSize: 18),
                 ),
               ),
+              Isveg(product: product),
             ],
           )
         ],

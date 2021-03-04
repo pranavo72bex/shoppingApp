@@ -46,7 +46,7 @@ class DetailsScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         ProductTitle(product: product),
-                        Isveg(product: product),
+                        SizedBox(height: 16 / 2),
                         ProductPrice(product: product),
                         CounterWithFavBtn(),
                         SizedBox(height: 16 / 2),
