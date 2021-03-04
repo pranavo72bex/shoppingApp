@@ -27,7 +27,7 @@ class DetailsScreen extends StatelessWidget {
                 children: <Widget>[
                   ProductImage(product: product),
                   Container(
-                    margin: EdgeInsets.only(top: size.height * 0.34),
+                    margin: EdgeInsets.only(top: size.height * 0.33),
                     padding: EdgeInsets.only(
                       top: size.height * 0.02,
                       left: 16,

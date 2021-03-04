@@ -22,6 +22,9 @@ class Description extends StatelessWidget {
         ),
         Text(
           product.description,
+          style: Theme.of(context).textTheme.subtitle2,
+          maxLines: 4,
+          overflow: TextOverflow.ellipsis,
         ),
       ],
     );
