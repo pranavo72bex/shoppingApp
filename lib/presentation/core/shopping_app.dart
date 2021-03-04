@@ -13,6 +13,7 @@ class ShoppingApp extends StatelessWidget {
     return BlocProvider(
       create: (context) => getIt.get<AuthBloc>(),
       child: MaterialApp(
+        home: Container(),
         debugShowCheckedModeBanner: false,
         title: 'Shopping App',
         builder: ExtendedNavigator.builder<AppRouter>(
@@ -42,6 +43,7 @@ class ShoppingApp extends StatelessWidget {
                 // brightness: Brightness.light,
                 elevation: 0,
               ),
+              // ignore: deprecated_member_use
               cursorColor: Color(0xFF04AB4C),
               inputDecorationTheme: InputDecorationTheme(
                 contentPadding: EdgeInsets.all(15),

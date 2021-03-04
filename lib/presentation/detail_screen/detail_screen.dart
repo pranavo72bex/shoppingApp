@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:shoppingApp/presentation/core/konstants.dart';
+import 'package:shoppingApp/presentation/detail_screen/widgets/isveg.dart';
+import 'package:shoppingApp/presentation/detail_screen/widgets/price_product.dart';
+import 'package:shoppingApp/presentation/detail_screen/widgets/product_image.dart';
+import 'package:shoppingApp/presentation/detail_screen/widgets/product_title.dart';
 import '../../domain/product/product.dart';
-import 'widgets/add_to_cart.dart';
-import 'widgets/color_size.dart';
 import 'widgets/counter_with_fav_button.dart';
 import 'widgets/description.dart';
-import 'widgets/product_title_image.dart';
 
 class DetailsScreen extends StatelessWidget {
   final Product product;
@@ -14,8 +17,7 @@ class DetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      // each product have a color
-      // backgroundColor: product.color,
+      backgroundColor: kSecondaryColor,
       appBar: buildAppBar(context),
       body: SingleChildScrollView(
         child: Column(
@@ -24,10 +26,11 @@ class DetailsScreen extends StatelessWidget {
               height: size.height,
               child: Stack(
                 children: <Widget>[
+                  ProductImage(product: product),
                   Container(
-                    margin: EdgeInsets.only(top: size.height * 0.3),
+                    margin: EdgeInsets.only(top: size.height * 0.34),
                     padding: EdgeInsets.only(
-                      top: size.height * 0.12,
+                      top: size.height * 0.02,
                       left: 16,
                       right: 16,
                     ),
@@ -40,18 +43,17 @@ class DetailsScreen extends StatelessWidget {
                       ),
                     ),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        ColorAndSize(product: product),
+                        ProductTitle(product: product),
                         SizedBox(height: 16 / 2),
-                        Description(product: product),
-                        SizedBox(height: 16 / 2),
+                        ProductPrice(product: product),
                         CounterWithFavBtn(),
                         SizedBox(height: 16 / 2),
-                        AddToCart(product: product)
+                        Description(product: product),
                       ],
                     ),
                   ),
-                  ProductTitleWithImage(product: product)
                 ],
               ),
             )
@@ -65,30 +67,23 @@ class DetailsScreen extends StatelessWidget {
     return AppBar(
       // backgroundColor: product.color,
       elevation: 0,
-      // leading: IconButton(
-      //   icon: SvgPicture.asset(
-      //     'assets/icons/back.svg',
-      //     color: Colors.white,
-      //   ),
-      //   onPressed: () => Navigator.pop(context),
-      // ),
-      // actions: <Widget>[
-      //   // IconButton(
-      //   //   icon: Icon(
-      //   //     Icons.search,
-      //   //     color: Colors.white,
-      //   //   ),
-      //   //   onPressed: () {},
-      //   // ),
-      //   // IconButton(
-      //   //   color: Colors.white,
-      //   //   icon: FaIcon(
-      //   //     FontAwesomeIcons.cartPlus,
-      //   //   ),
-      //   //   onPressed: () {},
-      //   // ),
-      //   // SizedBox(width: 16 / 2)
-      // ],
+      leading: IconButton(
+        icon: Icon(
+          Icons.arrow_back_ios_outlined,
+          color: Colors.white,
+        ),
+        onPressed: () => Navigator.pop(context),
+      ),
+      actions: <Widget>[
+        IconButton(
+          color: Colors.white,
+          icon: FaIcon(
+            FontAwesomeIcons.cartPlus,
+          ),
+          onPressed: () {},
+        ),
+        SizedBox(width: 16 / 2)
+      ],
     );
   }
 }

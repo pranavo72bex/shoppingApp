@@ -12,12 +12,18 @@ class Description extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 16),
-      child: Text(
-        product.description,
-        style: TextStyle(height: 1.5),
-      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          "Quick Overview",
+          style:
+              TextStyle(height: 1, fontWeight: FontWeight.bold, fontSize: 20),
+        ),
+        Text(
+          product.description,
+        ),
+      ],
     );
   }
 }
