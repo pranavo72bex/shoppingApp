@@ -26,6 +26,7 @@ class ProductRepo implements IProductRepo {
     if (res.statusCode == 200) {
       // print(res.data['responsedata']);
       final decodedData = jsonDecode(res.data);
+      // ignore: todo
       //TODO when not using freezed data class usind jsonDecode cause exception
       // need to find when should use jsonDecode() and when not to use
       // print(decodedData);
