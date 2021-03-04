@@ -39,7 +39,7 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
         shape: CircularNotchedRectangle(),
         child: Container(
           height: 55,
-          color: Colors.orange,
+          color: Colors.white,
           child: Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceAround,

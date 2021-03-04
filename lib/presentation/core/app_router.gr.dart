@@ -27,8 +27,8 @@ import 'bottom_navigation_page.dart';
 class Routes {
   static const String onboardingPage = '/onboarding-page';
   static const String signinPage = '/signin-page';
-  static const String bottomNavigationPage = '/bottom-navigation-page';
   static const String dashboardPage = '/dashboard-page';
+  static const String bottomNavigationPage = '/bottom-navigation-page';
   static const String signupPage = '/signup-page';
   static const String aboutMePage = '/about-me-page';
   static const String favoritesPage = '/favorites-page';
@@ -41,8 +41,8 @@ class Routes {
   static const all = <String>{
     onboardingPage,
     signinPage,
-    bottomNavigationPage,
     dashboardPage,
+    bottomNavigationPage,
     signupPage,
     aboutMePage,
     favoritesPage,
@@ -61,8 +61,8 @@ class AppRouter extends RouterBase {
   final _routes = <RouteDef>[
     RouteDef(Routes.onboardingPage, page: OnboardingPage),
     RouteDef(Routes.signinPage, page: SigninPage),
-    RouteDef(Routes.bottomNavigationPage, page: BottomNavigationPage),
     RouteDef(Routes.dashboardPage, page: DashboardPage),
+    RouteDef(Routes.bottomNavigationPage, page: BottomNavigationPage),
     RouteDef(Routes.signupPage, page: SignupPage),
     RouteDef(Routes.aboutMePage, page: AboutMePage),
     RouteDef(Routes.favoritesPage, page: FavoritesPage),
@@ -88,15 +88,15 @@ class AppRouter extends RouterBase {
         settings: data,
       );
     },
-    BottomNavigationPage: (data) {
-      return MaterialPageRoute<dynamic>(
-        builder: (context) => BottomNavigationPage(),
-        settings: data,
-      );
-    },
     DashboardPage: (data) {
       return MaterialPageRoute<dynamic>(
         builder: (context) => DashboardPage(),
+        settings: data,
+      );
+    },
+    BottomNavigationPage: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => BottomNavigationPage(),
         settings: data,
       );
     },
@@ -178,10 +178,10 @@ extension AppRouterExtendedNavigatorStateX on ExtendedNavigatorState {
 
   Future<dynamic> pushSigninPage() => push<dynamic>(Routes.signinPage);
 
+  Future<dynamic> pushDashboardPage() => push<dynamic>(Routes.dashboardPage);
+
   Future<dynamic> pushBottomNavigationPage() =>
       push<dynamic>(Routes.bottomNavigationPage);
-
-  Future<dynamic> pushDashboardPage() => push<dynamic>(Routes.dashboardPage);
 
   Future<dynamic> pushSignupPage() => push<dynamic>(Routes.signupPage);
 

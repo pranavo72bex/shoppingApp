@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route_annotations.dart';
+import 'package:shoppingApp/presentation/core/bottom_navigation_page.dart';
 import 'package:shoppingApp/presentation/dashboard/onboarding/onboarding.dart';
 import '../about_me/about_me_page.dart';
 import '../auth/common/password_recovery.dart';
@@ -11,7 +12,6 @@ import '../detail_screen/detail_screen.dart';
 import '../favorites/favorites.dart';
 import '../notification/notification_page.dart';
 import '../review/review_page.dart';
-import 'bottom_navigation_page.dart';
 
 @MaterialAutoRouter(
   generateNavigationHelperExtension: true,
@@ -20,8 +20,8 @@ import 'bottom_navigation_page.dart';
 
     MaterialRoute(page: OnboardingPage),
     MaterialRoute(page: SigninPage),
-    MaterialRoute(page: BottomNavigationPage),
     MaterialRoute(page: DashboardPage),
+    MaterialRoute(page: BottomNavigationPage),
     MaterialRoute(page: SignupPage),
     MaterialRoute(page: AboutMePage),
     MaterialRoute(page: FavoritesPage),
