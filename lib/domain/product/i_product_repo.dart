@@ -5,4 +5,5 @@ abstract class IProductRepo {
   Future<Dashboard> getDashboardData();
 
   Future<List<Product>> getTopProducts();
+  Future<List<Product>> getSalesProducts();
 }

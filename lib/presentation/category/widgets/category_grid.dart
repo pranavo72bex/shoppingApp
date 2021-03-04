@@ -18,6 +18,7 @@ class CategoryPageList extends StatelessWidget {
           },
           loaded: (data) {
             return GridView.builder(
+              padding: EdgeInsets.all(8.0),
               itemCount: data.products.length,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,

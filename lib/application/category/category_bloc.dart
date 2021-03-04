@@ -20,14 +20,25 @@ class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
   Stream<CategoryState> mapEventToState(
     CategoryEvent event,
   ) async* {
-    yield* event.map(getTopProductsstarted: (_) async* {
-      yield const _Loading();
-      try {
-        final topProducts = await _productRepo.getTopProducts();
-        yield _Loaded(products: topProducts);
-      } catch (e) {
-        yield const _Failure();
-      }
-    });
+    yield* event.map(
+      getTopProductsstarted: (_) async* {
+        yield const _Loading();
+        try {
+          final topProducts = await _productRepo.getTopProducts();
+          yield _Loaded(products: topProducts);
+        } catch (e) {
+          yield const _Failure();
+        }
+      },
+      getSalesProductsstarted: (_) async* {
+        yield const _Loading();
+        try {
+          final topProducts = await _productRepo.getSalesProducts();
+          yield _Loaded(products: topProducts);
+        } catch (e) {
+          yield const _Failure();
+        }
+      },
+    );
   }
 }

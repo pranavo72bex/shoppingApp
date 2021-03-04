@@ -17,6 +17,11 @@ class _$CategoryEventTearOff {
   _GetTopProductsStarted getTopProductsstarted() {
     return const _GetTopProductsStarted();
   }
+
+// ignore: unused_element
+  _GetSalesProductsStarted getSalesProductsstarted() {
+    return const _GetSalesProductsStarted();
+  }
 }
 
 /// @nodoc
@@ -28,19 +33,23 @@ mixin _$CategoryEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult getTopProductsstarted(),
+    @required TResult getSalesProductsstarted(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult getTopProductsstarted(),
+    TResult getSalesProductsstarted(),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult getTopProductsstarted(_GetTopProductsStarted value),
+    @required TResult getSalesProductsstarted(_GetSalesProductsStarted value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult getTopProductsstarted(_GetTopProductsStarted value),
+    TResult getSalesProductsstarted(_GetSalesProductsStarted value),
     @required TResult orElse(),
   });
 }
@@ -102,8 +111,10 @@ class _$_GetTopProductsStarted implements _GetTopProductsStarted {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult getTopProductsstarted(),
+    @required TResult getSalesProductsstarted(),
   }) {
     assert(getTopProductsstarted != null);
+    assert(getSalesProductsstarted != null);
     return getTopProductsstarted();
   }
 
@@ -111,6 +122,7 @@ class _$_GetTopProductsStarted implements _GetTopProductsStarted {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult getTopProductsstarted(),
+    TResult getSalesProductsstarted(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -124,8 +136,10 @@ class _$_GetTopProductsStarted implements _GetTopProductsStarted {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult getTopProductsstarted(_GetTopProductsStarted value),
+    @required TResult getSalesProductsstarted(_GetSalesProductsStarted value),
   }) {
     assert(getTopProductsstarted != null);
+    assert(getSalesProductsstarted != null);
     return getTopProductsstarted(this);
   }
 
@@ -133,6 +147,7 @@ class _$_GetTopProductsStarted implements _GetTopProductsStarted {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult getTopProductsstarted(_GetTopProductsStarted value),
+    TResult getSalesProductsstarted(_GetSalesProductsStarted value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -145,6 +160,98 @@ class _$_GetTopProductsStarted implements _GetTopProductsStarted {
 
 abstract class _GetTopProductsStarted implements CategoryEvent {
   const factory _GetTopProductsStarted() = _$_GetTopProductsStarted;
+}
+
+/// @nodoc
+abstract class _$GetSalesProductsStartedCopyWith<$Res> {
+  factory _$GetSalesProductsStartedCopyWith(_GetSalesProductsStarted value,
+          $Res Function(_GetSalesProductsStarted) then) =
+      __$GetSalesProductsStartedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$GetSalesProductsStartedCopyWithImpl<$Res>
+    extends _$CategoryEventCopyWithImpl<$Res>
+    implements _$GetSalesProductsStartedCopyWith<$Res> {
+  __$GetSalesProductsStartedCopyWithImpl(_GetSalesProductsStarted _value,
+      $Res Function(_GetSalesProductsStarted) _then)
+      : super(_value, (v) => _then(v as _GetSalesProductsStarted));
+
+  @override
+  _GetSalesProductsStarted get _value =>
+      super._value as _GetSalesProductsStarted;
+}
+
+/// @nodoc
+class _$_GetSalesProductsStarted implements _GetSalesProductsStarted {
+  const _$_GetSalesProductsStarted();
+
+  @override
+  String toString() {
+    return 'CategoryEvent.getSalesProductsstarted()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _GetSalesProductsStarted);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult getTopProductsstarted(),
+    @required TResult getSalesProductsstarted(),
+  }) {
+    assert(getTopProductsstarted != null);
+    assert(getSalesProductsstarted != null);
+    return getSalesProductsstarted();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult getTopProductsstarted(),
+    TResult getSalesProductsstarted(),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (getSalesProductsstarted != null) {
+      return getSalesProductsstarted();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult getTopProductsstarted(_GetTopProductsStarted value),
+    @required TResult getSalesProductsstarted(_GetSalesProductsStarted value),
+  }) {
+    assert(getTopProductsstarted != null);
+    assert(getSalesProductsstarted != null);
+    return getSalesProductsstarted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult getTopProductsstarted(_GetTopProductsStarted value),
+    TResult getSalesProductsstarted(_GetSalesProductsStarted value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (getSalesProductsstarted != null) {
+      return getSalesProductsstarted(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetSalesProductsStarted implements CategoryEvent {
+  const factory _GetSalesProductsStarted() = _$_GetSalesProductsStarted;
 }
 
 /// @nodoc

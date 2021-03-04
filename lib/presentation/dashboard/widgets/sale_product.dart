@@ -27,7 +27,7 @@ class SaleProduct extends StatelessWidget {
                     Routes.categoryPage,
                     arguments: CategoryPageArguments(
                       categoryName: 'Sales Product',
-                      categoryEvent: CategoryEvent.getTopProductsstarted(),
+                      categoryEvent: CategoryEvent.getSalesProductsstarted(),
                     ),
                   );
                 })
