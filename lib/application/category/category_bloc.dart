@@ -12,7 +12,7 @@ part 'category_bloc.freezed.dart';
 
 @injectable
 class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
-  CategoryBloc(this._productRepo) : super(_Initial());
+  CategoryBloc(this._productRepo) : super(const _Loading());
 
   final IProductRepo _productRepo;
 
@@ -21,8 +21,13 @@ class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
     CategoryEvent event,
   ) async* {
     yield* event.map(getTopProductsstarted: (_) async* {
-      yield _Loading();
-      final topProducts = await _productRepo.getTopProducts();
+      yield const _Loading();
+      try {
+        final topProducts = await _productRepo.getTopProducts();
+        yield _Loaded(products: topProducts);
+      } catch (e) {
+        yield const _Failure();
+      }
     });
   }
 }

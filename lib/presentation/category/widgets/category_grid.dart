@@ -1,0 +1,39 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shoppingApp/application/category/category_bloc.dart';
+import 'package:shoppingApp/presentation/common_widget/custom_circular_progress_indicator.dart';
+import 'package:shoppingApp/presentation/dashboard/widgets/product_grid_item.dart';
+
+class CategoryPageList extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<CategoryBloc, CategoryState>(
+      builder: (context, state) {
+        return state.map(
+          loading: (_) {
+            return CustomCircularProgressIndicator();
+          },
+          failure: (_) {
+            return Text('Something error occured');
+          },
+          loaded: (data) {
+            return GridView.builder(
+              itemCount: data.products.length,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                childAspectRatio: 0.55,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+              ),
+              itemBuilder: (_, index) {
+                return ProductGridItem(
+                  product: data.products[index],
+                );
+              },
+            );
+          },
+        );
+      },
+    );
+  }
+}

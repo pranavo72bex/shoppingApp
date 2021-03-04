@@ -152,11 +152,6 @@ class _$CategoryStateTearOff {
   const _$CategoryStateTearOff();
 
 // ignore: unused_element
-  _Initial initial() {
-    return const _Initial();
-  }
-
-// ignore: unused_element
   _Loading loading() {
     return const _Loading();
   }
@@ -165,6 +160,13 @@ class _$CategoryStateTearOff {
   _Loaded loaded({@required List<Product> products}) {
     return _Loaded(
       products: products,
+    );
+  }
+
+// ignore: unused_element
+  _Failure failure({String msgI}) {
+    return _Failure(
+      msgI: msgI,
     );
   }
 }
@@ -177,28 +179,28 @@ const $CategoryState = _$CategoryStateTearOff();
 mixin _$CategoryState {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult initial(),
     @required TResult loading(),
     @required TResult loaded(List<Product> products),
+    @required TResult failure(String msgI),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
     TResult loading(),
     TResult loaded(List<Product> products),
+    TResult failure(String msgI),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
     @required TResult loading(_Loading value),
     @required TResult loaded(_Loaded value),
+    @required TResult failure(_Failure value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
     TResult loading(_Loading value),
     TResult loaded(_Loaded value),
+    TResult failure(_Failure value),
     @required TResult orElse(),
   });
 }
@@ -218,100 +220,6 @@ class _$CategoryStateCopyWithImpl<$Res>
   final CategoryState _value;
   // ignore: unused_field
   final $Res Function(CategoryState) _then;
-}
-
-/// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$CategoryStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
-
-  @override
-  _Initial get _value => super._value as _Initial;
-}
-
-/// @nodoc
-class _$_Initial implements _Initial {
-  const _$_Initial();
-
-  @override
-  String toString() {
-    return 'CategoryState.initial()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult loading(),
-    @required TResult loaded(List<Product> products),
-  }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loaded != null);
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult loading(),
-    TResult loaded(List<Product> products),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult loading(_Loading value),
-    @required TResult loaded(_Loaded value),
-  }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loaded != null);
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult loading(_Loading value),
-    TResult loaded(_Loaded value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Initial implements CategoryState {
-  const factory _Initial() = _$_Initial;
 }
 
 /// @nodoc
@@ -350,22 +258,22 @@ class _$_Loading implements _Loading {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult initial(),
     @required TResult loading(),
     @required TResult loaded(List<Product> products),
+    @required TResult failure(String msgI),
   }) {
-    assert(initial != null);
     assert(loading != null);
     assert(loaded != null);
+    assert(failure != null);
     return loading();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
     TResult loading(),
     TResult loaded(List<Product> products),
+    TResult failure(String msgI),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -378,22 +286,22 @@ class _$_Loading implements _Loading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
     @required TResult loading(_Loading value),
     @required TResult loaded(_Loaded value),
+    @required TResult failure(_Failure value),
   }) {
-    assert(initial != null);
     assert(loading != null);
     assert(loaded != null);
+    assert(failure != null);
     return loading(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
     TResult loading(_Loading value),
     TResult loaded(_Loaded value),
+    TResult failure(_Failure value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -468,22 +376,22 @@ class _$_Loaded implements _Loaded {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult initial(),
     @required TResult loading(),
     @required TResult loaded(List<Product> products),
+    @required TResult failure(String msgI),
   }) {
-    assert(initial != null);
     assert(loading != null);
     assert(loaded != null);
+    assert(failure != null);
     return loaded(products);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
     TResult loading(),
     TResult loaded(List<Product> products),
+    TResult failure(String msgI),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -496,22 +404,22 @@ class _$_Loaded implements _Loaded {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
     @required TResult loading(_Loading value),
     @required TResult loaded(_Loaded value),
+    @required TResult failure(_Failure value),
   }) {
-    assert(initial != null);
     assert(loading != null);
     assert(loaded != null);
+    assert(failure != null);
     return loaded(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
     TResult loading(_Loading value),
     TResult loaded(_Loaded value),
+    TResult failure(_Failure value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -528,4 +436,124 @@ abstract class _Loaded implements CategoryState {
   List<Product> get products;
   @JsonKey(ignore: true)
   _$LoadedCopyWith<_Loaded> get copyWith;
+}
+
+/// @nodoc
+abstract class _$FailureCopyWith<$Res> {
+  factory _$FailureCopyWith(_Failure value, $Res Function(_Failure) then) =
+      __$FailureCopyWithImpl<$Res>;
+  $Res call({String msgI});
+}
+
+/// @nodoc
+class __$FailureCopyWithImpl<$Res> extends _$CategoryStateCopyWithImpl<$Res>
+    implements _$FailureCopyWith<$Res> {
+  __$FailureCopyWithImpl(_Failure _value, $Res Function(_Failure) _then)
+      : super(_value, (v) => _then(v as _Failure));
+
+  @override
+  _Failure get _value => super._value as _Failure;
+
+  @override
+  $Res call({
+    Object msgI = freezed,
+  }) {
+    return _then(_Failure(
+      msgI: msgI == freezed ? _value.msgI : msgI as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_Failure implements _Failure {
+  const _$_Failure({this.msgI});
+
+  @override
+  final String msgI;
+
+  @override
+  String toString() {
+    return 'CategoryState.failure(msgI: $msgI)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _Failure &&
+            (identical(other.msgI, msgI) ||
+                const DeepCollectionEquality().equals(other.msgI, msgI)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(msgI);
+
+  @JsonKey(ignore: true)
+  @override
+  _$FailureCopyWith<_Failure> get copyWith =>
+      __$FailureCopyWithImpl<_Failure>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult loading(),
+    @required TResult loaded(List<Product> products),
+    @required TResult failure(String msgI),
+  }) {
+    assert(loading != null);
+    assert(loaded != null);
+    assert(failure != null);
+    return failure(msgI);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult loading(),
+    TResult loaded(List<Product> products),
+    TResult failure(String msgI),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (failure != null) {
+      return failure(msgI);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult loading(_Loading value),
+    @required TResult loaded(_Loaded value),
+    @required TResult failure(_Failure value),
+  }) {
+    assert(loading != null);
+    assert(loaded != null);
+    assert(failure != null);
+    return failure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult loading(_Loading value),
+    TResult loaded(_Loaded value),
+    TResult failure(_Failure value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (failure != null) {
+      return failure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Failure implements CategoryState {
+  const factory _Failure({String msgI}) = _$_Failure;
+
+  String get msgI;
+  @JsonKey(ignore: true)
+  _$FailureCopyWith<_Failure> get copyWith;
 }

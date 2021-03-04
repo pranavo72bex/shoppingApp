@@ -9,13 +9,14 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
+import '../../application/category/category_bloc.dart';
 import '../../domain/product/product.dart';
 import '../about_me/about_me_page.dart';
 import '../auth/common/password_recovery.dart';
 import '../auth/signin/signin_page.dart';
 import '../auth/signup/signup_page.dart';
 import '../cart/cart_page.dart';
-import '../category_items_list/category_items_list.dart';
+import '../category/category_page.dart';
 import '../dashboard/dashboard_page.dart';
 import '../dashboard/onboarding/onboarding.dart';
 import '../detail_screen/detail_screen.dart';
@@ -35,7 +36,7 @@ class Routes {
   static const String cartPage = '/cart-page';
   static const String notificationsPage = '/notifications-page';
   static const String reviewPage = '/review-page';
-  static const String categoryItemsList = '/category-items-list';
+  static const String categoryPage = '/category-page';
   static const String detailsScreen = '/details-screen';
   static const String passwordRecovery = '/password-recovery';
   static const all = <String>{
@@ -49,7 +50,7 @@ class Routes {
     cartPage,
     notificationsPage,
     reviewPage,
-    categoryItemsList,
+    categoryPage,
     detailsScreen,
     passwordRecovery,
   };
@@ -69,7 +70,7 @@ class AppRouter extends RouterBase {
     RouteDef(Routes.cartPage, page: CartPage),
     RouteDef(Routes.notificationsPage, page: NotificationsPage),
     RouteDef(Routes.reviewPage, page: ReviewPage),
-    RouteDef(Routes.categoryItemsList, page: CategoryItemsList),
+    RouteDef(Routes.categoryPage, page: CategoryPage),
     RouteDef(Routes.detailsScreen, page: DetailsScreen),
     RouteDef(Routes.passwordRecovery, page: PasswordRecovery),
   ];
@@ -136,14 +137,13 @@ class AppRouter extends RouterBase {
         settings: data,
       );
     },
-    CategoryItemsList: (data) {
-      final args = data.getArgs<CategoryItemsListArguments>(
-        orElse: () => CategoryItemsListArguments(),
-      );
+    CategoryPage: (data) {
+      final args = data.getArgs<CategoryPageArguments>(nullOk: false);
       return MaterialPageRoute<dynamic>(
-        builder: (context) => CategoryItemsList(
+        builder: (context) => CategoryPage(
           key: args.key,
           categoryName: args.categoryName,
+          categoryEvent: args.categoryEvent,
         ),
         settings: data,
       );
@@ -196,14 +196,15 @@ extension AppRouterExtendedNavigatorStateX on ExtendedNavigatorState {
 
   Future<dynamic> pushReviewPage() => push<dynamic>(Routes.reviewPage);
 
-  Future<dynamic> pushCategoryItemsList({
+  Future<dynamic> pushCategoryPage({
     Key key,
-    String categoryName,
+    @required String categoryName,
+    @required CategoryEvent categoryEvent,
   }) =>
       push<dynamic>(
-        Routes.categoryItemsList,
-        arguments:
-            CategoryItemsListArguments(key: key, categoryName: categoryName),
+        Routes.categoryPage,
+        arguments: CategoryPageArguments(
+            key: key, categoryName: categoryName, categoryEvent: categoryEvent),
       );
 
   Future<dynamic> pushDetailsScreen({
@@ -223,11 +224,13 @@ extension AppRouterExtendedNavigatorStateX on ExtendedNavigatorState {
 /// Arguments holder classes
 /// *************************************************************************
 
-/// CategoryItemsList arguments holder class
-class CategoryItemsListArguments {
+/// CategoryPage arguments holder class
+class CategoryPageArguments {
   final Key key;
   final String categoryName;
-  CategoryItemsListArguments({this.key, this.categoryName});
+  final CategoryEvent categoryEvent;
+  CategoryPageArguments(
+      {this.key, @required this.categoryName, @required this.categoryEvent});
 }
 
 /// DetailsScreen arguments holder class

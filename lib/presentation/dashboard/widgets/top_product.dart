@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:shoppingApp/application/category/category_bloc.dart';
 import 'package:shoppingApp/domain/product/product.dart';
 import '../../core/app_router.gr.dart';
 import 'product_grid_item.dart';
@@ -22,9 +23,13 @@ class TopProduct extends StatelessWidget {
             IconButton(
                 icon: Icon(Icons.arrow_forward),
                 onPressed: () {
-                  ExtendedNavigator.of(context).push(Routes.categoryItemsList,
-                      arguments: CategoryItemsListArguments(
-                          categoryName: 'Top Product'.toUpperCase()));
+                  ExtendedNavigator.of(context).push(
+                    Routes.categoryPage,
+                    arguments: CategoryPageArguments(
+                      categoryName: 'Top Products',
+                      categoryEvent: CategoryEvent.getTopProductsstarted(),
+                    ),
+                  );
                 })
           ],
         ),
