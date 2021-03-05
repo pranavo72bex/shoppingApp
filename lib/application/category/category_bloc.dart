@@ -39,6 +39,15 @@ class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
           yield const _Failure();
         }
       },
+      getFeaturedProductsstarted: (_) async* {
+        yield const _Loading();
+        try {
+          final topProducts = await _productRepo.getFeaturedProducts();
+          yield _Loaded(products: topProducts);
+        } catch (e) {
+          yield const _Failure();
+        }
+      },
     );
   }
 }

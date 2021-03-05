@@ -20,7 +20,7 @@ class PopularDealsGrid extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              'Popular Deals'.toUpperCase(),
+              'Featured Product'.toUpperCase(),
               style: Theme.of(context).textTheme.headline6,
             ),
             IconButton(
@@ -29,8 +29,8 @@ class PopularDealsGrid extends StatelessWidget {
                   ExtendedNavigator.of(context).push(
                     Routes.categoryPage,
                     arguments: CategoryPageArguments(
-                      categoryName: 'Popular Deals',
-                      categoryEvent: CategoryEvent.getTopProductsstarted(),
+                      categoryName: 'Featured Product',
+                      categoryEvent: CategoryEvent.getFeaturedProductsstarted(),
                     ),
                   );
                 })

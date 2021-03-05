@@ -80,4 +80,24 @@ class ProductRepo implements IProductRepo {
       throw Exception();
     }
   }
+
+  @override
+  Future<List<Product>> getFeaturedProducts() async {
+    final res = await _dio.get('getFeaturedProducts');
+    if (res.statusCode == 200) {
+      // print(res.data['responsedata']);
+      final decodedData = jsonDecode(res.data);
+      // ignore: todo
+      //TODO when not using freezed data class usind jsonDecode cause exception
+      // need to find when should use jsonDecode() and when not to use
+      // print(decodedData);
+      // return Dashboard.fromJson(decodedData);
+      return (decodedData['responsedata'] as List)
+          .cast<Map<String, dynamic>>()
+          .map((e) => Product.fromJson(e))
+          .toList();
+    } else {
+      throw Exception();
+    }
+  }
 }
