@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Banner;
+import 'package:shoppingApp/domain/dashboard/dashboard.dart';
 
 class HomepageBanner extends StatefulWidget {
   final List<Banner> banner;
