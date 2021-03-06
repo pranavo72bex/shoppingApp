@@ -78,15 +78,15 @@ class _HomepageBannerState extends State<HomepageBanner> {
             left: 10,
             right: 10,
             child: new MaterialButton(
-              height: 40,
-              minWidth: 30,
-              color: Theme.of(context).primaryColor,
-              textColor: Colors.white,
-              child: Row(
-                children: [new Text("Order Now"), Icon(Icons.arrow_forward)],
-              ),
-              onPressed: () => {},
-            ),
+                height: 40,
+                minWidth: 30,
+                color: Theme.of(context).primaryColor,
+                textColor: Colors.white,
+                child: Row(
+                  children: [new Text("Order Now"), Icon(Icons.arrow_forward)],
+                ),
+                onPressed: () => {},
+                splashColor: Colors.green),
           )
         ],
       ),
