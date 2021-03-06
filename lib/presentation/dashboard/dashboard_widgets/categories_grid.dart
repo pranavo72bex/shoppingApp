@@ -70,7 +70,7 @@ class CategoryGridItem extends StatelessWidget {
             Routes.categoryPage,
             arguments: CategoryPageArguments(
               categoryName: text,
-              categoryEvent: CategoryEvent.getTopProductsstarted(),
+              categoryEvent: CategoryEvent.getFeaturedProductsstarted(),
             ),
           ),
           child: Container(
