@@ -45,6 +45,9 @@ class DashboardPage extends StatelessWidget {
                     HomepageSlider(
                       slider: s.dashboard.slider,
                     ),
+                    SizedBox(
+                      height: 10,
+                    ),
                     CategoriesGrid(
                       shopByCategory: s.dashboard.shopByCategory,
                     ),

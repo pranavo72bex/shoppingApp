@@ -22,7 +22,7 @@ class CategoriesGrid extends StatelessWidget {
               'Categories'.toUpperCase(),
               style: Theme.of(context).textTheme.headline6,
             ),
-            IconButton(icon: Icon(Icons.arrow_forward), onPressed: () {})
+            // IconButton(icon: Icon(Icons.arrow_forward), onPressed: () {})
           ],
         ),
         Container(
