@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shoppingApp/application/dashboard/dashboard_bloc.dart';
+import 'package:shoppingApp/presentation/dashboard/widgets/error_screen.dart';
 import 'package:shoppingApp/presentation/dashboard/widgets/homepage_banner.dart';
 import 'package:shoppingApp/presentation/dashboard/widgets/our_brand.dart';
 import 'package:shoppingApp/presentation/dashboard/widgets/sale_product.dart';
@@ -31,7 +32,7 @@ class DashboardPage extends StatelessWidget {
                   valueColor: AlwaysStoppedAnimation(Colors.green),
                   strokeWidth: 5,
                 )),
-                failure: (_) => Text('error occured'),
+                failure: (_) => Error404Screen(),
                 loaded: (s) => Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
