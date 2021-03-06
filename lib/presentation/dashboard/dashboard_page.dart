@@ -35,11 +35,14 @@ class DashboardPage extends StatelessWidget {
                 loaded: (s) => Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    HomepageSlider(
-                      slider: s.dashboard.slider,
-                    ),
                     HomepageBanner(
                       banner: s.dashboard.banner,
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    HomepageSlider(
+                      slider: s.dashboard.slider,
                     ),
                     CategoriesGrid(
                       shopByCategory: s.dashboard.shopByCategory,

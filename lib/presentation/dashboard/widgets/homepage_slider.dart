@@ -31,11 +31,14 @@ class _HomepageSliderState extends State<HomepageSlider> {
                   });
                 }),
             itemBuilder: (BuildContext context, int index, int realIndex) =>
-                Image.network(
-              widget.slider[index].image,
-              fit: BoxFit.cover,
-              height: 400,
-              width: double.infinity,
+                ClipRRect(
+              borderRadius: BorderRadius.circular(16.0),
+              child: Image.network(
+                widget.slider[index].image,
+                fit: BoxFit.cover,
+                height: 400,
+                width: double.infinity,
+              ),
             ),
             itemCount: widget.slider.length,
           ),
