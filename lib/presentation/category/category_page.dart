@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shoppingApp/application/category/category_bloc.dart';
-import 'package:shoppingApp/presentation/category/widgets/category_grid.dart';
+import '../../application/category/category_bloc.dart';
+import 'widgets/category_grid.dart';
 import '../../dependency_injection.dart';
 
 class CategoryPage extends StatelessWidget {

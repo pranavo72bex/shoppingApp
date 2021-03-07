@@ -1,6 +1,6 @@
 import 'package:injectable/injectable.dart';
-import 'package:shoppingApp/domain/user/i_user_repo.dart';
-import 'package:shoppingApp/domain/user/user.dart';
+import '../../domain/user/i_user_repo.dart';
+import '../../domain/user/user.dart';
 
 @LazySingleton(as: IUserRepo)
 class UserRepo implements IUserRepo {

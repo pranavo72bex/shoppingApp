@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shoppingApp/application/auth/auth_bloc.dart';
+import '../../../application/auth/auth_bloc.dart';
 
 import '../../common_widget/text_style.dart';
 import '../../core/app_router.gr.dart';

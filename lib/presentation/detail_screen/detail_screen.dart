@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:shoppingApp/presentation/core/konstants.dart';
-import 'package:shoppingApp/presentation/detail_screen/widgets/add_to_cart.dart';
-import 'package:shoppingApp/presentation/detail_screen/widgets/price_product.dart';
-import 'package:shoppingApp/presentation/detail_screen/widgets/product_image.dart';
-import 'package:shoppingApp/presentation/detail_screen/widgets/product_title.dart';
+import '../core/konstants.dart';
+import 'widgets/add_to_cart.dart';
+import 'widgets/price_product.dart';
+import 'widgets/product_image.dart';
+import 'widgets/product_title.dart';
 import '../../domain/product/product.dart';
 import 'widgets/counter_with_fav_button.dart';
 import 'widgets/description.dart';

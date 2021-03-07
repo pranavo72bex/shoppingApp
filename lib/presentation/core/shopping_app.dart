@@ -2,9 +2,9 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:shoppingApp/application/auth/auth_bloc.dart';
-import 'package:shoppingApp/dependency_injection.dart';
-import 'package:shoppingApp/main.dart';
+import '../../application/auth/auth_bloc.dart';
+import '../../dependency_injection.dart';
+import '../../main.dart';
 import 'app_router.gr.dart';
 
 class ShoppingApp extends StatelessWidget {

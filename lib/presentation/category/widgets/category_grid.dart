@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shoppingApp/application/category/category_bloc.dart';
-import 'package:shoppingApp/presentation/common_widget/custom_circular_progress_indicator.dart';
-import 'package:shoppingApp/presentation/dashboard/widgets/product_grid_item.dart';
+import '../../../application/category/category_bloc.dart';
+import '../../common_widget/custom_circular_progress_indicator.dart';
+import '../../dashboard/widgets/product_grid_item.dart';
 
 class CategoryPageList extends StatelessWidget {
   @override

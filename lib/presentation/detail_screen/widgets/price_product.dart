@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:shoppingApp/presentation/core/konstants.dart';
+import '../../core/konstants.dart';
 
 import '../../../domain/product/product.dart';
 

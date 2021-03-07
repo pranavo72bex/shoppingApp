@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:shoppingApp/presentation/core/konstants.dart';
+import '../../core/konstants.dart';
 
 import '../../../domain/product/product.dart';
 

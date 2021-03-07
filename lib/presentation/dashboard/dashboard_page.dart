@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shoppingApp/application/dashboard/dashboard_bloc.dart';
-import 'package:shoppingApp/presentation/dashboard/widgets/error_screen.dart';
-import 'package:shoppingApp/presentation/dashboard/widgets/homepage_banner.dart';
-import 'package:shoppingApp/presentation/dashboard/widgets/our_brand.dart';
-import 'package:shoppingApp/presentation/dashboard/widgets/sale_product.dart';
-import 'package:shoppingApp/presentation/dashboard/widgets/top_product.dart';
+import '../../application/dashboard/dashboard_bloc.dart';
+import 'widgets/error_screen.dart';
+import 'widgets/homepage_banner.dart';
+import 'widgets/our_brand.dart';
+import 'widgets/sale_product.dart';
+import 'widgets/top_product.dart';
 import 'dashboard_widgets/categories_grid.dart';
 import 'widgets/homepage_slider.dart';
 import 'widgets/popular_deals_grid.dart';
