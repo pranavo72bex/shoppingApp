@@ -63,8 +63,8 @@ class DashboardPage extends StatelessWidget {
                     ),
                     // RecentProduct(),
                     OurBrand(brands: s.dashboard.brands),
-                    SizedBox(
-                      height: 10,
+                    Divider(
+                      height: 15,
                     ),
                     SocialMedia()
                   ],
