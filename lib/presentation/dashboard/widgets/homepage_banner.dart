@@ -31,11 +31,25 @@ class _HomepageBannerState extends State<HomepageBanner> {
                   });
                 }),
             itemBuilder: (BuildContext context, int index, int realIndex) =>
+                Stack(
+              children: [
                 Image.network(
-              widget.banner[index].image,
-              fit: BoxFit.cover,
-              height: 400,
-              width: double.infinity,
+                  widget.banner[index].image,
+                  fit: BoxFit.cover,
+                  height: 400,
+                  width: double.infinity,
+                ),
+                Positioned(
+                  top: 10,
+                  left: 10,
+                  right: 10,
+                  child: Text(
+                    widget.banner[index].title,
+                    style: TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ],
             ),
             itemCount: widget.banner.length,
           ),
@@ -63,23 +77,13 @@ class _HomepageBannerState extends State<HomepageBanner> {
             ),
           ),
           Positioned(
-            top: 10,
-            left: 10,
-            right: 10,
-            child: Text(
-              //    yo kam garena
-              "Find It, Love It, Buy It.",
-              style:
-                  TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-            ),
-          ),
-          Positioned(
             top: 35,
             left: 10,
             right: 10,
             child: new MaterialButton(
                 height: 40,
                 minWidth: 30,
+                elevation: 2,
                 color: Theme.of(context).primaryColor,
                 textColor: Colors.white,
                 child: Row(
