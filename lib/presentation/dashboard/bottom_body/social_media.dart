@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:shoppingApp/presentation/core/app_router.gr.dart';
 import 'package:shoppingApp/presentation/core/konstants.dart';
 
 class SocialMedia extends StatelessWidget {
@@ -45,7 +46,7 @@ class SocialMedia extends StatelessWidget {
         ),
         InkWell(
           onTap: () {
-            //  ExtendedNavigator.of(context).replace(Routes.);
+            ExtendedNavigator.of(context).replace(Routes.aboutUs);
           },
           child: Text(
             "About-us",
