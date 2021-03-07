@@ -53,21 +53,41 @@ class SocialMedia extends StatelessWidget {
             style: TextStyle(color: Colors.black, fontSize: 17),
           ),
         ),
-        Text(
-          "FAQ",
-          style: TextStyle(color: Colors.black, fontSize: 17),
+        InkWell(
+          onTap: () {
+            ExtendedNavigator.of(context).replace(Routes.fAQ);
+          },
+          child: Text(
+            "FAQ",
+            style: TextStyle(color: Colors.black, fontSize: 17),
+          ),
         ),
-        Text(
-          "Privacy policy",
-          style: TextStyle(color: Colors.black, fontSize: 17),
+        InkWell(
+          onTap: () {
+            ExtendedNavigator.of(context).replace(Routes.privacyPolicy);
+          },
+          child: Text(
+            "Privacy policy",
+            style: TextStyle(color: Colors.black, fontSize: 17),
+          ),
         ),
-        Text(
-          "Terms and Conditions",
-          style: TextStyle(color: Colors.black, fontSize: 17),
+        InkWell(
+          onTap: () {
+            ExtendedNavigator.of(context).replace(Routes.termAndCondition);
+          },
+          child: Text(
+            "Terms and Conditions",
+            style: TextStyle(color: Colors.black, fontSize: 17),
+          ),
         ),
-        Text(
-          "Contact us",
-          style: TextStyle(color: Colors.black, fontSize: 17),
+        InkWell(
+          onTap: () {
+            ExtendedNavigator.of(context).replace(Routes.contactUs);
+          },
+          child: Text(
+            "Contact us",
+            style: TextStyle(color: Colors.black, fontSize: 17),
+          ),
         ),
         SizedBox(
           height: 5,
@@ -76,7 +96,7 @@ class SocialMedia extends StatelessWidget {
           padding: EdgeInsets.all(5),
           child: Center(
             child: Text(
-              "power by Daily Mart indoor 2021 All rights reserved",
+              "  power by Daily Mart indoor 2021 All rights reserved",
               style: TextStyle(color: Colors.white),
             ),
           ),

@@ -17,7 +17,11 @@ import '../auth/signin/signin_page.dart';
 import '../auth/signup/signup_page.dart';
 import '../cart/cart_page.dart';
 import '../category/category_page.dart';
-import '../dashboard/bottom_body/about_us.dart';
+import '../dashboard/bottom_body/widgets/about_us.dart';
+import '../dashboard/bottom_body/widgets/contact_us.dart';
+import '../dashboard/bottom_body/widgets/faq.dart';
+import '../dashboard/bottom_body/widgets/privacy_policy.dart';
+import '../dashboard/bottom_body/widgets/terms_and_conditon.dart';
 import '../dashboard/dashboard_page.dart';
 import '../detail_screen/detail_screen.dart';
 import '../favorites/favorites.dart';
@@ -31,6 +35,10 @@ class Routes {
   static const String signinPage = '/signin-page';
   static const String dashboardPage = '/dashboard-page';
   static const String aboutUs = '/about-us';
+  static const String contactUs = '/contact-us';
+  static const String fAQ = '/f-aQ';
+  static const String privacyPolicy = '/privacy-policy';
+  static const String termAndCondition = '/term-and-condition';
   static const String bottomNavigationPage = '/bottom-navigation-page';
   static const String signupPage = '/signup-page';
   static const String aboutMePage = '/about-me-page';
@@ -46,6 +54,10 @@ class Routes {
     signinPage,
     dashboardPage,
     aboutUs,
+    contactUs,
+    fAQ,
+    privacyPolicy,
+    termAndCondition,
     bottomNavigationPage,
     signupPage,
     aboutMePage,
@@ -67,6 +79,10 @@ class AppRouter extends RouterBase {
     RouteDef(Routes.signinPage, page: SigninPage),
     RouteDef(Routes.dashboardPage, page: DashboardPage),
     RouteDef(Routes.aboutUs, page: AboutUs),
+    RouteDef(Routes.contactUs, page: ContactUs),
+    RouteDef(Routes.fAQ, page: FAQ),
+    RouteDef(Routes.privacyPolicy, page: PrivacyPolicy),
+    RouteDef(Routes.termAndCondition, page: TermAndCondition),
     RouteDef(Routes.bottomNavigationPage, page: BottomNavigationPage),
     RouteDef(Routes.signupPage, page: SignupPage),
     RouteDef(Routes.aboutMePage, page: AboutMePage),
@@ -102,6 +118,30 @@ class AppRouter extends RouterBase {
     AboutUs: (data) {
       return MaterialPageRoute<dynamic>(
         builder: (context) => AboutUs(),
+        settings: data,
+      );
+    },
+    ContactUs: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => ContactUs(),
+        settings: data,
+      );
+    },
+    FAQ: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => FAQ(),
+        settings: data,
+      );
+    },
+    PrivacyPolicy: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => PrivacyPolicy(),
+        settings: data,
+      );
+    },
+    TermAndCondition: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => TermAndCondition(),
         settings: data,
       );
     },
@@ -191,6 +231,15 @@ extension AppRouterExtendedNavigatorStateX on ExtendedNavigatorState {
   Future<dynamic> pushDashboardPage() => push<dynamic>(Routes.dashboardPage);
 
   Future<dynamic> pushAboutUs() => push<dynamic>(Routes.aboutUs);
+
+  Future<dynamic> pushContactUs() => push<dynamic>(Routes.contactUs);
+
+  Future<dynamic> pushFAQ() => push<dynamic>(Routes.fAQ);
+
+  Future<dynamic> pushPrivacyPolicy() => push<dynamic>(Routes.privacyPolicy);
+
+  Future<dynamic> pushTermAndCondition() =>
+      push<dynamic>(Routes.termAndCondition);
 
   Future<dynamic> pushBottomNavigationPage() =>
       push<dynamic>(Routes.bottomNavigationPage);
