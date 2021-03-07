@@ -1,6 +1,7 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart' hide Banner;
-import 'package:shoppingApp/domain/dashboard/dashboard.dart';
+import '../../../domain/dashboard/dashboard.dart';
 
 class HomepageBanner extends StatefulWidget {
   final List<Banner> banner;
@@ -33,8 +34,8 @@ class _HomepageBannerState extends State<HomepageBanner> {
             itemBuilder: (BuildContext context, int index, int realIndex) =>
                 Stack(
               children: [
-                Image.network(
-                  widget.banner[index].image,
+                CachedNetworkImage(
+                  imageUrl: widget.banner[index].image,
                   fit: BoxFit.cover,
                   height: 400,
                   width: double.infinity,
@@ -79,7 +80,7 @@ class _HomepageBannerState extends State<HomepageBanner> {
           Positioned(
             top: 35,
             left: 10,
-            right: 10,
+            // right: 10,
             child: new MaterialButton(
                 height: 40,
                 minWidth: 30,

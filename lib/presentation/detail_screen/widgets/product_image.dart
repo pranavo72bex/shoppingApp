@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import '../../../domain/product/product.dart';
@@ -20,8 +21,8 @@ class ProductImage extends StatelessWidget {
             borderRadius: BorderRadius.circular(12.0),
             child: Hero(
               tag: "${product.id}",
-              child: Image.network(
-                product.image,
+              child: CachedNetworkImage(
+                imageUrl: product.image,
                 height: 230,
                 width: 200,
                 fit: BoxFit.fill,

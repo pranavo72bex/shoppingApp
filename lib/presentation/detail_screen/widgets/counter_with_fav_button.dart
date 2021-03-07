@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shoppingApp/domain/product/product.dart';
-import 'package:shoppingApp/presentation/core/konstants.dart';
+import '../../../domain/product/product.dart';
+import '../../core/konstants.dart';
 
 import 'cart_counter.dart';
 

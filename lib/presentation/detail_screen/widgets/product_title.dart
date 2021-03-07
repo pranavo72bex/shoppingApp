@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shoppingApp/presentation/detail_screen/widgets/isveg.dart';
+import 'isveg.dart';
 
 import '../../../domain/product/product.dart';
 

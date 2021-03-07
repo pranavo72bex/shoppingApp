@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
-import 'package:shoppingApp/application/category/category_bloc.dart';
-import 'package:shoppingApp/domain/product/product.dart';
+import '../../../application/category/category_bloc.dart';
+import '../../../domain/product/product.dart';
 
 import '../../core/app_router.gr.dart';
 import 'product_grid_item.dart';

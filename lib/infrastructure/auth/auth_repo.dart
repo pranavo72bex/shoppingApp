@@ -3,7 +3,7 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
-import 'package:shoppingApp/domain/auth/i_auth_repo.dart';
+import '../../domain/auth/i_auth_repo.dart';
 
 @LazySingleton(as: IAuthRepo)
 class AuthRepo implements IAuthRepo {

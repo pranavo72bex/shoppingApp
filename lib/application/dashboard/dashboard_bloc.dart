@@ -3,10 +3,10 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:shoppingApp/domain/dashboard/dashboard.dart';
-import 'package:shoppingApp/domain/product/i_product_repo.dart';
-import 'package:shoppingApp/domain/product/product.dart';
-import 'package:shoppingApp/infrastructure/product/product_repo.dart';
+import '../../domain/dashboard/dashboard.dart';
+import '../../domain/product/i_product_repo.dart';
+import '../../domain/product/product.dart';
+import '../../infrastructure/product/product_repo.dart';
 
 part 'dashboard_event.dart';
 part 'dashboard_state.dart';

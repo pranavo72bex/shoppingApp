@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:shoppingApp/domain/product/i_product_repo.dart';
-import 'package:shoppingApp/domain/product/product.dart';
+import '../../domain/product/i_product_repo.dart';
+import '../../domain/product/product.dart';
 
 part 'category_event.dart';
 part 'category_state.dart';

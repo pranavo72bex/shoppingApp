@@ -1,10 +1,11 @@
 import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:shoppingApp/domain/product/product.dart';
-import 'package:shoppingApp/presentation/core/app_router.gr.dart';
+import '../../../domain/product/product.dart';
+import '../../core/app_router.gr.dart';
 
 import '../../core/konstants.dart';
 
@@ -46,13 +47,9 @@ class _ProductItemState extends State<ProductGridItem> {
                         horizontal: 10,
                         vertical: 10,
                       ),
-                      child:
-                          Ink.image(image: NetworkImage(widget.product.image)),
-                      // child: Image.network(
-                      //   widget.product.image,
-                      //   fit: BoxFit.cover,
-                      //   // width: 100,
-                      // ),
+                      child: Ink.image(
+                          image:
+                              CachedNetworkImageProvider(widget.product.image)),
                     ),
                   ),
                   Positioned(
