@@ -18,10 +18,10 @@ import '../auth/signup/signup_page.dart';
 import '../cart/cart_page.dart';
 import '../category/category_page.dart';
 import '../dashboard/dashboard_page.dart';
-import '../dashboard/onboarding/onboarding.dart';
 import '../detail_screen/detail_screen.dart';
 import '../favorites/favorites.dart';
 import '../notification/notification_page.dart';
+import '../onboarding/onboarding.dart';
 import '../review/review_page.dart';
 import 'bottom_navigation_page.dart';
 

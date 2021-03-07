@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route_annotations.dart';
 import 'package:shoppingApp/presentation/category/category_page.dart';
 import 'package:shoppingApp/presentation/core/bottom_navigation_page.dart';
-import 'package:shoppingApp/presentation/dashboard/onboarding/onboarding.dart';
+import 'package:shoppingApp/presentation/onboarding/onboarding.dart';
 import '../about_me/about_me_page.dart';
 import '../auth/common/password_recovery.dart';
 import '../auth/signin/signin_page.dart';
