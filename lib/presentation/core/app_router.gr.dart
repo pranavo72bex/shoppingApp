@@ -17,6 +17,7 @@ import '../auth/signin/signin_page.dart';
 import '../auth/signup/signup_page.dart';
 import '../cart/cart_page.dart';
 import '../category/category_page.dart';
+import '../dashboard/bottom_body/about_us.dart';
 import '../dashboard/dashboard_page.dart';
 import '../detail_screen/detail_screen.dart';
 import '../favorites/favorites.dart';
@@ -29,6 +30,7 @@ class Routes {
   static const String onboardingPage = '/onboarding-page';
   static const String signinPage = '/signin-page';
   static const String dashboardPage = '/dashboard-page';
+  static const String aboutUs = '/about-us';
   static const String bottomNavigationPage = '/bottom-navigation-page';
   static const String signupPage = '/signup-page';
   static const String aboutMePage = '/about-me-page';
@@ -43,6 +45,7 @@ class Routes {
     onboardingPage,
     signinPage,
     dashboardPage,
+    aboutUs,
     bottomNavigationPage,
     signupPage,
     aboutMePage,
@@ -63,6 +66,7 @@ class AppRouter extends RouterBase {
     RouteDef(Routes.onboardingPage, page: OnboardingPage),
     RouteDef(Routes.signinPage, page: SigninPage),
     RouteDef(Routes.dashboardPage, page: DashboardPage),
+    RouteDef(Routes.aboutUs, page: AboutUs),
     RouteDef(Routes.bottomNavigationPage, page: BottomNavigationPage),
     RouteDef(Routes.signupPage, page: SignupPage),
     RouteDef(Routes.aboutMePage, page: AboutMePage),
@@ -92,6 +96,12 @@ class AppRouter extends RouterBase {
     DashboardPage: (data) {
       return MaterialPageRoute<dynamic>(
         builder: (context) => DashboardPage(),
+        settings: data,
+      );
+    },
+    AboutUs: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => AboutUs(),
         settings: data,
       );
     },
@@ -179,6 +189,8 @@ extension AppRouterExtendedNavigatorStateX on ExtendedNavigatorState {
   Future<dynamic> pushSigninPage() => push<dynamic>(Routes.signinPage);
 
   Future<dynamic> pushDashboardPage() => push<dynamic>(Routes.dashboardPage);
+
+  Future<dynamic> pushAboutUs() => push<dynamic>(Routes.aboutUs);
 
   Future<dynamic> pushBottomNavigationPage() =>
       push<dynamic>(Routes.bottomNavigationPage);

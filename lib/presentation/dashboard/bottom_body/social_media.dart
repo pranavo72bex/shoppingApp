@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shoppingApp/presentation/core/konstants.dart';
@@ -42,9 +43,14 @@ class SocialMedia extends StatelessWidget {
           style: TextStyle(
               color: Colors.black, fontWeight: FontWeight.bold, fontSize: 25),
         ),
-        Text(
-          "About-us",
-          style: TextStyle(color: Colors.black, fontSize: 17),
+        InkWell(
+          onTap: () {
+            //  ExtendedNavigator.of(context).replace(Routes.);
+          },
+          child: Text(
+            "About-us",
+            style: TextStyle(color: Colors.black, fontSize: 17),
+          ),
         ),
         Text(
           "FAQ",
