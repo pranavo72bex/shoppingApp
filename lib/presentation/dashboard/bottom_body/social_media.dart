@@ -93,10 +93,10 @@ class SocialMedia extends StatelessWidget {
           height: 5,
         ),
         Container(
-          padding: EdgeInsets.all(5),
+          padding: EdgeInsets.all(10),
           child: Center(
             child: Text(
-              "  power by Daily Mart indoor 2021 All rights reserved",
+              "power by Daily Mart indoor 2021 All rights reserved",
               style: TextStyle(color: Colors.white),
             ),
           ),
