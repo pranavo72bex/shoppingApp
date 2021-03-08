@@ -8,18 +8,9 @@ import '../../domain/product/product.dart';
 
 @LazySingleton(as: IProductRepo)
 class ProductRepo implements IProductRepo {
-  final Dio _dio = Dio(
-    BaseOptions(
-      baseUrl: 'http://4percentmedical.com/dks/grocery/Api/Restapi/',
-      headers: {
-        'Authorization': 'LS',
-        'device_id': '12345',
-        'device_version': '1.0',
-        'device_type': '1',
-        'store_id': '14',
-      },
-    ),
-  );
+  final Dio _dio;
+
+  ProductRepo(this._dio);
 
   @override
   Future<Dashboard> getDashboardData() async {

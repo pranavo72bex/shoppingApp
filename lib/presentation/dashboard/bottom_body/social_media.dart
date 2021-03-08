@@ -41,52 +41,52 @@ class SocialMedia extends StatelessWidget {
         ),
         Text(
           "Information",
-          style: TextStyle(
-              color: Colors.black, fontWeight: FontWeight.bold, fontSize: 25),
+          // style: TextStyle(
+          //     color: Colors.black, fontWeight: FontWeight.bold, fontSize: 25),
         ),
         InkWell(
           onTap: () {
-            ExtendedNavigator.of(context).replace(Routes.aboutUs);
+            ExtendedNavigator.of(context).push(Routes.aboutUs);
           },
           child: Text(
             "About-us",
-            style: TextStyle(color: Colors.black, fontSize: 17),
+            // style: TextStyle(color: Colors.black, fontSize: 17),
           ),
         ),
         InkWell(
           onTap: () {
-            ExtendedNavigator.of(context).replace(Routes.fAQ);
+            ExtendedNavigator.of(context).push(Routes.fAQ);
           },
           child: Text(
             "FAQ",
-            style: TextStyle(color: Colors.black, fontSize: 17),
+            // style: TextStyle(color: Colors.black, fontSize: 17),
           ),
         ),
         InkWell(
           onTap: () {
-            ExtendedNavigator.of(context).replace(Routes.privacyPolicy);
+            ExtendedNavigator.of(context).push(Routes.privacyPolicy);
           },
           child: Text(
             "Privacy policy",
-            style: TextStyle(color: Colors.black, fontSize: 17),
+            // style: TextStyle(color: Colors.black, fontSize: 17),
           ),
         ),
         InkWell(
           onTap: () {
-            ExtendedNavigator.of(context).replace(Routes.termAndCondition);
+            ExtendedNavigator.of(context).push(Routes.termAndCondition);
           },
           child: Text(
             "Terms and Conditions",
-            style: TextStyle(color: Colors.black, fontSize: 17),
+            // style: TextStyle(color: Colors.black, fontSize: 17),
           ),
         ),
         InkWell(
           onTap: () {
-            ExtendedNavigator.of(context).replace(Routes.contactUs);
+            ExtendedNavigator.of(context).push(Routes.contactUs);
           },
           child: Text(
             "Contact us",
-            style: TextStyle(color: Colors.black, fontSize: 17),
+            // style: TextStyle(color: Colors.black, fontSize: 17),
           ),
         ),
         SizedBox(
@@ -94,17 +94,16 @@ class SocialMedia extends StatelessWidget {
         ),
         Container(
           padding: EdgeInsets.all(10),
-          child: Center(
-            child: Text(
-              "power by Daily Mart indoor 2021 All rights reserved",
-              style: TextStyle(color: Colors.white),
-            ),
+          child: Text(
+            "Powered by Daily Mart Indoor.\n2021 - All rights reserved",
+            textAlign: TextAlign.center,
+            style: TextStyle(color: Colors.white),
           ),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(8),
             color: Colors.green,
           ),
-          height: 60,
+          // height: 60,
           width: double.infinity,
         )
       ],

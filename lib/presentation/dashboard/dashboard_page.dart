@@ -7,6 +7,7 @@ import 'package:shoppingApp/presentation/dashboard/widgets/homepage_banner.dart'
 import 'package:shoppingApp/presentation/dashboard/widgets/our_brand.dart';
 import 'package:shoppingApp/presentation/dashboard/widgets/sale_product.dart';
 import 'package:shoppingApp/presentation/dashboard/widgets/top_product.dart';
+import '../../dependency_injection.dart';
 import 'dashboard_widgets/categories_grid.dart';
 import 'widgets/homepage_slider.dart';
 import 'widgets/popular_deals_grid.dart';
@@ -16,7 +17,8 @@ class DashboardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => DashboardBloc()..add(DashboardEvent.started()),
+      create: (context) =>
+          getIt.get<DashboardBloc>()..add(DashboardEvent.started()),
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.transparent,
