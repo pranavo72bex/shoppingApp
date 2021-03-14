@@ -85,8 +85,8 @@ class _HomepageBannerState extends State<HomepageBanner> {
                 height: 40,
                 minWidth: 30,
                 elevation: 2,
-                color: Theme.of(context).primaryColor,
-                textColor: Colors.white,
+                color: Colors.orange,
+                textColor: Colors.black,
                 child: Row(
                   children: [new Text("Order Now"), Icon(Icons.arrow_forward)],
                 ),

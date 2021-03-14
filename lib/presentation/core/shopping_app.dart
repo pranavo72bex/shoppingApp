@@ -24,18 +24,18 @@ class ShoppingApp extends StatelessWidget {
               : Routes.dashboardPage,
           builder: (context, extendedNav) => Theme(
             data: ThemeData(
-              primaryColor: Color(0xFFF78909),
+              primaryColor: Colors.white,
               textTheme: GoogleFonts.poppinsTextTheme(
                 Theme.of(context).textTheme,
               ),
               scaffoldBackgroundColor: Color(0xFFF8F8FF),
               appBarTheme: AppBarTheme().copyWith(
                 iconTheme:
-                    IconThemeData(color: Colors.white), //back button theme
+                    IconThemeData(color: Colors.black), //back button theme
                 actionsIconTheme: IconThemeData(color: Color(0xAA504f57)),
                 textTheme: Theme.of(context).textTheme.copyWith(
                       headline6: Theme.of(context).textTheme.headline6.copyWith(
-                            color: Colors.white,
+                            color: Colors.black,
                             fontWeight: FontWeight.bold,
                           ),
                     ),
