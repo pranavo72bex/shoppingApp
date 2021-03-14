@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shoppingApp/presentation/core/konstants.dart';
 
 class SearchBar extends StatefulWidget {
   @override
@@ -9,9 +10,14 @@ class _SearchBarState extends State<SearchBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 10, left: 10, right: 10),
+      margin: EdgeInsets.only(
+        top: 10,
+        left: 5,
+        right: 5,
+      ),
       decoration: BoxDecoration(
         color: Colors.white,
+        boxShadow: kShadow,
         borderRadius: BorderRadius.circular(18),
       ),
       child: TextField(

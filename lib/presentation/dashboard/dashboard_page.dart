@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shoppingApp/application/dashboard/dashboard_bloc.dart';
+import 'package:shoppingApp/presentation/common_widget/custom_circular_progress_indicator.dart';
 import 'package:shoppingApp/presentation/dashboard/bottom_body/social_media.dart';
 import 'package:shoppingApp/presentation/dashboard/widgets/error_screen.dart';
 import 'package:shoppingApp/presentation/dashboard/widgets/homepage_banner.dart';
@@ -20,25 +21,25 @@ class DashboardPage extends StatelessWidget {
       create: (context) =>
           getIt.get<DashboardBloc>()..add(DashboardEvent.started()),
       child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          title: SearchBar(),
-        ),
         body: SingleChildScrollView(
           padding: EdgeInsets.all(16),
           child: BlocBuilder<DashboardBloc, DashboardState>(
             builder: (context, state) {
               return state.map(
                 loading: (_) => Center(
-                    child: CircularProgressIndicator(
-                  backgroundColor: Colors.orange,
-                  valueColor: AlwaysStoppedAnimation(Colors.green),
-                  strokeWidth: 5,
-                )),
+                  child: CustomCircularProgressIndicator(),
+                ),
                 failure: (_) => Error404Screen(),
                 loaded: (s) => Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
+                    SizedBox(
+                      height: 10,
+                    ),
+                    SearchBar(),
+                    SizedBox(
+                      height: 10,
+                    ),
                     HomepageBanner(
                       banner: s.dashboard.banner,
                     ),

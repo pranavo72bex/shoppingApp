@@ -164,7 +164,7 @@ class OnboardingPage extends StatelessWidget {
     return IntroductionScreen(
       pages: listPagesViewModel,
       onDone: () {
-        ExtendedNavigator.of(context).push(Routes.passwordRecovery);
+        ExtendedNavigator.of(context).push(Routes.signinPage);
       },
       showSkipButton: true,
       skip: const Text(
