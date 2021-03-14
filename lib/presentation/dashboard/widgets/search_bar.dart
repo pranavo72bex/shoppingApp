@@ -18,7 +18,7 @@ class _SearchBarState extends State<SearchBar> {
       decoration: BoxDecoration(
         color: Colors.white,
         boxShadow: kShadow,
-        borderRadius: BorderRadius.circular(18),
+        borderRadius: BorderRadius.circular(25),
       ),
       child: TextField(
         textInputAction: TextInputAction.search,

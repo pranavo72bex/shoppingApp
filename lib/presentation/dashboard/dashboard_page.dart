@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:shoppingApp/application/dashboard/dashboard_bloc.dart';
-import 'package:shoppingApp/presentation/common_widget/custom_circular_progress_indicator.dart';
+import 'package:shoppingApp/presentation/core/konstants.dart';
 import 'package:shoppingApp/presentation/dashboard/bottom_body/social_media.dart';
 import 'package:shoppingApp/presentation/dashboard/widgets/error_screen.dart';
 import 'package:shoppingApp/presentation/dashboard/widgets/homepage_banner.dart';
@@ -26,9 +27,7 @@ class DashboardPage extends StatelessWidget {
           child: BlocBuilder<DashboardBloc, DashboardState>(
             builder: (context, state) {
               return state.map(
-                loading: (_) => Center(
-                  child: CustomCircularProgressIndicator(),
-                ),
+                loading: (_) => Shimmerdashboard(),
                 failure: (_) => Error404Screen(),
                 loaded: (s) => Column(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -76,6 +75,113 @@ class DashboardPage extends StatelessWidget {
             },
           ),
         ),
+      ),
+    );
+  }
+}
+
+class Shimmerdashboard extends StatelessWidget {
+  const Shimmerdashboard({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Shimmer.fromColors(
+      baseColor: Colors.white,
+      highlightColor: Colors.grey[300],
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(
+            height: 10,
+          ),
+          Container(
+            height: 55,
+            margin: EdgeInsets.only(
+              top: 10,
+              left: 5,
+              right: 5,
+            ),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              boxShadow: kShadow,
+              borderRadius: BorderRadius.circular(25),
+            ),
+          ),
+          Container(
+            height: 180,
+            width: double.infinity,
+            margin: EdgeInsets.only(
+              top: 10,
+              left: 5,
+              right: 5,
+            ),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              boxShadow: kShadow,
+            ),
+          ),
+          Container(
+            height: 180,
+            width: double.infinity,
+            margin: EdgeInsets.only(
+              top: 10,
+              left: 5,
+              right: 5,
+            ),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              boxShadow: kShadow,
+              borderRadius: BorderRadius.circular(25),
+            ),
+          ),
+          Container(
+            height: 40,
+            width: 150,
+            margin: EdgeInsets.only(
+              top: 10,
+              left: 5,
+              right: 5,
+            ),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              boxShadow: kShadow,
+            ),
+          ),
+          Row(
+            children: [
+              Container(
+                width: 160,
+                height: 120,
+                margin: EdgeInsets.only(
+                  top: 10,
+                  left: 5,
+                  right: 5,
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  boxShadow: kShadow,
+                  borderRadius: BorderRadius.circular(25),
+                ),
+              ),
+              Container(
+                height: 120,
+                width: 160,
+                margin: EdgeInsets.only(
+                  top: 10,
+                  left: 5,
+                  right: 5,
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(25),
+                  boxShadow: kShadow,
+                ),
+              ),
+            ],
+          )
+        ],
       ),
     );
   }
