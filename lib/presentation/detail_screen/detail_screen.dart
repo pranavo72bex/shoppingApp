@@ -65,12 +65,12 @@ class DetailsScreen extends StatelessWidget {
 
   AppBar buildAppBar(BuildContext context) {
     return AppBar(
-      // backgroundColor: product.color,
+      backgroundColor: kSecondaryColor,
       elevation: 0,
       leading: IconButton(
         icon: Icon(
-          Icons.arrow_back_ios_outlined,
-          color: Colors.white,
+          Icons.arrow_back,
+          color: Colors.black,
         ),
         onPressed: () => Navigator.pop(context),
       ),
