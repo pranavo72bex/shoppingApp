@@ -1,16 +1,6 @@
 # shoppingApp
+Grocery app
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![photo1625805351](https://user-images.githubusercontent.com/71395812/125024135-ed43d680-e09f-11eb-9449-ae351e5323c6.jpeg)
+![photo1625805396](https://user-images.githubusercontent.com/71395812/125024141-efa63080-e09f-11eb-8809-ea0b89844788.jpeg)
+![photo1625803861](https://user-images.githubusercontent.com/71395812/125024153-f634a800-e09f-11eb-8d7b-c22f46f01f9c.jpeg)
