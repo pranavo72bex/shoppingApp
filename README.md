@@ -1,6 +1,4 @@
 # shoppingApp
 Grocery app
 
-![photo1625805351](https://user-images.githubusercontent.com/71395812/125024135-ed43d680-e09f-11eb-9449-ae351e5323c6.jpeg)
-![photo1625805396](https://user-images.githubusercontent.com/71395812/125024141-efa63080-e09f-11eb-8809-ea0b89844788.jpeg)
-![photo1625803861](https://user-images.githubusercontent.com/71395812/125024153-f634a800-e09f-11eb-8d7b-c22f46f01f9c.jpeg)
+ ![photo1625805396](https://user-images.githubusercontent.com/71395812/125032072-2767a500-e0ad-11eb-97fa-52ec4407bffc.jpeg)  ![photo1625805351](https://user-images.githubusercontent.com/71395812/125032093-2e8eb300-e0ad-11eb-9574-f4990016e31f.jpeg)  ![WhatsApp Image 2021-07-09 at 11 57 40 AM (1)](https://user-images.githubusercontent.com/71395812/125032287-77466c00-e0ad-11eb-82cb-99af3495ab56.jpeg)  ![WhatsApp Image 2021-07-09 at 11 57 40 AM](https://user-images.githubusercontent.com/71395812/125032257-6d246d80-e0ad-11eb-8b94-a0437ef4d168.jpeg)
